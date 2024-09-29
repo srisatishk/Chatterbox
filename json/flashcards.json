@@ -1,0 +1,13 @@
+[
+
+    {
+        "id": 1, 
+        "word": "chat",
+        "translation": "cat"
+    },
+    {
+        "id": 2,
+        "phrase": "siempre",
+        "translation": "always"
+    }
+]

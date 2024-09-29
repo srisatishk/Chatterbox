@@ -1,0 +1,16 @@
+[
+    {
+        "user": "user", 
+        "story": "story", 
+        "cate": "Category", 
+        "question": "question", 
+        "phrases": "phrases", 
+        "words": "words", 
+        "mock":"MockConversations", 
+        "fill": "FillintheBlank", 
+        "flash": "Flashcards", 
+        "match": "Matching", 
+        "Language":"language", 
+        "Progress":"progress"
+    }
+]

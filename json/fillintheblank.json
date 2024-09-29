@@ -1,0 +1,14 @@
+[
+    {
+        "id" : 1,
+        "samplesentence": ["Je conduis mon _ dans la rue"], 
+        "Word Bank": ["fourchette", "voiture", "livre", "café"], 
+        "User Input": "voiture"
+    },
+    {
+        "id" : 2,
+        "samplesentence": ["Mi desayuno ___ estuvo delicioso"], 
+        "Word Bank": ["batido", "teléfono", "plato", "agua"],  
+        "User Input":  "plato" 
+    }
+]
