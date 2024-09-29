@@ -1,0 +1,13 @@
+[
+    {
+        "id":1,
+        "phraselist":"phraselist",
+        "Words":["femme","nous", "jaune", "devant", "ajouter"]
+        
+    }, 
+    {
+        "id":2,
+        "phraselist":"phraselist",
+        "Words":["tener, mucho, pensar, creer, nada"]
+    }
+]

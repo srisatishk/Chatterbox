@@ -1,0 +1,28 @@
+[
+
+    {
+        "id": 1, 
+        "FirstName": "John", 
+        "LastName": "Doe", 
+        "Email": "johndoe@gmail.com",
+        "PhoneNumber":"627-917-2739",
+        "DateofBirth": "01-01-01", 
+        "UserName": "johndoe73",
+        "Password": "IlovemyCat", 
+        "Languages": ["French, 5"], 
+        "Streak": 8
+    },
+    {
+        "id": 2, 
+        "FirstName": "Jane", 
+        "LastName": "Smith", 
+        "Email": "jsmith@gmail.com",
+        "PhoneNumber":"817-902-3201",
+        "DateofBirth": "10-07-98", 
+        "UserName": "janesmith10",
+        "Password": "IlovemyDog", 
+        "Languages": "Spanish", 
+        "Streak": 19
+    }
+
+]

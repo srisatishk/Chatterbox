@@ -1,0 +1,20 @@
+[
+    {
+        "id":1,
+        "TotalQuestionAnswered": 10, 
+        "NumCorrectAnswers": 7, 
+        "CurrentCategory": "Numbers", 
+        "ProgressinCategory": 50,
+        "MissedWords": ["cinq","sept","neuf"]
+    },
+    {
+        "id":2,
+        "TotalQuestionAnswered": 12, 
+        "NumCorrectAnswers": 10, 
+        "CurrentCategory": "Colors", 
+        "ProgressinCategory": 75,
+        "MissedWords": ["azule","rojo"]
+    }
+
+
+]

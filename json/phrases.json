@@ -1,0 +1,15 @@
+[
+    {
+        "id" : 1, 
+        "Words":["femme","nous", "jaune", "devant", "ajouter"],
+        "Pronunciation": ["fem - me", "noos", "ja-une", "de-vant", "a-jou-ter"],
+        "Translation": ["women", "we", "yellow", "in front", "add"]
+
+    },
+    {
+        "id":2,
+        "Words":["tener, mucho, pensar, creer, nada"],
+        "Pronunciation": ["t-ner", "moo-cho", "pen-sar", "cr-eer", "na-da"],
+        "Translation" : ["have", "a lot", "think", "believe", "nothing"]
+    }
+]
