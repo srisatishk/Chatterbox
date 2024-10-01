@@ -14,7 +14,43 @@
         "CurrentCategory": "Colors", 
         "ProgressinCategory": 75,
         "MissedWords": ["azule","rojo"]
+    },
+
+
+
+    {
+        "id":1,
+        "sentenceStructure": "/*Only if they were learning phrases*/",
+        "CurrentCategory":"Numbers", 
+        "ProgressinLanguage":6, 
+        "Translation": ["cinq", 5, "sept",7, "neuf",9]
+    }, 
+    {
+        "id":2,
+        "sentenceStructure": "/*Only if they were learning phrases*/",
+        "CurrentCategory":"Colors", 
+        "ProgressinLanguage":11, 
+        "Translation": ["Azule", "blue", "rojo","red"]
+    },
+
+    {
+        "id":1,
+        "languagelist":"languagelist",
+        "language":"French", 
+        "Categories":["Number","Colors", "People", "Places", "Alphabet"], 
+        "languages":["French","Spanish", "German", "Chinese", "Japanese"]
+    },
+    {
+        "id":2,
+        "languagelist":"languagelist",
+        "language":"Spanish", 
+        "Categories":["Number","Colors", "People", "Places", "Alphabet"], 
+        "languages":["French","Spanish", "German", "Chinese", "Japanese"]
     }
+
+
+
+
 
 
 ]
