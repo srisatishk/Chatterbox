@@ -2,10 +2,15 @@ package language;
 
 import java.util.ArrayList;
 import java.util.Locale.Category;
+<<<<<<< HEAD
 /* @author grace */
 public class languageList {
+=======
+
+public class LanguageList {
+>>>>>>> c8335bbdaa15a7c0bec674506351fc6a2289421e
     
-    languageList LanguageList; 
+    LanguageList languagelist; 
     private String language; 
     private ArrayList<Category> categories; 
     private ArrayList<Word> wordlist; 
@@ -33,6 +38,5 @@ public class languageList {
     { 
         return languages; 
     }
-    
 
 }

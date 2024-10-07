@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "firstName":"Sasha",
+        "lastName":"Addams",
+    "email":"sashaaddams@gmail.com",
+    "phoneNumber":"803-285-6666",
+    "dateOfBirth":"08/28/2004",
+    "username":"saddams",
+    "password": "maple804",
+    "streak": "36"
+  },{
+        "id": 2,
+        "firstName":"Tim",
+        "lastName":"Smith",
+    "email":"smithyTim@gmail.com",
+    "phoneNumber":"803-333-9645",
+    "dateOfBirth":"12/25/2001",
+    "username":"tsmith",
+    "password":"coolcat1",
+    "streak":"15"
+  }
+]
