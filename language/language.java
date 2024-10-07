@@ -8,7 +8,7 @@ public class Language {
     private String sentenceStructure; 
     private Category currentCategory; 
     private int progressInCategory; 
-    private HashMap<Word,Definition> translation; 
+    private HashMap<Word, Definition> translation; 
 
   
     public String sentenceStructure()

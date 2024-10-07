@@ -6,75 +6,47 @@ package language;
  */
 
 /**
- * The Flashcard class represents a single flashcard that contains a word,
- * its definition, the language of the word, and its category.
- * Each flashcard is uniquely identified by an id.
+ * The Flashcards class represents a single flashcard that contains a word,
+ * its translation, and an example phrase.
+ * This class is designed to be used in a language learning app.
  */
 public class Flashcards {
 
-    /** The unique identifier for the flashcard. */
-    private String id;
-
-    /** The word or term on the flashcard. */
+    /** The word or term on the flashcard in the target language. */
     private String word;
 
-    /** The definition or meaning of the word. */
-    private String definition;
+    /** The translation of the word in the learner's native language. */
+    private String translation;
 
-    /** The language to which the word belongs. */
-    private String language;
-
-    /** The category of the word (e.g., grammar, vocabulary). */
-    private String category;
+    /** An example phrase that uses the word, for contextual learning. */
+    private String phrase;
 
     /**
-     * Constructs a new Flashcard object with the specified details.
+     * Constructs a new Flashcard object with the specified word, translation, and phrase.
      *
-     * @param id The unique identifier for the flashcard.
-     * @param word The word or term on the flashcard.
-     * @param definition The definition of the word.
-     * @param language The language of the word.
-     * @param category The category to which the word belongs.
+     * @param word The word or term in the target language.
+     * @param translation The translation of the word in the learner's native language.
+     * @param phrase An example phrase using the word for contextual understanding.
      */
-    public Flashcards(String id, String word, String definition, String language, String category) {
-        this.id = id;
+    public Flashcards(String word, String translation, String phrase) {
         this.word = word;
-        this.definition = definition;
-        this.language = language;
-        this.category = category;
+        this.translation = translation;
+        this.phrase = phrase;
     }
 
     // Getters and setters
 
     /**
-     * Returns the unique identifier of the flashcard.
+     * Returns the word or term in the target language.
      *
-     * @return The id of the flashcard.
-     */
-    public String getId() {
-        return id;
-    }
-
-    /**
-     * Sets the unique identifier of the flashcard.
-     *
-     * @param id The new id of the flashcard.
-     */
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    /**
-     * Returns the word or term on the flashcard.
-     *
-     * @return The word on the flashcard.
+     * @return The word in the target language.
      */
     public String getWord() {
         return word;
     }
 
     /**
-     * Sets the word or term on the flashcard.
+     * Sets the word or term in the target language.
      *
      * @param word The new word for the flashcard.
      */
@@ -83,56 +55,67 @@ public class Flashcards {
     }
 
     /**
-     * Returns the definition of the word on the flashcard.
+     * Returns the translation of the word in the learner's native language.
      *
-     * @return The definition of the word.
+     * @return The translation of the word.
      */
-    public String getDefinition() {
-        return definition;
+    public String getTranslation() {
+        return translation;
     }
 
     /**
-     * Sets the definition of the word on the flashcard.
+     * Sets the translation of the word in the learner's native language.
      *
-     * @param definition The new definition for the word.
+     * @param translation The new translation for the word.
      */
-    public void setDefinition(String definition) {
-        this.definition = definition;
+    public void setTranslation(String translation) {
+        this.translation = translation;
     }
 
     /**
-     * Returns the language of the word on the flashcard.
+     * Returns the example phrase for contextual understanding.
      *
-     * @return The language of the word.
+     * @return The example phrase.
      */
-    public String getLanguage() {
-        return language;
+    public String getPhrase() {
+        return phrase;
     }
 
     /**
-     * Sets the language of the word on the flashcard.
+     * Sets the example phrase for contextual understanding.
      *
-     * @param language The new language of the word.
+     * @param phrase The new example phrase.
      */
-    public void setLanguage(String language) {
-        this.language = language;
+    public void setPhrase(String phrase) {
+        this.phrase = phrase;
     }
 
     /**
-     * Returns the category of the word on the flashcard.
-     *
-     * @return The category of the word.
+     * Displays the details of the flashcard, including the word, its translation,
+     * and an example phrase.
      */
-    public String getCategory() {
-        return category;
+    public void showFlashcard() {
+        System.out.println("Word (Target Language): " + word);
+        System.out.println("Translation (Learner's Language): " + translation);
+        System.out.println("Example Phrase: " + phrase);
     }
 
     /**
-     * Sets the category of the word on the flashcard.
-     *
-     * @param category The new category for the word.
+     * Main method for testing the Flashcards class.
+     * Creates and displays Flashcard objects with word, translation, and example phrases.
+     * 
+     * @param args Command-line arguments (not used).
      */
-    public void setCategory(String category) {
-        this.category = category;
+    public static void main(String[] args) {
+        // Create flashcard objects
+        Flashcards flashcard1 = new Flashcards("Bonjour", "Hello", "Bonjour! Je m'appelle Pierre.");
+        Flashcards flashcard2 = new Flashcards("Hola", "Hello", "Hola! Me llamo Juan.");
+
+        // Display flashcard details
+        System.out.println("Flashcard 1: ");
+        flashcard1.showFlashcard();
+
+        System.out.println("\nFlashcard 2: ");
+        flashcard2.showFlashcard();
     }
 }
