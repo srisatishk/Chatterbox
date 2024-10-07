@@ -3,9 +3,9 @@ package language;
 import java.util.ArrayList;
 import java.util.Locale.Category;
 
-public class languageList {
+public class LanguageList {
     
-    languageList LanguageList; 
+    LanguageList languagelist; 
     private String language; 
     private ArrayList<Category> categories; 
     private ArrayList<Word> wordlist; 

@@ -3,7 +3,7 @@ package language;
 import java.util.HashMap;
 import java.util.Locale.Category;
 
-public class language {
+public class Language {
     
     private String sentenceStructure; 
     private Category currentCategory; 

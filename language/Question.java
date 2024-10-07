@@ -8,9 +8,6 @@ public class Question {
      */
     private String question;
 
-    // public Question (String question) {
-    //     this.question = question;
-    // }
     /**
      * getQuestion method
      */
@@ -18,7 +15,10 @@ public class Question {
 
         return question;
     }
-
+    /**
+     * makeFlashcards method
+     * @return question for flashcards
+     */
     public String makeFlashCards() {
         return "Question for flashcard" + question;
     }

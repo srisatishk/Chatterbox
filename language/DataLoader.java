@@ -57,7 +57,7 @@ public class DataLoader {
                 Flashcard flashcard = new Flashcard(id, word, definition, language, category);
                 flashcards.add(flashcard);
             }
-        } catch (IOException | ParseException e) {
+        }  catch (IOException | ParseException e) {
             e.printStackTrace();  // Handle errors in reading or parsing the file
         }
 

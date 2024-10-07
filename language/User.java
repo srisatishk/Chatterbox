@@ -1,6 +1,6 @@
 package language;
 import java.util.HashMap;
-import java.util.Hashmap;
+import java.util.Date;
 import java.util.UUID;
 /**
  * @author sri
@@ -17,42 +17,48 @@ public class User{
     private Date dateOfBirth;
     private String username;
     private String password;
-    private HashMap<Language, Process> language;
+    private HashMap<Language, Progress> languages;
     private int streak;
 
     public User(String firstName, String lastName, String email){
+        this.id = UUID.randomUUID();
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.languages = new HashMap<>();
+        this.streak = 0; 
     }
 
     public String getFirstName(){
-        return null;
+        return firstName;
     }
 
     public void setFirstName(){
-    
+        this.firstName = firstName;
     }
 
     public String getLastName(){
-        return null;
+        return lastName;
     }
 
     public void setLastName(){
-
+        this.lastName = lastName;
     }
 
     public String getEmail(){
-        return null;
+        return email;
     }
 
     public void setEmail(){
-
+        this.email = email;
     }
 
     public String getPhoneNumber(){
-        return null;
+        return phoneNumber;
     }
 
     public void setPhoneNumber(){
-
+        this.phoneNumber = phoneNumber;
     }
 
     public int getDayofBirth(){
@@ -80,22 +86,23 @@ public class User{
     }
 
     public String getEnterUsername(){
-        return null;
+        return username;
     }
 
     public void setEnterUsername(){
-
+        this.username = username;
     }
 
     public String getEnterPassword(){
-        return null;
+        return password;
     }
 
     public void setEnterPassword(){
-
+        this.password = password;
     }
 
-    public void forgotPassword(){
+    public void forgotPassword(String newPassword){
+        this.password = newPassword
     }
 
     public String getUsername(){
@@ -115,11 +122,11 @@ public class User{
     }
 
     public int getStreak(){
-        return 0;
+        return streak;
     }
 
     public void setStreak(){
-
+        this.streak = streak;
     }
 
     public boolean getLogout(){
@@ -127,7 +134,7 @@ public class User{
     }
 
     public HashMap<Language, Progress> getLanguages(){
-
+        return languages;
     }
 
 }
