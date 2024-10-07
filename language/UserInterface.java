@@ -1,4 +1,4 @@
-package LanguageLearningProgram;
+package language;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -77,9 +77,5 @@ private String sentenceStructure;
     public void progressInLanguage() {
         System.out.print("Track the progress in the language.");
     }
-
-    
-
-
 
 }

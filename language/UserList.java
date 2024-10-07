@@ -1,4 +1,5 @@
 package language;
+
 import java.util.ArrayList;
 /**
  * @author zaniah
@@ -13,7 +14,7 @@ public class UserList {
     /**
      * private constructor
      */
-    private UserList(){
+    UserList(){
         this.users = new ArrayList<>();
     }
 

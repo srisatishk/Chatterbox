@@ -1,4 +1,6 @@
-package LanguageLearningProgram;
+<<<<<<< HEAD
+=======
+package language;
 
 import java.util.ArrayList;
 
@@ -46,3 +48,4 @@ public class Progress {
 
     }
 }
+>>>>>>> 39ff41a8a45381016810bb3f3977587fa65ca61f
