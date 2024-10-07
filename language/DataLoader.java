@@ -13,6 +13,7 @@ public class DataLoader extends DataConstants {
     private static final String USER_FILE_NAME = null;
     private static final String CATEGORY_SYSTEM_FILE_NAME = null;
     private static final String CATEGORY_FILE_NAME = null;
+    private static final String WORDLIST_FILE_NAME = null;
 
     // Method to get a list of Users from a JSON file
     public static ArrayList<UserList> getUserList() {
@@ -61,7 +62,7 @@ public class DataLoader extends DataConstants {
         try (FileReader reader = new FileReader(CATEGORY_FILE_NAME)) {
             JSONArray questionsJSON = new JSONArray();
 
-            for (int i = 0; i < questionsJSON.length(); i++) {
+            for (int i = 0; i < ((CharSequence) questionsJSON).length(); i++) {
                 JSONObject questionJSON = questionsJSON.getJSONObject(i);
                 questions.add(getQuestionFromJSON(questionJSON));
             }
@@ -79,10 +80,10 @@ public class DataLoader extends DataConstants {
         ArrayList<Word> words = new ArrayList<>();
 
         try (FileReader reader = new FileReader(WORDLIST_FILE_NAME)) {
-            JSONArray wordsJSON = new JSONArray(new JSONTokener(reader));
+            JSONArray wordsJSON = new JSONArray();
 
-            for (int i = 0; i < wordsJSON.length(); i++) {
-                JSONObject wordJSON = wordsJSON.getJSONObject(i);
+            for (int i = 0; i < ((CharSequence) wordsJSON).length(); i++) {
+                JSONObject wordJSON = ((Object) wordsJSON).getJSONObject(i);
                 words.add(getWordFromJSON(wordJSON));
             }
 
@@ -109,14 +110,14 @@ public class DataLoader extends DataConstants {
 
     // Helper method to create a Question object from JSON
     private static Question getQuestionFromJSON(JSONObject json) {
-        String questionText = json.toJSONString("questionText");
-        return new Question(questionText);
+        String questionText = json.toJSONString();
+        return new Question();
     }
 
     // Helper method to create a Word object from JSON
     private static Word getWordFromJSON(JSONObject json) {
-        String wordText = json.toJSONString("word");
-        String definition = json.toJSONString("definition");
+        String wordText = json.toJSONString();
+        String definition = json.toJSONString();
         return new Word();
     }
 }

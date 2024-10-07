@@ -3,16 +3,16 @@ package language;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import org.json.JSONArray;
-import org.json.JSONObject;
+
+import org.json.simple.JSONArray;
 
 public class DataWriter extends DataConstants {
 
     // Saves the user list to the specified JSON file
-    public static boolean saveUserList(ArrayList<User> users) {
+    public static boolean saveUserList(ArrayList<UserList> users) {
         JSONArray jsonUsers = new JSONArray();
 
-        for (User user : users) {
+        for (UserList user : users) {
             jsonUsers.put(getUserJSON(user));
         }
 

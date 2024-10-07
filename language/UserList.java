@@ -14,7 +14,7 @@ public class UserList {
     /**
      * private constructor
      */
-    private UserList(){
+    UserList(){
         this.users = new ArrayList<>();
     }
 
