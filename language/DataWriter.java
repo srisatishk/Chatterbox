@@ -2,98 +2,58 @@ package language;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-
+import java.util.List;
 import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
+/**
+ * Author: Hardik Marlapudi
+ * Date: 10/6/2024
+ */
+
+/**
+ * The DataWriter class is responsible for writing flashcard data to a JSON file.
+ * It takes a list of Flashcard objects and converts them into JSON format before
+ * saving them to the file.
+ */
 public class DataWriter extends DataConstants {
 
-    // Saves the user list to the specified JSON file
-    public static boolean saveUserList(ArrayList<UserList> users) {
-        JSONArray jsonUsers = new JSONArray();
+   /** 
+    * Path to the JSON file where flashcard data will be written.
+    */
+   private static final String FILE_PATH = "data.json";
 
-        for (UserList user : users) {
-            jsonUsers.put(getUserJSON(user));
+   /**
+    * Writes a list of flashcards to the JSON file specified in FILE_PATH.
+    * This method converts each Flashcard object into a JSON representation and writes
+    * the entire list of flashcards as a JSON array to the file.
+    *
+    * @param flashcards The list of Flashcard objects to be written to the file.
+    */
+   public static void writeFlashcards(List<Flashcard> flashcards) {
+        // Create a JSON array to hold flashcard data
+        JSONArray flashcardList = new JSONArray();
+
+        // Convert each Flashcard object to a JSON object
+        for (Flashcard flashcard : flashcards) {
+            JSONObject flashcardDetails = new JSONObject();
+
+            flashcardDetails.put("id", flashcard.getId());
+            flashcardDetails.put("word", flashcard.getWord());
+            flashcardDetails.put("definition", flashcard.getDefinition());
+            flashcardDetails.put("language", flashcard.getLanguage());
+            flashcardDetails.put("category", flashcard.getCategory());
+
+            // Add the flashcard JSON object to the array
+            flashcardList.add(flashcardDetails);
         }
 
-        try (FileWriter file = new FileWriter(USER_FILE_NAME)) {
-            file.write(jsonUsers.toString());
-            file.flush();
-            return true;
+        // Write the JSON array to the file
+        try (FileWriter file = new FileWriter(FILE_PATH)) {
+            file.write(flashcardList.toJSONString());  // Write JSON data to file
+            file.flush();  // Ensure all data is written
         } catch (IOException e) {
-            System.err.println("Error saving user list to file: " + USER_FILE_NAME);
-            e.printStackTrace();
-            return false;
+            e.printStackTrace();  // Handle errors in writing to the file
         }
-    }
-
-    // Saves the category system (multiple categories) to the specified JSON file
-    public static void saveCategorySystem(ArrayList<Category> categories) {
-        JSONArray jsonCategories = new JSONArray();
-
-        for (Category category : categories) {
-            jsonCategories.put(getCategoryJSON(category));
-        }
-
-        try (FileWriter file = new FileWriter(CATEGORY_SYSTEM_FILE_NAME)) {
-            file.write(jsonCategories.toString());
-            file.flush();
-        } catch (IOException e) {
-            System.err.println("Error saving category system to file: " + CATEGORY_SYSTEM_FILE_NAME);
-            e.printStackTrace();
-        }
-    }
-
-    // Saves a single category to the specified JSON file
-    public static void saveSingleCategory(Category category) {
-        JSONObject jsonCategory = getCategoryJSON(category);
-
-        try (FileWriter file = new FileWriter(CATEGORY_FILE_NAME)) {
-            file.write(jsonCategory.toString());
-            file.flush();
-        } catch (IOException e) {
-            System.err.println("Error saving single category to file: " + CATEGORY_FILE_NAME);
-            e.printStackTrace();
-        }
-    }
-
-    // Saves the word list to the specified JSON file
-    public static void saveWordList(ArrayList<Word> words) {
-        JSONArray jsonWords = new JSONArray();
-
-        for (Word word : words) {
-            jsonWords.put(getWordJSON(word));
-        }
-
-        try (FileWriter file = new FileWriter(WORDLIST_FILE_NAME)) {
-            file.write(jsonWords.toString());
-            file.flush();
-        } catch (IOException e) {
-            System.err.println("Error saving word list to file: " + WORDLIST_FILE_NAME);
-            e.printStackTrace();
-        }
-    }
-
-    // Converts a User object into a JSON object
-    private static JSONObject getUserJSON(User user) {
-        JSONObject json = new JSONObject();
-        json.put("name", user.getName());
-        json.put("id", user.getId());
-        return json;
-    }
-
-    // Converts a Category object into a JSON object
-    private static JSONObject getCategoryJSON(Category category) {
-        JSONObject json = new JSONObject();
-        json.put("name", category.getName());
-        return json;
-    }
-
-    // Converts a Word object into a JSON object
-    private static JSONObject getWordJSON(Word word) {
-        JSONObject json = new JSONObject();
-        json.put("word", word.getWord());
-        json.put("definition", word.getDefinition());
-        return json;
-    }
+   }
 }
