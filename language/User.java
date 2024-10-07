@@ -102,7 +102,7 @@ public class User{
     }
 
     public void forgotPassword(String newPassword){
-        this.password = newPassword
+        this.password = newPassword;
     }
 
     public String getUsername(){
