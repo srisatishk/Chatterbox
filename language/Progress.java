@@ -1,4 +1,4 @@
-package LanguageLearningProgram;
+package language;
 
 import java.util.ArrayList;
 
