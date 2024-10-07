@@ -30,12 +30,12 @@ public class DataWriter extends DataConstants {
     *
     * @param flashcards The list of Flashcard objects to be written to the file.
     */
-   public static void writeFlashcards(List<Flashcard> flashcards) {
+   public static void writeFlashcards(List<Flashcards> flashcards) {
         // Create a JSON array to hold flashcard data
         JSONArray flashcardList = new JSONArray();
 
         // Convert each Flashcard object to a JSON object
-        for (Flashcard flashcard : flashcards) {
+        for (Flashcards flashcard : flashcards) {
             JSONObject flashcardDetails = new JSONObject();
 
             flashcardDetails.put("id", flashcard.getId());

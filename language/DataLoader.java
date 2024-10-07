@@ -32,8 +32,8 @@ public class DataLoader {
     *
     * @return A list of Flashcard objects parsed from the JSON file.
     */
-    public static List<Flashcard> loadFlashcards() {
-        List<Flashcard> flashcards = new ArrayList<>();
+    public static List<Flashcards> loadFlashcards() {
+        List<Flashcards> flashcards = new ArrayList<>();
 
         // Try to read and parse the JSON file
         try (FileReader reader = new FileReader(FILE_PATH)) {
@@ -54,7 +54,7 @@ public class DataLoader {
                 String category = (String) flashcardJSON.get("category");
                 
                 // Create a new Flashcard object and add it to the list
-                Flashcard flashcard = new Flashcard(id, word, definition, language, category);
+                Flashcards flashcard = new Flashcards(id, word, definition, language, category);
                 flashcards.add(flashcard);
             }
         }  catch (IOException | ParseException e) {

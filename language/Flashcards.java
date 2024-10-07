@@ -10,7 +10,7 @@ package language;
  * its definition, the language of the word, and its category.
  * Each flashcard is uniquely identified by an id.
  */
-public class Flashcard {
+public class Flashcards {
 
     /** The unique identifier for the flashcard. */
     private String id;
@@ -36,7 +36,7 @@ public class Flashcard {
      * @param language The language of the word.
      * @param category The category to which the word belongs.
      */
-    public Flashcard(String id, String word, String definition, String language, String category) {
+    public Flashcards(String id, String word, String definition, String language, String category) {
         this.id = id;
         this.word = word;
         this.definition = definition;
