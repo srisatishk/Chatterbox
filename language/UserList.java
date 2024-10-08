@@ -40,8 +40,7 @@ public class UserList {
      */
     public User getUser(String username){
         for(User user : userList){
-            if(user.getUsername().equals(username)){
-                return user;
+            
         
     }
 
