@@ -3,12 +3,12 @@ package language;
 import java.util.HashMap;
 import java.util.Locale.Category;
 
-public class Language {
+public class language {
     
     private String sentenceStructure; 
     private Category currentCategory; 
     private int progressInCategory; 
-    private HashMap<Word,Definition> translation; 
+    private HashMap<Word, Definition> translation; 
 
   
     public String sentenceStructure()

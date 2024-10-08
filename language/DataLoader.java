@@ -47,14 +47,12 @@ public class DataLoader {
             for (Object flashcardObject : flashcardList) {
                 JSONObject flashcardJSON = (JSONObject) flashcardObject;
 
-                String id = (String) flashcardJSON.get("id");
                 String word = (String) flashcardJSON.get("word");
-                String definition = (String) flashcardJSON.get("definition");
-                String language = (String) flashcardJSON.get("language");
-                String category = (String) flashcardJSON.get("category");
+                String translation = (String) flashcardJSON.get("translation");
+                String phrase = (String) flashcardJSON.get("phrase");
                 
                 // Create a new Flashcard object and add it to the list
-                Flashcards flashcard = new Flashcards(id, word, definition, language, category);
+                Flashcards flashcard = new Flashcards(word, translation, phrase);
                 flashcards.add(flashcard);
             }
         }  catch (IOException | ParseException e) {
