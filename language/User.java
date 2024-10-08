@@ -5,7 +5,13 @@ import java.util.UUID;
 /**
  * @author sri
  */
+<<<<<<< HEAD
+
+
 public class User{
+=======
+public class User {
+>>>>>>> 76675f1d27859ceb0aab4aa569b72860082b6e41
 /**
  * attributes for user class
  */

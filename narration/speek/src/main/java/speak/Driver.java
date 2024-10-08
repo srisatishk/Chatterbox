@@ -1,4 +1,4 @@
-package Narrator.speek.src.main.java;
+package speak;
 
 public class Driver {
     public static void main(String[] args){

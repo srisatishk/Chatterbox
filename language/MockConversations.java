@@ -4,11 +4,11 @@ package language;
  */
 import java.util.ArrayList;
 public class MockConversations {
-    /** attributes of MockConversations class */
-	private String topic;
-	private ArrayList<String> script;
-	private ArrayList<String> roles;
-	private ArrayList<String> answers;
+    /** attributes of MockConversations class */x
+    private String topic;
+    private ArrayList<String> script;
+    private ArrayList<String> roles;
+    private ArrayList<String> answers;
 
 	public String getTopic(){
 	  return null;

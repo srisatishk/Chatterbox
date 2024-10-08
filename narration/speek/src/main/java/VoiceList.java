@@ -1,4 +1,7 @@
-package Narrator.speek.src.main.java;
+<<<<<<<< HEAD:narration/speek/src/main/java/VoiceList.java
+========
+package speak;
+>>>>>>>> 76675f1d27859ceb0aab4aa569b72860082b6e41:narration/speek/src/main/java/speak/VoiceList.java
 
 import java.util.HashMap;
 import java.util.Map;
