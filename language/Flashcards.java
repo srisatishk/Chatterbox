@@ -10,6 +10,7 @@ package language;
  * its translation, and an example phrase.
  * This class is designed to be used in a language learning app.
  */
+
 public class Flashcards {
 
     /** The word or term on the flashcard in the target language. */
@@ -91,13 +92,25 @@ public class Flashcards {
     }
 
     /**
+     * Returns a string representation of the flashcard object.
+     *
+     * @return A string containing the word, its translation, and an example phrase.
+     */
+    @Override
+    public String toString() {
+        return "Flashcard{" +
+               "Word='" + word + '\'' +
+               ", Translation='" + translation + '\'' +
+               ", Example Phrase='" + phrase + '\'' +
+               '}';
+    }
+
+    /**
      * Displays the details of the flashcard, including the word, its translation,
      * and an example phrase.
      */
     public void showFlashcard() {
-        System.out.println("Word (Target Language): " + word);
-        System.out.println("Translation (Learner's Language): " + translation);
-        System.out.println("Example Phrase: " + phrase);
+        System.out.println(toString());
     }
 
     /**
