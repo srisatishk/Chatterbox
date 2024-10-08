@@ -15,7 +15,9 @@ public class UserList {
      * private constructor
      */
     UserList(){
-        this.users = new ArrayList<>();
+        //this.users = new ArrayList<>();
+        //users = DataLoader.getUserList();
+        userList = DataLoader.getUser();
     }
 
     /**
@@ -37,6 +39,11 @@ public class UserList {
      * @return users username
      */
     public User getUser(String username){
+        for(User user : userList){
+            if(user.getUsername().equals(username)){
+                return user;
+            }
+        }
         return null;
     }
 
@@ -48,7 +55,7 @@ public class UserList {
      * @param email users email
      */
     public void addUser(String firstName, String lastName, String email){
-
+        UserList.add(new User(firstName, lastName, email));
     }
 
     /**
@@ -67,7 +74,7 @@ public class UserList {
      * saves all the users info (first, last, email)
      */
     public void saveUsers(){
-
+        DataWriter.saveUsers;
     }
     
 }
