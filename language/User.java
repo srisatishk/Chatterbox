@@ -5,6 +5,8 @@ import java.util.UUID;
 /**
  * @author sri
  */
+
+
 public class User{
 /**
  * attributes for user class
