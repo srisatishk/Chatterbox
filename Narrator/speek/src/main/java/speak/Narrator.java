@@ -1,4 +1,4 @@
-package Narrator.speek.src.main.java;
+package speak;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -28,7 +28,7 @@ public class Narrator {
         polly.close();
     }
 
-private static void talkPolly(PollyClient polly, String text) {
+    private static void talkPolly(PollyClient polly, String text) {
         try {
             DescribeVoicesRequest describeVoiceRequest = DescribeVoicesRequest.builder()
                     .engine("standard")
@@ -56,14 +56,14 @@ private static void talkPolly(PollyClient polly, String text) {
     }
 
 public static InputStream synthesize(PollyClient polly, String text, Voice voice, OutputFormat format)
-            throws IOException {
-        SynthesizeSpeechRequest synthReq = SynthesizeSpeechRequest.builder()
-                .text(text)
-                .voiceId(voice.id())
-                .outputFormat(format)
-                .build();
+    throws IOException {
+    SynthesizeSpeechRequest synthReq = SynthesizeSpeechRequest.builder()
+        .text(text)
+        .voiceId(voice.id())
+        .outputFormat(format)
+        .build();
 
-        ResponseInputStream<SynthesizeSpeechResponse> synthRes = polly.synthesizeSpeech(synthReq);
-        return synthRes;
-    }
+ResponseInputStream<SynthesizeSpeechResponse> synthRes = polly.synthesizeSpeech(synthReq);
+return synthRes;
+}
 }

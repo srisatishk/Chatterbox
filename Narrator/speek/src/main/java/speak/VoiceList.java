@@ -1,4 +1,4 @@
-package Narrator.speek.src.main.java;
+package speak;
 
 import java.util.HashMap;
 import java.util.Map;

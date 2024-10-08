@@ -23,7 +23,7 @@ public class language {
     { 
         return; 
     }
-    public HashMap<Word,Definition> getTranslation()
+    public HashMap<Word, Definition> getTranslation()
     {
         return null; 
     }
