@@ -69,7 +69,7 @@ public class CategorySystemFacade {
      * getProgress method
      * @return the user progress
      */
-    public progress getProgress(){
+    public Progress getProgress(){
         return null;
     }
 
