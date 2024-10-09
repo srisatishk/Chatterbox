@@ -2,12 +2,16 @@ package language;
 
 import java.util.HashMap;
 
+/* sentence structure and progress in the class
+ * @author grace 
+ */
+
 public class Language {
 
     private String sentenceStructure; 
     private String currentCategory; 
     private int progressInCategory; 
-    private HashMap<String, String> translation; 
+    private HashMap<Word, definition> translation; 
 
     public Language(String sentenceStructure, String currentCategory, int progressInCategory) {
         this.sentenceStructure = sentenceStructure;
@@ -28,7 +32,7 @@ public class Language {
         return currentCategory; 
     }
 
-    public HashMap<String, String> getTranslation() {
+    public HashMap<word, definition> getTranslation() {
         return translation; 
     }
 
