@@ -36,7 +36,7 @@ public class UserList {
      * getUser method
      * retrieves the users info (username)
      * @param username the users username that they created
-     * @return users user
+     * @return user
      */
     public User getUser(String username){
         for(User user : users){
@@ -55,19 +55,20 @@ public class UserList {
      * @param email users email
      */
     public boolean addUser(String firstName, String lastName, String email){
-        //UserList.add(new User(firstName, lastName, email, phoneNumber));
+        //User.add(new User(firstName, lastName, email));
 
-        if (!validateEmail(email)) {
+        if (!validEmail(email)) {
             System.out.println("Invalid email!");
             return false;
         }
-
+        //should username and password be included 
+        
         // if (getUser(username) != null) {
         //     System.out.println("This username is taken");
         //     return false;
         // }
-        // if (password.length() < 8) {
-        //     System.out.println("Password must be at least 8 characters");
+        // if (password.length() < 7) {
+        //     System.out.println("Password must be at least 7 characters");
         //     return false;
         // }
 
@@ -84,7 +85,7 @@ public class UserList {
      * @param email users email
      */
     public void editUser(String firstName, String lastName, String email){
-
+       
     }
 
     /**
@@ -96,7 +97,15 @@ public class UserList {
     }
     
     //private helper method
-    private boolean validateEmail(String email) {
+    /**
+     * validate email method
+     * email is valid if it has the "@" symbol and a "."
+     * email is not valid if it doesnt have "@" or "."
+     * valid email ex: janedoe@omg.com
+     * @param email the users emial
+     * @return valid email
+     */
+    private boolean validEmail(String email) {
         return email != null && email.contains("@") && email.contains(".");
     }
 }
