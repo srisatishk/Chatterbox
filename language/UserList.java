@@ -62,7 +62,7 @@ public class UserList {
             return false;
         }
         //should username and password be included 
-        
+
         // if (getUser(username) != null) {
         //     System.out.println("This username is taken");
         //     return false;
