@@ -1,4 +1,4 @@
-[ // we need to add get translation to story 
+[ 
 {
 "id" : 1,
 "languageID" : 1,
@@ -40,6 +40,6 @@
     ]
 }
 ],
-"pictures" : ["apple picture", "two oranges picture", "three bananas picture"]
+"pictures" : ["pink cake picture", "colorful sprinkles picture", "lit cake picture"]
 }
 ]
