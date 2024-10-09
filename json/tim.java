@@ -9,7 +9,4 @@ public class tim {
         UUID uuid = UUID.randomUUID(); 
         System.out.println("Generated UUID + " + uuid);
     }
-
-    
-    
 }
