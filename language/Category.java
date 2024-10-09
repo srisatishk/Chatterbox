@@ -11,7 +11,8 @@ public class Category{
     private ArrayList<Question> questions;
     private Story story;
 
-    public void toString(){
+    public String toString(){
+        return "";
     }
 
     public void listCategories(ArrayList<Category> categories){

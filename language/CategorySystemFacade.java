@@ -69,7 +69,7 @@ public class CategorySystemFacade {
      * getProgress method
      * @return the user progress
      */
-    public progress getProgress(){
+    public Progress getProgress(){
         return null;
     }
 
@@ -77,7 +77,7 @@ public class CategorySystemFacade {
      * getLanguage method
      * @return the language the user wants to study
      */
-    public language getLanguage(){
+    public Language getLanguage(){
         return null;
     }
 

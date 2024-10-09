@@ -1,38 +1,43 @@
 package language;
 
 import java.util.ArrayList;
-import java.util.Locale.Category;
+import java.util.List;
 
-public class languageList {
-    
-    languageList LanguageList; 
+/* @author grace */
+public class LanguageList {
+
     private String language; 
     private ArrayList<Category> categories; 
-    private ArrayList<Word> wordlist; 
+    private ArrayList<Word> wordList; 
     private ArrayList<String> languages; 
-    private ArrayList<Phrase> phraselist; 
+    private ArrayList<Phrase> phraseList; 
 
-  
-    public void LanguageList()
-    { 
-        return; 
+    public LanguageList() {
+        this.languages = new ArrayList<>();
+        this.categories = new ArrayList<>();
+        this.wordList = new ArrayList<>();
+        this.phraseList = new ArrayList<>();
     }
-    public String toString()
-    { 
+
+    public String toString() { 
         return language; 
     }
-    public void listLanguages(languages)
-    { 
-        return; 
+
+
+    public void listLanguages(ArrayList<String> languages) { 
+        this.languages.addAll(languages);
     }
-    public ArrayList<String> chooseLanguage () 
-    { 
+
+    public ArrayList<String> chooseLanguage() { 
         return languages; 
     }
-    public ArrayList<String> getLanguage () 
-    { 
+
+    public ArrayList<String> getLanguages() { 
         return languages; 
     }
-    
+    public ArrayList<Category> chooseCategories() { 
+        return categories; 
+    }
+
 
 }
