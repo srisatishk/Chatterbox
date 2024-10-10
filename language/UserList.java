@@ -132,7 +132,7 @@ public class UserList {
 
             // Edit Username & make sure its valid
             if (user.getUsername() != null && !user.getUsername().trim().isEmpty()) {
-                user.setUsername(user.getUsername());
+                user.setEnterUsername(user.getUsername());
                 System.out.println("Your username has been updated!");
             } else {
                 System.out.println("Username not updated.");
@@ -140,7 +140,7 @@ public class UserList {
 
             // Edit Password & make sure its valid
             if (user.getPassword() != null && user.getPassword().length() >= 7) {
-                user.setPassword(user.getPassword());
+                user.setEnterPassword(user.getPassword());
                 System.out.println("Your password has been updated!");
             } else {
                 System.out.println("Password not updated.");
