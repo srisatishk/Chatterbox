@@ -35,7 +35,7 @@ public class User{
         return firstName;
     }
 
-    public void setFirstName(){
+    public void setFirstName(String firstName){
         this.firstName = firstName;
     }
 
@@ -43,7 +43,7 @@ public class User{
         return lastName;
     }
 
-    public void setLastName(){
+    public void setLastName(String lastName){
         this.lastName = lastName;
     }
 
@@ -51,7 +51,7 @@ public class User{
         return email;
     }
 
-    public void setEmail(){
+    public void setEmail(String email){
         this.email = email;
     }
 
@@ -59,7 +59,7 @@ public class User{
         return phoneNumber;
     }
 
-    public void setPhoneNumber(){
+    public void setPhoneNumber(String phoneNumber){
         this.phoneNumber = phoneNumber;
     }
 
@@ -91,7 +91,7 @@ public class User{
         return username;
     }
 
-    public void setEnterUsername(){
+    public void setEnterUsername(String username){
         this.username = username;
     }
 
@@ -99,7 +99,7 @@ public class User{
         return password;
     }
 
-    public void setEnterPassword(){
+    public void setEnterPassword(String password){
         this.password = password;
     }
 
