@@ -102,12 +102,10 @@ public class User{
     }
 
     public void setDateOfBirth(int year, int month, int day) {
-        // Date of Birth logic, same as your original
         this.dateOfBirth = calculateDateOfBirth(year, month, day);
     }
 
     private LocalDate calculateDateOfBirth(int year, int month, int day) {
-        // Ensure valid leap year, month, and day calculations
         if (year >= 1900 && year <= LocalDate.now().getYear() && month >= 1 && month <= 12) {
             boolean isLeapYear = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
             int maxDays = (month == 2 && isLeapYear) ? 29 : (month == 2) ? 28 : (month == 4 || month == 6 || month == 9 || month == 11) ? 30 : 31;
@@ -115,7 +113,7 @@ public class User{
                 return LocalDate.of(year, month, day);
             }
         }
-        return LocalDate.of(2000, 1, 1);  // Default value
+        return LocalDate.of(2000, 1, 1); 
     }
 
     public int getStreak(){
