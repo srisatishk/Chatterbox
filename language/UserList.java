@@ -54,23 +54,38 @@ public class UserList {
      * @param lastName users last name
      * @param email users email
      */
-    public boolean addUser(String firstName, String lastName, String email){
+    public boolean addUser(String firstName, String lastName, String email, String username, String password){
         //User.add(new User(firstName, lastName, email));
 
+        //validate first name
+        if (!validName(firstName)) {
+            System.out.println("First name must have at least one character!");
+            return false;
+        }
+
+        // Validate last name
+        if (!validName(lastName)) {
+            System.out.println("Last name must have at least one character!");
+            return false;
+        }
+
+        //valudate email
         if (!validEmail(email)) {
             System.out.println("Invalid email!");
             return false;
         }
-        //should username and password be included 
 
-        // if (getUser(username) != null) {
-        //     System.out.println("This username is taken");
-        //     return false;
-        // }
-        // if (password.length() < 7) {
-        //     System.out.println("Password must be at least 7 characters");
-        //     return false;
-        // }
+        //validate username
+        if (getUser(username) != null) {
+            System.out.println("This username is taken");
+            return false;
+        }
+
+        //validate password
+        if (password.length() < 7) {
+            System.out.println("Password must be at least 7 characters");
+            return false;
+        }
 
         User newUser = new User(firstName, lastName, email);
         users.add(newUser);
@@ -83,11 +98,55 @@ public class UserList {
      * @param firstName users first name
      * @param lastName users last name
      * @param email users email
+     * @param username users username
+     * @param password users password
      */
-    public void editUser(String firstName, String lastName, String email){
-       
-    }
+    public void editUser(User user, String firstName, String lastName, String email, String username, String password){
+        if (user == null) {
+            System.out.println(" User not found!");
+            return;
+        }
+            // Edit First Name & make sure its valid
+            if (firstName != null && !firstName.trim().isEmpty()) {
+                user.setFirstName(firstName);
+                System.out.println("Your first name has been updated!");
+            } else {
+                System.out.println("First name not updated.");
+            }
 
+            // Edit Last Name & make sure ots valid
+            if (lastName != null && !lastName.trim().isEmpty()) {
+                user.setLastName(lastName);
+                System.out.println("Your last name has been updated!");
+            } else {
+                System.out.println("Last name not updated.");
+            }
+
+            // Edit Email & make sure its valid
+            if (email != null && validEmail(email)) {
+                user.setEmail(email);
+                System.out.println("Your email has been updated!");
+            } else {
+                System.out.println("Email not updated.");
+            }
+
+            // Edit Username & make sure its valid
+            if (user.getUsername() != null && !user.getUsername().trim().isEmpty()) {
+                user.setUsername(user.getUsername());
+                System.out.println("Your username has been updated!");
+            } else {
+                System.out.println("Username not updated.");
+            }
+
+            // Edit Password & make sure its valid
+            if (user.getPassword() != null && user.getPassword().length() >= 7) {
+                user.setPassword(user.getPassword());
+                System.out.println("Your password has been updated!");
+            } else {
+                System.out.println("Password not updated.");
+            }
+    }
+    
     /**
      * saveUsers method
      * saves all the users info (first, last, email)
@@ -96,8 +155,19 @@ public class UserList {
         DataWriter.saveUsers;
     }
     
-    //private helper method
     /**
+     * private helper method
+     * validates users first and last name
+     * first and last should have at least one character
+     * @param name users first/last name
+     * @return valid first/last name
+     */
+    private boolean validName(String name) {
+        return name != null && !name.trim().isEmpty();
+    }
+
+    /**
+     * private helper method
      * validate email method
      * email is valid if it has the "@" symbol and a "."
      * email is not valid if it doesnt have "@" or "."
