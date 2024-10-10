@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.time.LocalDate;
+import java.util.HashMap;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -35,7 +36,7 @@ public class DataLoader extends DataConstants{
     * @return A list of Flashcard objects parsed from the JSON file.
     */
 
-    public static ArrayList<User> getUsers() {
+    public static UserList getUser() {
         ArrayList<User> users = new ArrayList<User>();
     try {
         FileReader reader = new FileReader(FILE_NAME_USER);
@@ -52,9 +53,7 @@ public class DataLoader extends DataConstants{
             LocalDate dateOfBirth = (LocalDate)userJSON.get(USER_DATE_OF_BIRTH);
             String username = (String)userJSON.get(USER_USERNAME);
             String password = (String)userJSON.get(USER_PASSWORD);
-            
             int streak = ((Long)userJSON.get(USER_STREAK)).intValue();
-
             users.add(new User(id, firstName, lastName, email, phoneNumber, dateOfBirth, username, password, streak));
             
         }
@@ -64,9 +63,10 @@ public class DataLoader extends DataConstants{
     } catch (Exception e) {
         e.printStackTrace();
     }
-
     return null;
 }
+
+
 
     public static List<Flashcards> loadFlashcards() {
         List<Flashcards> flashcards = new ArrayList<>();

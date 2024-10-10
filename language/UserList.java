@@ -9,9 +9,9 @@ public class UserList {
     /**
      * attributes for userlist
      */
-    private UUID id;
     private static UserList userList;
     private ArrayList<User> users;
+    private UUID id;
 
     /**
      * private constructor
@@ -56,8 +56,6 @@ public class UserList {
      * @param firstName users first name
      * @param lastName users last name
      * @param email users email
-     * @param username users usernamme
-     * @param password users password
      */
     public boolean addUser(String firstName, String lastName, String email, String username, String password){
         //User.add(new User(firstName, lastName, email));
@@ -157,7 +155,7 @@ public class UserList {
      * saves all the users info (first, last, email)
      */
     public void saveUsers(){
-        DataWriter.saveUsers;
+        DataWriter.saveUsers();
     }
     
     /**
