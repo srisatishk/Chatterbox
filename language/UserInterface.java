@@ -20,7 +20,7 @@ private String sentenceStructure;
     private int languageID;
     private User currentUser;
     private ArrayList<User> userList; 
-    private DataWriter dataWriter;
+    private DataWriter dataWriter; 
 
     public UserInterface() {
         this.languages = new ArrayList<>();

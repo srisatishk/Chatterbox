@@ -28,7 +28,8 @@ public class DataLoader extends DataConstants{
 
         for (int i=0; i < usersJSON.size(); i++) {
             JSONObject userJSON = (JSONObject)usersJSON.get(i);
-            UUID id = UUID.fromString((String)userJSON.get(USER_ID)) ;
+            UUID id = UUID.fromString(String.valueOf(userJSON.get(USER_ID)));
+            //UUID id = UUID.fromString((String)userJSON.get(USER_ID)) ;
             String firstName = (String)userJSON.get(USER_FIRST_NAME);
             String lastName = (String)userJSON.get(USER_LAST_NAME);
             String email = (String)userJSON.get(USER_EMAIL);
@@ -38,17 +39,42 @@ public class DataLoader extends DataConstants{
             String username = (String)userJSON.get(USER_USERNAME);
             String password = (String)userJSON.get(USER_PASSWORD);
             int streak = ((Long)userJSON.get(USER_STREAK)).intValue();
-            //userList.add(new User(id, firstName, lastName, email, phoneNumber, dateOfBirth, username, password, streak));
-            //User newUser = new User(firstName, lastName, email, username, password);
+            
+            JSONArray languagesJSON = (JSONArray) userJSON.get("languages");
+            ArrayList<HashMap<String, Object>> languagesList = new ArrayList<>();
+            
+            for (Object languageObj : languagesJSON) {
+                JSONObject languageJSON = (JSONObject) languageObj;
+
+                HashMap<String, Object> languageMap = new HashMap<>();
+                languageMap.put("languageID", ((Long) languageJSON.get("languageID")).intValue());
+                languageMap.put("progressInLanguage", ((Long) languageJSON.get("progressInLanguage")).intValue());
+                languageMap.put("currentCategory", (String) languageJSON.get("currentCategory"));
+                languageMap.put("progressInCategory", ((Long) languageJSON.get("progressInCategory")).intValue());
+                languageMap.put("numCorrectAnswers", ((Long) languageJSON.get("numCorrectAnswers")).intValue());
+
+                languagesList.add(languageMap);
+            }
             User newUser = new User(id, firstName, lastName, email, phoneNumber, dateOfBirth, username, password, streak);
             userList.add(newUser);
-        }
+        }   
         return userList;
 
     } catch (Exception e) {
         e.printStackTrace();
     }
     return null;
+}
+
+public static void main(String[] args) {
+    ArrayList<User> users = getUsers();
+    if (users != null) {
+        for (User user : users) {
+            System.out.println("User: " + user.getFirstName() + " " + user.getLastName() + ", Email: " + user.getEmail());
+        }
+    } else {
+        System.out.println("No users found or failed to load data.");
+    }
 }
 
 
