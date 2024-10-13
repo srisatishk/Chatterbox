@@ -4,37 +4,80 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
+import java.time.LocalDate;
+import java.util.HashMap;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 /**
- * Author: Hardik Marlapudi
- * Date: 10/6/2024
- */
-
-/**
  * The DataLoader class is responsible for loading flashcard data from a JSON file.
  * It parses the JSON data and converts it into a list of Flashcard objects.
  */
-public class DataLoader {
+public class DataLoader extends DataConstants{
+    // Loads the lists of Users
+    public static ArrayList<User> getUsers() {
+        ArrayList<User> userList = new ArrayList<User>();
+    try {
+        FileReader reader = new FileReader(FILE_NAME_USER);
+        JSONParser parser = new JSONParser();
+        JSONArray usersJSON = (JSONArray)new JSONParser().parse(reader);
 
-   /** 
-    * Path to the JSON file where flashcard data is stored. 
-    */
-   private static final String FILE_NAME_FLASHCARDS = "data.json";
-   private static final String FILE_NAME_QUESTIONS = "question.json";
-   private static final String FILE_NAME_PROGRESS = "progress.json";
-   private static final String FILE_NAME_CATEGORY_SYSTEM = "categorysystem.json";
+        for (int i=0; i < usersJSON.size(); i++) {
+            JSONObject userJSON = (JSONObject)usersJSON.get(i);
+            UUID id = UUID.fromString(String.valueOf(userJSON.get(USER_ID)));
+            //UUID id = UUID.fromString((String)userJSON.get(USER_ID)) ;
+            String firstName = (String)userJSON.get(USER_FIRST_NAME);
+            String lastName = (String)userJSON.get(USER_LAST_NAME);
+            String email = (String)userJSON.get(USER_EMAIL);
+            String phoneNumber = (String)userJSON.get(USER_PHONE_NUMBER);
+            String dateOfBirthString = (String) userJSON.get(USER_DATE_OF_BIRTH);
+            LocalDate dateOfBirth = LocalDate.parse(dateOfBirthString);
+            String username = (String)userJSON.get(USER_USERNAME);
+            String password = (String)userJSON.get(USER_PASSWORD);
+            int streak = ((Long)userJSON.get(USER_STREAK)).intValue();
+            
+            JSONArray languagesJSON = (JSONArray) userJSON.get("languages");
+            ArrayList<HashMap<String, Object>> languagesList = new ArrayList<>();
+            
+            for (Object languageObj : languagesJSON) {
+                JSONObject languageJSON = (JSONObject) languageObj;
 
-   /**
-    * Loads the flashcards from the JSON file specified in the FILE_NAME.
-    * This method reads the JSON file, parses the flashcard data, and converts
-    * each JSON object into a Flashcard pojo object.
-    *
-    * @return A list of Flashcard objects parsed from the JSON file.
-    */
+                HashMap<String, Object> languageMap = new HashMap<>();
+                languageMap.put("languageID", ((Long) languageJSON.get("languageID")).intValue());
+                languageMap.put("progressInLanguage", ((Long) languageJSON.get("progressInLanguage")).intValue());
+                languageMap.put("currentCategory", (String) languageJSON.get("currentCategory"));
+                languageMap.put("progressInCategory", ((Long) languageJSON.get("progressInCategory")).intValue());
+                languageMap.put("numCorrectAnswers", ((Long) languageJSON.get("numCorrectAnswers")).intValue());
+
+                languagesList.add(languageMap);
+            }
+            User newUser = new User(id, firstName, lastName, email, phoneNumber, dateOfBirth, username, password, streak);
+            userList.add(newUser);
+        }   
+        return userList;
+
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    return null;
+}
+
+public static void main(String[] args) {
+    ArrayList<User> users = getUsers();
+    if (users != null) {
+        for (User user : users) {
+            System.out.println("User: " + user.getFirstName() + " " + user.getLastName() + ", Email: " + user.getEmail());
+        }
+    } else {
+        System.out.println("No users found or failed to load data.");
+    }
+}
+
+
 
     public static List<Flashcards> loadFlashcards() {
         List<Flashcards> flashcards = new ArrayList<>();
@@ -131,15 +174,15 @@ public static List<Progress> loadProgress() {
             ArrayList<String> result = convertJsonArrayToStringArray(missedWords);
 
             // Create a new Progress object and populate its fields
-            Progress progress = new Progress();
-            progress.setTotalQuestionsAnswered(totalQuestionsAnswered);
-            progress.setNumCorrectAnswers(numCorrectAnswers);
-            progress.setCurrentCategory(currentCategory);
-            progress.setProgressInCategory(progressInCategory);
-            progress.setMissedWords(result);
+                // Progress progress = new Progress();
+                // progress.setTotalQuestionsAnswered(totalQuestionsAnswered);
+                // progress.setNumCorrectAnswers(numCorrectAnswers);
+                // progress.setCurrentCategory(currentCategory);
+                // progress.setProgressInCategory(progressInCategory);
+                // progress.setMissedWords(result);
 
             // Add the Progress object to the progress list
-            progressList.add(progress);
+                // progressList.add(progress);
         }
 
     } catch (IOException | ParseException e) {
