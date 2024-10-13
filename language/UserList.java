@@ -18,8 +18,8 @@ public class UserList {
      */
    private UserList(){
         //this.users = new ArrayList<>();
-        //users = DataLoader.getUserList();
-        userList = DataLoader.getUser();
+        users = DataLoader.getUsers();
+        //userList = DataLoader.getUser();
         this.id = UUID.randomUUID();
     }
 

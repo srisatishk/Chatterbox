@@ -20,12 +20,15 @@ public class User{
     private HashMap<language, Progress> languages;
     private int streak;
 
-    public User(String firstName, String lastName, String email){
+    public User(UUID id, String firstName, String lastName, String email, String phoneNumber, LocalDate dateOfBirth, String username, String password, int streak){
         this.id = UUID.randomUUID();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        this.dateOfBirth = dateOfBirth;
+        this.username = username;
+        this.password = password;
         this.languages = new HashMap<>();
         this.streak = 0; 
     }

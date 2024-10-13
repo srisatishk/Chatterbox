@@ -38,8 +38,10 @@ public class DataLoader extends DataConstants{
             String username = (String)userJSON.get(USER_USERNAME);
             String password = (String)userJSON.get(USER_PASSWORD);
             int streak = ((Long)userJSON.get(USER_STREAK)).intValue();
-            userList.add(new User(id, firstName, lastName, email, phoneNumber, dateOfBirth, username, password, streak));
-            User newUser = new User(firstName, lastName, email, username, password);
+            //userList.add(new User(id, firstName, lastName, email, phoneNumber, dateOfBirth, username, password, streak));
+            //User newUser = new User(firstName, lastName, email, username, password);
+            User newUser = new User(id, firstName, lastName, email, phoneNumber, dateOfBirth, username, password, streak);
+            userList.add(newUser);
         }
         return userList;
 
