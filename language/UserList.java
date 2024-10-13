@@ -1,5 +1,6 @@
 package language;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.UUID;
 /**
@@ -57,7 +58,7 @@ public class UserList {
      * @param lastName users last name
      * @param email users email
      */
-    public boolean addUser(String firstName, String lastName, String email, String username, String password){
+    public boolean addUser(UUID id, String firstName, String lastName, String email, String phoneNumber, LocalDate dateOfBirth, String username, String password, int streak){
         //User.add(new User(firstName, lastName, email));
 
         //validate first name
@@ -90,7 +91,7 @@ public class UserList {
             return false;
         }
 
-        User newUser = new User(firstName, lastName, email);
+        User newUser = new User(id, firstName, lastName, email, phoneNumber, dateOfBirth, username, password, streak);
         users.add(newUser);
         return true;
     }
