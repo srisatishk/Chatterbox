@@ -2,7 +2,9 @@ package language;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -23,6 +25,39 @@ public class DataWriter extends DataConstants {
     */
    private static final String FILE_PATH = "data.json";
 
+   public static void saveUsers() {
+        UserList users = UserList.getInstance();
+        ArrayList<User> userList = users.getUsers();
+        JSONArray jsonUserList = new JSONArray();
+
+        for (int i =0; i < userList.size(); i++) {
+            jsonUserList.add(getUserJSON(userList.get(i)));
+        }
+
+        try (FileWriter file = new FileWriter(FILE_NAME_USER)) {
+ 
+            file.write(jsonUserList.toJSONString());
+            file.flush();
+ 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+	}
+    (@SuppressWarnings("unchecked"))
+    public static JSONObject getUserJSON(User user) {
+        JSONObject userDetails = new JSONObject();
+        userDetails.put(USER_ID, user.getId().toString());
+		userDetails.put(USER_USERNAME, user.getUsername());
+		userDetails.put(USER_FIRST_NAME, user.getFirstName());
+		userDetails.put(USER_LAST_NAME, user.getLastName());
+        userDetails.put(USER_USERNAME, user.getUsername());
+        userDetails.put(USER_EMAIL, user.getEmail());
+		userDetails.put(USER_PHONE_NUMBER, user.getPhoneNumber());
+        userDetails.put(USER_DATE_OF_BIRTH, user.getDateOfBirth());
+        userDetails.put(USER_PASSWORD, user.getPassword());
+        userDetails.put(USER_STREAK, user.getStreak());
+    }
+   
    /**
     * Writes a list of flashcards to the JSON file specified in FILE_PATH.
     * This method converts each Flashcard object into a JSON representation and writes
@@ -30,6 +65,8 @@ public class DataWriter extends DataConstants {
     *
     * @param flashcards The list of Flashcard objects to be written to the file.
     */
+
+
   
 // (@SuppressWarnings("unchecked")) to get rid of the warnings.
 @SuppressWarnings("unchecked")
