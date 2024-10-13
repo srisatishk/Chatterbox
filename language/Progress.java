@@ -10,7 +10,7 @@ public class Progress {
     private int progressInCategory;
     private ArrayList<String> missedWords;
 
-    public int getTotalQuestionsAnswered() {
+    public int getTotalQuestionsAnswered() {    
         return totalQuestionsAnswered;
     }
 
