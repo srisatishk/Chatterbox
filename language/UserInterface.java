@@ -19,7 +19,7 @@ private String sentenceStructure;
     private User currentUser;
     private ArrayList<User> userList; 
 
-    public UI() {
+    public UserInterface() {
         this.languages = new ArrayList<>();
         this.categories = new ArrayList<>();
         this.userList = new ArrayList<>();
