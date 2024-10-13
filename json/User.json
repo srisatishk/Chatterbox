@@ -1,11 +1,11 @@
 [
     {
-        "id" : 1,
+        "id" : "85e9d2cb-9847-4934-970c-442d081fffa4",
         "firstName" : "John" ,
         "lastName" : "Doe",
         "email" : "johndoe@gmail.com",
         "phoneNumber" : "627-917-2739",
-        "dateOfBirth" : "01-01-05",
+        "dateOfBirth" : "2001-01-05",
         "username" : "johndoe73",
         "password" : "IlovemyCat",
         "languages" : [{
@@ -19,7 +19,7 @@
     },
 
 {
-"id": 2, 
+"id": "9dfc6cef-6cd2-45e7-8a78-c24b0bfa1063", 
 "firstName": "Jane", 
 "lastName": "Smith", 
 "email": "jsmith@gmail.com",

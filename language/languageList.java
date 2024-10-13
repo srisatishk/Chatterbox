@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * 
 **/
 
-public class languageList {
+public class LanguageList {
 
    // private LanguageList languagelist; 
     private String language; 
@@ -16,7 +16,7 @@ public class languageList {
     private ArrayList<Phrase> phraselist; 
 
   
-    public void languageList()
+    public void LanguageList()
     { 
         return; 
     }
