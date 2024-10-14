@@ -18,13 +18,16 @@ public class LanguageList {
   
     public void LanguageList()
     { 
-        return; 
+       this.categories = new ArrayList<>(); 
+       this.wordlist =new ArrayList<>(); 
+       this.languages = new ArrayList<>(); 
+       this.phraselist = new ArrayList<>(); 
     }
     public String toString()
     { 
         return language; 
     }
-    public void listLanguages(languages)
+    public void listLanguages()
     { 
         return; 
     }

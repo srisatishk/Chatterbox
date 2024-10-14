@@ -6,14 +6,14 @@ import java.util.HashMap;
  * @author grace 
  */
 
-public class language {
+public class Language {
 
     private String sentenceStructure; 
     private String currentCategory; 
     private int progressInCategory; 
     private HashMap<Word, definition> translation; 
 
-    public language(String sentenceStructure, String currentCategory, int progressInCategory) {
+    public Language(String sentenceStructure, String currentCategory, int progressInCategory) {
         this.sentenceStructure = sentenceStructure;
         this.currentCategory = currentCategory;
         this.progressInCategory = progressInCategory; 

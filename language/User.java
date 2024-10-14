@@ -17,7 +17,7 @@ public class User{
     private LocalDate dateOfBirth;
     private String username;
     private String password;
-    private HashMap<language, Progress> languages;
+    private HashMap<Language, Progress> languages;
     private int streak;
 
     public User(UUID id, String firstName, String lastName, String email, String phoneNumber, LocalDate dateOfBirth, String username, String password, int streak){
@@ -127,7 +127,7 @@ public class User{
         return streak;
     }
 
-    public HashMap<language, Progress> getLanguages(){
+    public HashMap<Language, Progress> getLanguages(){
         return languages;
     }
 

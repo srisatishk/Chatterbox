@@ -11,7 +11,7 @@ public class UserList {
      * attributes for userlist
      */
     private static UserList userList;
-    private ArrayList<User> users;
+    private static ArrayList<User> users;
     private UUID id;
 
     /**
@@ -181,5 +181,9 @@ public class UserList {
      */
     private boolean validEmail(String email) {
         return email != null && email.contains("@") && email.contains(".");
+    }
+
+    public static ArrayList<User> getUser() {
+       return users;
     }
 }

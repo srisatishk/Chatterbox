@@ -26,24 +26,24 @@ public class DataWriter extends DataConstants {
    private static final String FILE_PATH = "data.json";
    private static final String USER_FILE_PATH = "user.json";
 
+   
    public static void saveUsers() {
-        UserList users = UserList.getInstance();
-        ArrayList<User> userList = users.getUsers();
-        JSONArray jsonUserList = new JSONArray();
+       UserList users = UserList.getInstance();
+       ArrayList<User> userList = users.getUser(); // Assuming getUser() returns ArrayList<User>
+       JSONArray jsonUserList = new JSONArray();
 
-        for (int i =0; i < userList.size(); i++) {
-            jsonUserList.add(getUserJSON(userList.get(i)));
-        }
+       for (User user : userList) {
+           jsonUserList.add(getUserJSON(user));
+       }
 
-        try (FileWriter file = new FileWriter(FILE_NAME_USER)) {
- 
-            file.write(jsonUserList.toJSONString());
-            file.flush();
- 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-	}
+       try (FileWriter file = new FileWriter(USER_FILE_PATH)) {
+           file.write(jsonUserList.toJSONString());
+           file.flush();
+       } catch (IOException e) {
+           e.printStackTrace();
+       }
+   }
+   
     (@SuppressWarnings("unchecked"))
     public static JSONObject getUserJSON(User user) {
         JSONObject userDetails = new JSONObject();
