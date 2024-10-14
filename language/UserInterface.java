@@ -20,13 +20,14 @@ private String sentenceStructure;
     private int languageID;
     private User currentUser;
     private ArrayList<User> userList; 
-    private DataWriter dataWriter; 
+
 
     public UserInterface() {
         this.languages = new ArrayList<>();
         this.categories = new ArrayList<>();
         this.userList = new ArrayList<>();
-        this.dataWriter = new DataWriter();
+        //this.dataWriter = new DataWriter();
+
 
 
     }
@@ -47,7 +48,6 @@ private String sentenceStructure;
 
     }
 
-    @SuppressWarnings("static-access")
     public void createAccount(String firstName, String lastName, String email, String phoneNumber, LocalDate dateOfBirth, String username, String password) {
         System.out.println("Account creation.");
         // Scanner scanner = new Scanner(System.in);
@@ -70,7 +70,7 @@ private String sentenceStructure;
         User newUser = new User(UUID.randomUUID(), firstName, lastName, email, phoneNumber, dateOfBirth, username, password, 0);
         userList.add(newUser);
         System.out.println("Account has been successfully created for: " + username);
-        dataWriter.writeUsers(userList); 
+        DataWriter.writeUsers(userList); 
 
     }
 
@@ -141,7 +141,6 @@ private String sentenceStructure;
         langUI.userList.add(new User(UUID.randomUUID(), "John", "Doe", "johndoe@gmail.com", "627-917-2739", LocalDate.of(2005, 1, 1), "johndoe73", "IlovemyCat", 0));
 
         // run scenarios
-        System.out.println("Testing hardcoded scenarios...");
         langUI.scenario1(); // login scenario
         langUI.scenario2(); // create account
     }

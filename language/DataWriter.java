@@ -24,6 +24,7 @@ public class DataWriter extends DataConstants {
     * Path to the JSON file where flashcard data will be written.
     */
    private static final String FILE_PATH = "data.json";
+   private static final String USER_FILE_PATH = "user.json";
 
    public static void saveUsers() {
         UserList users = UserList.getInstance();
@@ -56,6 +57,7 @@ public class DataWriter extends DataConstants {
         userDetails.put(USER_DATE_OF_BIRTH, user.getDateOfBirth());
         userDetails.put(USER_PASSWORD, user.getPassword());
         userDetails.put(USER_STREAK, user.getStreak());
+        return userDetails;
     }
    
    /**
@@ -94,4 +96,29 @@ public static void writeFlashcards(List<Flashcards> flashcards) {
             e.printStackTrace();  // Handle errors in writing to the file
         }
    }
+
+   @SuppressWarnings("unchecked")
+   public static void writeUsers(List<User> users) {
+        JSONArray userList = new JSONArray();
+        for (User user : users) {
+            JSONObject userDetails = new JSONObject();
+            //userDetails.put("id", user.getId().toString());
+            userDetails.put("firstName", user.getFirstName());
+            userDetails.put("lastName", user.getLastName());
+            userDetails.put("email", user.getEmail());
+            userDetails.put("phoneNumber", user.getPhoneNumber());
+            userDetails.put("dateOfBirth", user.getDateOfBirth().toString());
+            userDetails.put("username", user.getUsername());
+            userDetails.put("password", user.getPassword());
+            userList.add(userDetails);
+        }
+
+        try (FileWriter file = new FileWriter(USER_FILE_PATH)) {
+            file.write(userList.toJSONString());
+            file.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+   }
+
 }
