@@ -21,7 +21,7 @@ public class User{
     private int streak;
 
     public User(UUID id, String firstName, String lastName, String email, String phoneNumber, LocalDate dateOfBirth, String username, String password, int streak){
-        this.id = UUID.randomUUID();
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -33,6 +33,10 @@ public class User{
         this.streak = 0; 
     }
 
+    public UUID getId() {
+        return id;
+    }
+    
     public String getFirstName() {
         return firstName;
     }
