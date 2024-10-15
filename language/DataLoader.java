@@ -34,27 +34,12 @@ public class DataLoader extends DataConstants{
             String lastName = (String)userJSON.get(USER_LAST_NAME);
             String email = (String)userJSON.get(USER_EMAIL);
             String phoneNumber = (String)userJSON.get(USER_PHONE_NUMBER);
-            String dateOfBirthString = (String) userJSON.get(USER_DATE_OF_BIRTH);
-            LocalDate dateOfBirth = LocalDate.parse(dateOfBirthString);
+            String dateOfBirth = (String) userJSON.get(USER_DATE_OF_BIRTH);
+            //LocalDate dateOfBirth = LocalDate.parse(dobString);
             String username = (String)userJSON.get(USER_USERNAME);
             String password = (String)userJSON.get(USER_PASSWORD);
             int streak = ((Long)userJSON.get(USER_STREAK)).intValue();
             
-            JSONArray languagesJSON = (JSONArray) userJSON.get("languages");
-            ArrayList<HashMap<String, Object>> languagesList = new ArrayList<>();
-            
-            for (Object languageObj : languagesJSON) {
-                JSONObject languageJSON = (JSONObject) languageObj;
-
-                HashMap<String, Object> languageMap = new HashMap<>();
-                languageMap.put("languageID", ((Long) languageJSON.get("languageID")).intValue());
-                languageMap.put("progressInLanguage", ((Long) languageJSON.get("progressInLanguage")).intValue());
-                languageMap.put("currentCategory", (String) languageJSON.get("currentCategory"));
-                languageMap.put("progressInCategory", ((Long) languageJSON.get("progressInCategory")).intValue());
-                languageMap.put("numCorrectAnswers", ((Long) languageJSON.get("numCorrectAnswers")).intValue());
-
-                languagesList.add(languageMap);
-            }
             User newUser = new User(id, firstName, lastName, email, phoneNumber, dateOfBirth, username, password, streak);
             userList.add(newUser);
         }   
@@ -69,11 +54,15 @@ public class DataLoader extends DataConstants{
 public static void main(String[] args) {
     ArrayList<User> users = getUsers();
     if (users != null) {
-        for (User user : users) {
-            System.out.println("User: " + user.getFirstName() + " " + user.getLastName() + ", Email: " + user.getEmail());
+        if (users.isEmpty()) {
+            System.out.println("No users found in the data.");
+        } else {
+            for (User user : users) {
+                System.out.println("User: " + user.getFirstName() + " " + user.getLastName() + ", Email: " + user.getEmail());
+            }
         }
     } else {
-        System.out.println("No users found or failed to load data.");
+        System.out.println("Failed to load user data.");
     }
 }
 
