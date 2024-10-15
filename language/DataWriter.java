@@ -26,7 +26,6 @@ public class DataWriter extends DataConstants {
    private static final String FILE_PATH = "data.json";
    private static final String USER_FILE_PATH = "user.json";
 
-   
    public static void saveUsers() {
        UserList users = UserList.getInstance();
        ArrayList<User> userList = users.getUser(); // Assuming getUser() returns ArrayList<User>
@@ -42,9 +41,10 @@ public class DataWriter extends DataConstants {
        } catch (IOException e) {
            e.printStackTrace();
        }
+       
    }
-   
-    (@SuppressWarnings("unchecked"))
+  
+   // (@SuppressWarnings("unchecked"))
     public static JSONObject getUserJSON(User user) {
         JSONObject userDetails = new JSONObject();
         userDetails.put(USER_ID, user.getId().toString());
@@ -59,17 +59,8 @@ public class DataWriter extends DataConstants {
         userDetails.put(USER_STREAK, user.getStreak());
         return userDetails;
     }
-   
-   /**
-    * Writes a list of flashcards to the JSON file specified in FILE_PATH.
-    * This method converts each Flashcard object into a JSON representation and writes
-    * the entire list of flashcards as a JSON array to the file.
-    *
-    * @param flashcards The list of Flashcard objects to be written to the file.
-    */
 
-
-  
+  /* */
 // (@SuppressWarnings("unchecked")) to get rid of the warnings.
 @SuppressWarnings("unchecked")
 public static void writeFlashcards(List<Flashcards> flashcards) {
@@ -120,5 +111,5 @@ public static void writeFlashcards(List<Flashcards> flashcards) {
             e.printStackTrace();
         }
    }
-
+   
 }
