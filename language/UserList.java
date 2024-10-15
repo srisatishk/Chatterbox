@@ -1,6 +1,5 @@
 package language;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.UUID;
 /**
@@ -10,8 +9,9 @@ public class UserList {
     /**
      * attributes for userlist
      */
+   // private static UserList userList;
     private static UserList userList;
-    private static ArrayList<User> users;
+    private ArrayList<User> users;
     private UUID id;
 
     /**
@@ -19,8 +19,8 @@ public class UserList {
      */
    private UserList(){
         //this.users = new ArrayList<>();
+        //users = DataLoader.getUserList();
         users = DataLoader.getUsers();
-        //userList = DataLoader.getUser();
         this.id = UUID.randomUUID();
     }
 
@@ -58,7 +58,7 @@ public class UserList {
      * @param lastName users last name
      * @param email users email
      */
-    public boolean addUser(UUID id, String firstName, String lastName, String email, String phoneNumber, LocalDate dateOfBirth, String username, String password, int streak){
+    public boolean addUser(String firstName, String lastName, String email, String username, String password){
         //User.add(new User(firstName, lastName, email));
 
         //validate first name
@@ -91,7 +91,7 @@ public class UserList {
             return false;
         }
 
-        User newUser = new User(id, firstName, lastName, email, phoneNumber, dateOfBirth, username, password, streak);
+        User newUser = new User(id, firstName, lastName, email, username, null, password, 0);
         users.add(newUser);
         return true;
     }
@@ -183,7 +183,7 @@ public class UserList {
         return email != null && email.contains("@") && email.contains(".");
     }
 
-    public static ArrayList<User> getUser() {
-       return users;
+    public ArrayList getUsers() {
+        return users;
     }
 }
