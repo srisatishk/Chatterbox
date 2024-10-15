@@ -8,9 +8,8 @@ public class Phrase extends Question {
      * attributes for phrase class
      */
     private ArrayList<Word> words;
-    private ArrayList<String> pronunciation;
     private ArrayList<String> translation;
-    private boolean structure;
+   // private boolean structure;
 
     /**
      * getWords method

@@ -47,6 +47,10 @@ private String sentenceStructure;
         return false;
 
     }
+    public boolean logout (String username, String password)
+    { 
+        UUID.logout; 
+    }
 
     public void createAccount(String firstName, String lastName, String email, String phoneNumber, LocalDate dateOfBirth, String username, String password) {
         System.out.println("Account creation.");

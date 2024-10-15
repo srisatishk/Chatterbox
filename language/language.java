@@ -1,5 +1,6 @@
 package language;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /* sentence structure and progress in the class
@@ -11,16 +12,17 @@ public class Language {
     private String sentenceStructure; 
     private String currentCategory; 
     private int progressInCategory; 
-    private HashMap<Word, definition> translation; 
+    private static ArrayList<Word> translation; 
 
     public Language(String sentenceStructure, String currentCategory, int progressInCategory) {
         this.sentenceStructure = sentenceStructure;
         this.currentCategory = currentCategory;
         this.progressInCategory = progressInCategory; 
-        this.translation = new HashMap<>();
+        this.translation = new ArrayList<>();
     }
   
     public String getSentenceStructure() { 
+        
         return sentenceStructure; 
     }
 
