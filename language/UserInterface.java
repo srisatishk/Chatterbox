@@ -43,6 +43,10 @@ private String sentenceStructure;
         return true;
 
     }
+    public boolean logout (String username, String password)
+    { 
+        UUID.logout; 
+    }
 
      /**
      * createAccount method 
