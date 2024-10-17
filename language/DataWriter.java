@@ -24,17 +24,21 @@ public class DataWriter extends DataConstants {
     * Path to the JSON file where flashcard data will be written.
     */
    private static final String FILE_PATH = "data.json";
-   private static final String USER_FILE_PATH = "user.json";
 
+<<<<<<< HEAD
+=======
+   @SuppressWarnings("unchecked")
+>>>>>>> 7ed635412a371749af1bcad9a68be8635b00e068
    public static void saveUsers() {
-       UserList users = UserList.getInstance();
-       ArrayList<User> userList = users.getUser(); // Assuming getUser() returns ArrayList<User>
-       JSONArray jsonUserList = new JSONArray();
+        UserList users = UserList.getInstance();
+        ArrayList<User> userList = users.getUsers();
+        JSONArray jsonUserList = new JSONArray();
 
-       for (User user : userList) {
-           jsonUserList.add(getUserJSON(user));
-       }
+        for (int i =0; i < userList.size(); i++) {
+            jsonUserList.add(getUserJSON(userList.get(i)));
+        }
 
+<<<<<<< HEAD
        try (FileWriter file = new FileWriter(USER_FILE_PATH)) {
            file.write(jsonUserList.toJSONString());
            file.flush();
@@ -45,6 +49,19 @@ public class DataWriter extends DataConstants {
    }
   
    // (@SuppressWarnings("unchecked"))
+=======
+        try (FileWriter file = new FileWriter(FILE_NAME_USER)) {
+ 
+            file.write(jsonUserList.toJSONString());
+            file.flush();
+ 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+>>>>>>> 7ed635412a371749af1bcad9a68be8635b00e068
     public static JSONObject getUserJSON(User user) {
         JSONObject userDetails = new JSONObject();
         userDetails.put(USER_ID, user.getId().toString());
@@ -57,8 +74,21 @@ public class DataWriter extends DataConstants {
         userDetails.put(USER_DATE_OF_BIRTH, user.getDateOfBirth());
         userDetails.put(USER_PASSWORD, user.getPassword());
         userDetails.put(USER_STREAK, user.getStreak());
+
         return userDetails;
     }
+<<<<<<< HEAD
+=======
+
+   
+   /**
+    * Writes a list of flashcards to the JSON file specified in FILE_PATH.
+    * This method converts each Flashcard object into a JSON representation and writes
+    * the entire list of flashcards as a JSON array to the file.
+    *
+    * @param flashcards The list of Flashcard objects to be written to the file.
+    */
+>>>>>>> 7ed635412a371749af1bcad9a68be8635b00e068
 
   /* */
 // (@SuppressWarnings("unchecked")) to get rid of the warnings.
@@ -87,6 +117,7 @@ public static void writeFlashcards(List<Flashcards> flashcards) {
             e.printStackTrace();  // Handle errors in writing to the file
         }
    }
+<<<<<<< HEAD
 
    @SuppressWarnings("unchecked")
    public static void writeUsers(List<User> users) {
@@ -112,4 +143,6 @@ public static void writeFlashcards(List<Flashcards> flashcards) {
         }
    }
    
+=======
+>>>>>>> 7ed635412a371749af1bcad9a68be8635b00e068
 }

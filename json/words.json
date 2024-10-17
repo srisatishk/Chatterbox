@@ -1,0 +1,199 @@
+[
+    //colors
+    {
+        "word": "rojo",
+        "pronunciation": "roh-ho",
+        "translation": "red",
+       "alternatives<>": ["azul", "amarillo", "blanco", "gris", "morado" ,"naranja", "rosa", "verde", "negro"] 
+    },
+    {
+        "word": "azul",
+        "pronunciation": "ah-sool" , 
+        "translation": "blue",
+       "alternatives<>": ["rojo", "amarillo", "blanco", "gris", "morado" ,"naranja", "rosa", "verde", "negro"]
+    },
+    {
+        "word": "amarillo",
+        "pronunciation": "ah-mah-ree-yo",
+        "translation": "yello",
+       "alternatives<>": ["rojo", "azul", "blanco", "gris", "morado" ,"naranja", "rosa", "verde", "negro"]
+    },
+    {
+        "word": "blanco",
+        "pronunciation": "bahn-co",
+        "translation": "white",
+       "alternatives<>": ["rojo", "azul", "amarillo", "gris", "morado" ,"naranja", "rosa", "verde", "negro"]
+    },
+    {
+        "word": "gris",
+        "pronunciation": "greece",
+        "translation": "gray",
+       "alternatives<>": ["rojo", "azul", "amarillo", "blanco", "morado" ,"naranja", "rosa", "verde", "negro"]
+    },
+    {
+        "word": "morado",
+        "pronunciation": "moh-rah-do",
+        "translation": "purple",
+       "alternatives<>": ["rojo", "azul", "amarillo", "blanco", "gris", "naranja", "rosa", "verde", "negro"]
+    },
+    {
+        "word": "naranja",
+        "pronunciation": "nah-rahn-ha",
+        "translation": "orange",
+       "alternatives<>": ["rojo", "azul", "amarillo", "blanco", "gris", "morado" , "rosa", "verde", "negro"]
+    },
+    {
+        "word": "rosa",
+        "pronunciation": "roh-sa",
+        "translation": "pink",
+       "alternatives<>": ["rojo", "azul", "amarillo", "blanco", "gris", "morado" ,"naranja", "verde", "negro"]
+    },
+    {
+        "word": "verde",
+        "pronunciation": "ver-deh",
+        "translation": "green",
+       "alternatives<>": ["rojo", "azul", "amarillo", "blanco", "gris", "morado" ,"naranja", "rosa", "negro"]
+    },
+    {
+        "word": "negro",
+        "pronunciation": "new-eh-veh",
+        "translation": "black",
+       "alternatives<>": ["rojo", "azul", "amarillo", "blanco", "gris", "morado" ,"naranja", "rosa", "verde"]
+    },
+
+//numbers
+    {
+        "word": "uno",
+        "pronunciation": "oo-no",
+        "translation": "one",
+       "alternatives<>": [ "dos" , "tres" , "cuatro", "cinco", "seis" , "siete" ,"ocho", "nueve" ,"diez"]
+    },
+    {
+        "word": "dos",
+        "pronunciation": "dose",
+        "translation": "two",
+       "alternatives<>": ["uno", "tres" , "cuatro", "cinco", "seis" , "siete" ,"ocho", "nueve" ,"diez"]
+    },
+    {
+        "word": "tres",
+        "pronunciation": "trace",
+        "translation": "three",
+       "alternatives<>": ["uno", "dos" , "cuatro", "cinco", "seis" , "siete" ,"ocho", "nueve" ,"diez"]
+    },
+    {
+        "word": "cuatro",
+        "pronunciation": "kwat-ro",
+        "translation": "four",
+       "alternatives<>": ["uno", "dos" , "tres" , "cinco", "seis" , "siete" ,"ocho", "nueve" ,"diez"]
+    },
+    {
+        "word": "cinco",
+        "pronunciation": "sink-o",
+        "translation": "five",
+       "alternatives<>": ["uno", "dos" , "tres" , "cuatro", "seis" , "siete" ,"ocho", "nueve" ,"diez"]
+    },
+    {
+        "word": "seis",
+        "pronunciation": "saze",
+        "translation": "six",
+       "alternatives<>": ["uno", "dos" , "tres" , "cuatro", "cinco", "siete" ,"ocho", "nueve" ,"diez"]
+    },
+    {
+        "word": "siete",
+        "pronunciation": "see-yet-eh",
+        "translation": "seven",
+       "alternatives<>": ["uno", "dos" , "tres" , "cuatro", "cinco", "seis" , "ocho", "nueve" ,"diez"]
+    },
+    {
+        "word": "ocho",
+        "pronunciation": "och-o",
+        "translation": "eight",
+       "alternatives<>": ["uno", "dos" , "tres" , "cuatro", "cinco", "seis" , "siete" ,"nueve" ,"diez"]
+    },
+    {
+        "word": "nueve",
+        "pronunciation": "new-eh-veh",
+        "translation": "nine",
+       "alternatives<>": ["uno", "dos" , "tres" , "cuatro", "cinco", "seis" , "siete" ,"ocho","diez"]
+    },
+    {
+        "word": "diez",
+        "pronunciation": "dee-ace",
+        "translation": "ten",
+       "alternatives<>": ["uno", "dos" , "tres" , "cuatro", "cinco", "seis" , "siete" ,"ocho", "nueve"]
+    }
+    
+//people
+    {
+        "word": " izquierda" , 
+        "pronunciation": ,
+        "translation": "left", 
+       "alternatives<>": [ "derecha" , "recto" , "atrás" , "cerca" , "lejos" ,"al lado de" , "frente a" ,"detrás de"]
+    }
+
+    //weather 
+    {
+        "word": "detrás de" , 
+        "pronunciation": ,
+        "translation": "behind", 
+    "alternatives<>": 
+    }
+
+    // places 
+
+    {
+        "word": "detrás de" , 
+        "pronunciation": ,
+        "translation": "behind", 
+    "alternatives<>": 
+    }
+    {
+        "word": "detrás de" , 
+        "pronunciation": ,
+        "translation": "behind", 
+    "alternatives<>": 
+    }
+    {
+        "word": "detrás de" , 
+        "pronunciation": ,
+        "translation": "behind", 
+    "alternatives<>": 
+    }
+    {
+        "word": "detrás de" , 
+        "pronunciation": ,
+        "translation": "behind", 
+    "alternatives<>": 
+    }
+    {
+        "word": "detrás de" , 
+        "pronunciation": ,
+        "translation": "behind", 
+    "alternatives<>": 
+    }
+    {
+        "word": "detrás de" , 
+        "pronunciation": ,
+        "translation": "behind", 
+    "alternatives<>": 
+    }
+    {
+        "word": "detrás de" , 
+        "pronunciation": ,
+        "translation": "behind", 
+    "alternatives<>": 
+    }
+    {
+        "word": "detrás de" , 
+        "pronunciation": ,
+        "translation": "behind", 
+    "alternatives<>": 
+    }
+    {
+        "word": "detrás de" , 
+        "pronunciation": ,
+        "translation": "behind", 
+    "alternatives<>": 
+    }
+]
+

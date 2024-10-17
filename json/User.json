@@ -8,13 +8,6 @@
         "dateOfBirth" : "2001-01-05",
         "username" : "johndoe73",
         "password" : "IlovemyCat",
-        "languages" : [{
-            "languageID" : 1,
-            "progressInLanguage" : 6,
-            "currentCategory" :"numbers",
-            "progressInCategory" : 16,
-            "numCorrectAnswers" : 55
-        }],
         "streak" : 8
     },
 
@@ -24,16 +17,9 @@
 "lastName": "Smith", 
 "email": "jsmith@gmail.com",
 "phoneNumber":"817-902-3201",
-"dateofBirth": "10-07-98", 
+"dateofBirth": "10-07-1998", 
 "userName": "janesmith10",
 "password": "IlovemyCat", 
-"languages": [{
-    "languageID" : 2,
-    "progressInLanguage" : 17,
-    "currentCategory" : "colors",
-    "progressInCategory" : 16,
-    "numCorrectAnswers" : 55    
-}], 
 "streak": 19
 }
 ]
