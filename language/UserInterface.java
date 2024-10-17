@@ -26,7 +26,7 @@ private String sentenceStructure;
     /**
      * Constructor for UI
      */
-    public UI() {
+    public UserInterface() {
         this.languages = new ArrayList<>();
         this.categories = new ArrayList<>();
         this.userList = new ArrayList<>();

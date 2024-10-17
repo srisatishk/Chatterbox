@@ -14,19 +14,11 @@ public class Progress {
     private int progressInCategory;
     private ArrayList<String> missedWords;
 
-<<<<<<< HEAD
     public int getTotalQuestionsAnswered() {    
         return totalQuestionsAnswered;
     }
 
     public void setTotalQuestionsAnswered(int totalQuestionsAnswered) {
-=======
-     /**
-     * Progress method
-     * constructor for attributes
-     */
-    public Progress(int totalQuestionsAnswered, int numCorrectAnswers, Category currentCategory, int progressInCategory, ArrayList<String> missedWords) {
->>>>>>> f27a5bd88941f497390d98704441c1d0cd02a838
         this.totalQuestionsAnswered = totalQuestionsAnswered;
         this.numCorrectAnswers = numCorrectAnswers;
         this.currentCategory = currentCategory;
@@ -68,9 +60,9 @@ public class Progress {
      */
     public void trackPercentCorrect() {
         if (totalQuestionsAnswered == 0) {
-            System.out.print("The user has not answered any questions yet.")
+            System.out.print("The user has not answered any questions yet.");
         }
-        int perCorrect = (numCorrectAnswers / totalQuestionsAnswered) * 100
+        int perCorrect = (numCorrectAnswers / totalQuestionsAnswered) * 100;
         System.out.print("Tracking the percentage of correct answers. : The percentage of correct answers is: " + perCorrect + "%");
     }
 

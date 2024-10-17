@@ -2,8 +2,8 @@ package language;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.HashMap;
 import java.util.UUID;
+import java.util.ArrayList;
 /**
  * @author sri
  */
@@ -19,7 +19,7 @@ public class User{
     private String dateOfBirth;
     private String username;
     private String password;
-    // private HashMap<Language, Progress> languages;
+    private ArrayList<Language> languages;
     private int streak;
 
     public User(UUID id, String firstName, String lastName, String email, String phoneNumber, String dateOfBirth, String username, String password, int streak){
@@ -31,7 +31,7 @@ public class User{
         this.dateOfBirth = dateOfBirth;
         this.username = username;
         this.password = password;
-        //this.languages = new HashMap<>();
+        this.languages = new ArrayList<>();
         this.streak = streak; 
     }
 
@@ -157,9 +157,9 @@ public class User{
         return streak;
     }
 
-    // public HashMap<Language, Progress> getLanguages(){
-    //     return languages;
-    // }
+    public ArrayList<Language> getLanguages(){
+        return languages;
+    }
 
     public void forgotPassword(String newPassword){
         String defaultPassword = "LanguageLearner123@";

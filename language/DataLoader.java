@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.time.LocalDate;
-import java.util.HashMap;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -14,8 +13,8 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 /**
- * The DataLoader class is responsible for loading flashcard data from a JSON file.
- * It parses the JSON data and converts it into a list of Flashcard objects.
+ * The DataLoader class is responsible for loading data from the JSON files.
+ * It parses the JSON data and converts it into a list of objects.
  */
 public class DataLoader extends DataConstants{
     // Loads the lists of Users
@@ -51,6 +50,8 @@ public class DataLoader extends DataConstants{
     return null;
 }
 
+// Main method to test getUsers
+/* 
 public static void main(String[] args) {
     ArrayList<User> users = getUsers();
     if (users != null) {
@@ -65,9 +66,9 @@ public static void main(String[] args) {
         System.out.println("Failed to load user data.");
     }
 }
+*/
 
-
-
+// Loads the list of flashcards
     public static List<Flashcards> loadFlashcards() {
         List<Flashcards> flashcards = new ArrayList<>();
 
@@ -99,7 +100,7 @@ public static void main(String[] args) {
     }
 
     
-
+    // loads the list of questions
     public static List<Question> loadQuestions() {
         List<Question> questionsList = new ArrayList<>();
 

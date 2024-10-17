@@ -16,5 +16,8 @@ public abstract class DataConstants {
     protected static final String USER_DATE_OF_BIRTH = "dateOfBirth";
     protected static final String USER_PASSWORD = "password";
     protected static final String USER_STREAK = "streak";
+    //Files for DataLoader - LANGUAGE
+    //Files for DataLoader - CATEGORY
+    //Files for DataLoader - FLASHCARDS
 
 }

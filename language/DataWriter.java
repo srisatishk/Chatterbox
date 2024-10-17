@@ -9,11 +9,6 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 /**
- * Author: Hardik Marlapudi
- * Date: 10/6/2024
- */
-
-/**
  * The DataWriter class is responsible for writing flashcard data to a JSON file.
  * It takes a list of Flashcard objects and converts them into JSON format before
  * saving them to the file.
@@ -21,10 +16,16 @@ import org.json.simple.JSONObject;
 public class DataWriter extends DataConstants {
 
    /** 
-    * Path to the JSON file where flashcard data will be written.
+    * Path to the JSON file where user data will be written.
     */
-   private static final String FILE_PATH = "data.json";
 
+       /**
+    * Writes a list of users to the JSON file specified in FILE_PATH.
+    * This method converts each User object into a JSON representation and writes
+    * the entire list of users as a JSON array to the file.
+    *
+    * @param flashcards The list of Flashcard objects to be written to the file.
+    */
    @SuppressWarnings("unchecked")
    public static void saveUsers() {
         UserList users = UserList.getInstance();
@@ -71,8 +72,6 @@ public class DataWriter extends DataConstants {
     * @param flashcards The list of Flashcard objects to be written to the file.
     */
 
-
-  
 // (@SuppressWarnings("unchecked")) to get rid of the warnings.
 @SuppressWarnings("unchecked")
 public static void writeFlashcards(List<Flashcards> flashcards) {
@@ -92,7 +91,7 @@ public static void writeFlashcards(List<Flashcards> flashcards) {
         }
 
         // Write the JSON array to the file
-        try (FileWriter file = new FileWriter(FILE_PATH)) {
+        try (FileWriter file = new FileWriter(FILE_NAME_FLASHCARDS)) {
             file.write(flashcardList.toJSONString());  // Write JSON data to file
             file.flush();  // Ensure all data is written
         } catch (IOException e) {
