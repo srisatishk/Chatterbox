@@ -28,7 +28,6 @@ public class DataLoader extends DataConstants{
         for (int i=0; i < usersJSON.size(); i++) {
             JSONObject userJSON = (JSONObject)usersJSON.get(i);
             UUID id = UUID.fromString(String.valueOf(userJSON.get(USER_ID)));
-            //UUID id = UUID.fromString((String)userJSON.get(USER_ID)) ;
             String firstName = (String)userJSON.get(USER_FIRST_NAME);
             String lastName = (String)userJSON.get(USER_LAST_NAME);
             String email = (String)userJSON.get(USER_EMAIL);
@@ -48,6 +47,41 @@ public class DataLoader extends DataConstants{
         e.printStackTrace();
     }
     return null;
+}
+
+public static ArrayList<Language> getLanguages () {
+    ArrayList<Language> languageList = new ArrayList<Language>();
+    try {
+        FileReader reader = new FileReader(FILE_NAME_USER);
+        JSONParser parser = new JSONParser();
+        JSONArray languagesJSON = (JSONArray)new JSONParser().parse(reader);
+
+        for (int i=0; i < languagesJSON.size(); i++) {
+            JSONObject languageJSON = (JSONObject)languagesJSON.get(i);
+            UUID languageID = UUID.fromString(String.valueOf(languageJSON.get(LANGUAGE_ID)));
+            String language = (String)languageJSON.get(LANGUAGE);
+            String title = (String)languageJSON.get(CATEGORY_TITLE);
+            String question = (String)languageJSON.get(CATEGORY_QUESTION);
+            String currentCategory = (String)languageJSON.get(CURRENT_CATEGORY);
+            int totalQuestionsAnswered = ((Long)languageJSON.get(TOT_QUESTIONS_ANSWERED)).intValue();
+            int progressInCategory = ((Long)languageJSON.get(PROGRESS_IN_CATEGORY)).intValue();
+            int numCorrectAnswers = ((Long)languageJSON.get(NUM_CORRECT_ANSWERS)).intValue();
+            JSONArray missedWordsJSON = (JSONArray)languageJSON.get(MISSED_WORDS);
+            ArrayList<String> missedWords = new ArrayList<>();
+            for (Object word : missedWordsJSON) {
+                missedWords.add((String) word);
+            }
+
+            Category newCategory = new Category()
+            
+
+
+        }
+    }
+    catch (Exception e) {
+    e.printStackTrace();
+    }
+return null;
 }
 
 // Main method to test getUsers

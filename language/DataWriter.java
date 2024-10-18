@@ -19,6 +19,7 @@ public class DataWriter extends DataConstants {
     * Path to the JSON file where user data will be written.
     */
 
+<<<<<<< HEAD
        /**
     * Writes a list of users to the JSON file specified in FILE_PATH.
     * This method converts each User object into a JSON representation and writes
@@ -26,7 +27,12 @@ public class DataWriter extends DataConstants {
     *
     * @param flashcards The list of Flashcard objects to be written to the file.
     */
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> ab7c5fd0bcb3f704a014b1ff516176587890045b
    @SuppressWarnings("unchecked")
+>>>>>>> 7ed635412a371749af1bcad9a68be8635b00e068
    public static void saveUsers() {
         UserList users = UserList.getInstance();
         ArrayList<User> userList = users.getUsers();
@@ -36,6 +42,18 @@ public class DataWriter extends DataConstants {
             jsonUserList.add(getUserJSON(userList.get(i)));
         }
 
+<<<<<<< HEAD
+       try (FileWriter file = new FileWriter(USER_FILE_PATH)) {
+           file.write(jsonUserList.toJSONString());
+           file.flush();
+       } catch (IOException e) {
+           e.printStackTrace();
+       }
+       
+   }
+  
+   // (@SuppressWarnings("unchecked"))
+=======
         try (FileWriter file = new FileWriter(FILE_NAME_USER)) {
  
             file.write(jsonUserList.toJSONString());
@@ -47,6 +65,7 @@ public class DataWriter extends DataConstants {
     }
 
     @SuppressWarnings("unchecked")
+>>>>>>> 7ed635412a371749af1bcad9a68be8635b00e068
     public static JSONObject getUserJSON(User user) {
         JSONObject userDetails = new JSONObject();
         userDetails.put(USER_ID, user.getId().toString());
@@ -62,6 +81,8 @@ public class DataWriter extends DataConstants {
 
         return userDetails;
     }
+<<<<<<< HEAD
+=======
 
    
    /**
@@ -71,7 +92,12 @@ public class DataWriter extends DataConstants {
     *
     * @param flashcards The list of Flashcard objects to be written to the file.
     */
+>>>>>>> 7ed635412a371749af1bcad9a68be8635b00e068
 
+<<<<<<< HEAD
+=======
+  /* */
+>>>>>>> ab7c5fd0bcb3f704a014b1ff516176587890045b
 // (@SuppressWarnings("unchecked")) to get rid of the warnings.
 @SuppressWarnings("unchecked")
 public static void writeFlashcards(List<Flashcards> flashcards) {
@@ -98,4 +124,32 @@ public static void writeFlashcards(List<Flashcards> flashcards) {
             e.printStackTrace();  // Handle errors in writing to the file
         }
    }
+<<<<<<< HEAD
+
+   @SuppressWarnings("unchecked")
+   public static void writeUsers(List<User> users) {
+        JSONArray userList = new JSONArray();
+        for (User user : users) {
+            JSONObject userDetails = new JSONObject();
+            //userDetails.put("id", user.getId().toString());
+            userDetails.put("firstName", user.getFirstName());
+            userDetails.put("lastName", user.getLastName());
+            userDetails.put("email", user.getEmail());
+            userDetails.put("phoneNumber", user.getPhoneNumber());
+            userDetails.put("dateOfBirth", user.getDateOfBirth().toString());
+            userDetails.put("username", user.getUsername());
+            userDetails.put("password", user.getPassword());
+            userList.add(userDetails);
+        }
+
+        try (FileWriter file = new FileWriter(USER_FILE_PATH)) {
+            file.write(userList.toJSONString());
+            file.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+   }
+   
+=======
+>>>>>>> 7ed635412a371749af1bcad9a68be8635b00e068
 }

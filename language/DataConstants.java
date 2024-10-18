@@ -17,6 +17,8 @@ public abstract class DataConstants {
     protected static final String USER_PASSWORD = "password";
     protected static final String USER_STREAK = "streak";
     //Files for DataLoader - LANGUAGE
+    protected static final String FILE_NAME_CATEGORY = "PixelChicksProject/json/Category.json";
+    protected static final String LANGUAGE_ID = ""
     //Files for DataLoader - CATEGORY
     //Files for DataLoader - FLASHCARDS
 

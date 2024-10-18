@@ -4,6 +4,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.UUID;
 import java.util.ArrayList;
+import java.util.HashMap;
 /**
  * @author sri
  */
@@ -19,7 +20,7 @@ public class User{
     private String dateOfBirth;
     private String username;
     private String password;
-    private ArrayList<Language> languages;
+    private HashMap<Language,Progress> languages;
     private int streak;
 
     public User(UUID id, String firstName, String lastName, String email, String phoneNumber, String dateOfBirth, String username, String password, int streak){
@@ -31,7 +32,7 @@ public class User{
         this.dateOfBirth = dateOfBirth;
         this.username = username;
         this.password = password;
-        this.languages = new ArrayList<>();
+        this.languages = new HashMap <>();
         this.streak = streak; 
     }
 
@@ -157,8 +158,12 @@ public class User{
         return streak;
     }
 
-    public ArrayList<Language> getLanguages(){
+    public HashMap<Language, Progress> getLanguages(){
         return languages;
+    }
+
+    public void setLanguages(HashMap<Language, Progress> langugages) {
+        this.languages = languages;
     }
 
     public void forgotPassword(String newPassword){
