@@ -1,5 +1,4 @@
 [
-    //colors
     {
         "word": "rojo",
         "pronunciation": "roh-ho",
@@ -61,7 +60,8 @@
        "alternatives<>": ["rojo", "azul", "amarillo", "blanco", "gris", "morado" ,"naranja", "rosa", "verde"]
     },
 
-//numbers
+
+
     {
         "word": "uno",
         "pronunciation": "oo-no",
@@ -121,188 +121,199 @@
         "pronunciation": "dee-ace",
         "translation": "ten",
        "alternatives<>": ["uno", "dos" , "tres" , "cuatro", "cinco", "seis" , "siete" ,"ocho", "nueve"]
-    }
+    },
     
-//people
+
+
     {
         "word": "Mama", 
-        "pronunciation": ,
+        "pronunciation": "mah-mah",
         "translation": "mom", 
        "alternatives<>": ["Papa", "Hijo", "Hija", "Hermano", "Hermana", "Esposo", "Esposa", "abuelo", "abuela" ]
-    }
+    },
     {
         "word": "Papa", 
-        "pronunciation": ,
+        "pronunciation": "pah-pah",
         "translation": "dad", 
        "alternatives<>": ["Mama", "Hijo", "Hija", "Hermano", "Hermana", "Esposo", "Esposa", "abuelo", "abuela" ]
-    }
+    },
     {
         "word": "Hijo", 
-        "pronunciation": ,
+        "pronunciation": "ee-hoh",
         "translation": "son", 
        "alternatives<>": ["Mama","Papa", "Hija", "Hermano", "Hermana", "Esposo", "Esposa", "abuelo", "abuela" ]
-    }
+    },
     {
         "word": "Hija", 
-        "pronunciation": ,
+        "pronunciation": "ee-hah",
         "translation": "daughter", 
        "alternatives<>": ["Mama","Papa", "Hijo", "Hermano", "Hermana", "Esposo", "Esposa", "abuelo", "abuela" ]
-    }
+    },
     {
         "word": "Hermano", 
-        "pronunciation": ,
+        "pronunciation": "ehr-mah-noh",
         "translation": "Brother", 
        "alternatives<>": ["Mama","Papa", "Hijo", "Hija", "Hermana", "Esposo", "Esposa", "abuelo", "abuela" ]
-    }
+    },
     {
         "word": "Hermana", 
-        "pronunciation": ,
+        "pronunciation": "ehr-mah-nah",
         "translation": "Sister", 
        "alternatives<>":["Mama","Papa", "Hijo", "Hija", "Hermano","Esposo", "Esposa", "abuelo", "abuela" ]
-    }
+    },
     {
         "word": "Esposo", 
-        "pronunciation": ,
+        "pronunciation": "ehs-poh-soh",
         "translation": "Husband", 
        "alternatives<>": ["Mama","Papa", "Hijo", "Hija", "Hermano", "Hermana", "Esposa", "abuelo", "abuela" ]
-    }
+    },
     {
         "word": "Esposa", 
-        "pronunciation": ,
+        "pronunciation": "ehs-poh-sah",
         "translation": "wife", 
        "alternatives<>":["Mama","Papa", "Hijo", "Hija", "Hermano", "Hermana", "Esposo", "abuelo", "abuela" ]
-    }
+    },
     {
         "word": "abuelo", 
-        "pronunciation": , 
+        "pronunciation": "ah-bweh-loh", 
         "translation": "grandfather", 
        "alternatives<>": ["Mama","Papa", "Hijo", "Hija", "Hermano", "Hermana", "Esposo", "Esposa", "abuela" ]
-    }
+    },
     {
         "word": "abuela", 
-        "pronunciation": ,
+        "pronunciation": "ah-bweh-lah",
         "translation": "grandmother", 
        "alternatives<>": ["Mama","Papa", "Hijo", "Hija", "Hermano", "Hermana", "Esposo", "Esposa", "abuelo"]
-    }
+    },
 
     
-    //weather 
+
+
     {
         "word": "el grado" , 
         "pronunciation": "grah-doh",
         "translation": "degree", 
-        "alternatives<>": 
-    }
+        "alternatives<>": ["soleado", "la lluvia" , "la nieve" , "adentro" , "el invierno" , "el verano" , "la primavera" , "la temperatura" , "el tiempo"]
+    },
     {
         "word": "el tiempo" , 
         "pronunciation": "tyehm-poh",
         "translation": "weather", 
-        "alternatives<>": 
-    }
+        "alternatives<>": ["soleado", "la lluvia" , "la nieve" , "adentro" , "el invierno" , "el verano" , "la primavera" , "la temperatura" ,"el grado"]
+    },
     {
         "word": "la temperatura" , 
         "pronunciation": "tehm-peh-rah-too-rah",
         "translation": "temperature", 
-        "alternatives<>": 
-    }
+        "alternatives<>": ["soleado", "la lluvia" , "la nieve" , "adentro" , "el invierno" , "el verano" , "la primavera" , "el tiempo" , "el grado"]
+    },
+    
     {
         "word": "la primavera" , 
         "pronunciation": "pree-mah-beh-rah",
         "translation": "spring", 
-        "alternatives<>": 
-    }
+        "alternatives<>": ["soleado", "la lluvia" , "la nieve" , "adentro" , "el invierno" , "el verano" ,"la temperatura" , "el tiempo" , "el grado"]
+    },
     {
         "word": "el verano" , 
         "pronunciation": "beh-rah-noh",
         "translation": "summer", 
-        "alternatives<>": 
-    }
+        "alternatives<>": ["soleado", "la lluvia" , "la nieve" , "adentro" , "el invierno" , "la primavera" , "la temperatura" , "el tiempo" , "el grado"]
+    },
     {
         "word": "el invierno" , 
         "pronunciation": "enn-byehr-noh",
         "translation": "winter", 
-    "alternatives<>": 
-    }
+        "alternatives<>": ["soleado", "la lluvia" , "la nieve" , "adentro" , "el verano" , "la primavera" , "la temperatura" , "el tiempo" , "el grado"]
+    },
     {
-        "word": "detrás de" , 
-        "pronunciation": ,
-        "translation": "behind", 
-    "alternatives<>": 
-    }
+        "word": "adentro" , 
+        "pronunciation": "ah-dehn-troh",
+        "translation": "inside", 
+        "alternatives<>": ["soleado", "la lluvia" , "la nieve" , "el invierno" , "el verano" , "la primavera" , "la temperatura" , "el tiempo" , "el grado"]
+    },
     {
-        "word": "detrás de" , 
-        "pronunciation": ,
-        "translation": "behind", 
-    "alternatives<>": 
-    }
+        "word": "la nieve" , 
+        "pronunciation": "nyeh-beh",
+        "translation": "snow", 
+        "alternatives<>": ["soleado", "la lluvia" , "adentro" , "el invierno" , "el verano" , "la primavera" , "la temperatura" , "el tiempo" , "el grado"]
+    },
     {
-        "word": "detrás de" , 
-        "pronunciation": ,
-        "translation": "behind", 
-    "alternatives<>": 
-    }
+        "word": "la lluvia" , 
+        "pronunciation": "yoo-byah",
+        "translation": "rain", 
+        "alternatives<>": ["soleado", "la nieve" , "adentro" , "el invierno" , "el verano" , "la primavera" , "la temperatura" , "el tiempo" , "el grado"]
+    },
     {
-        "word": "detrás de" , 
-        "pronunciation": ,
-        "translation": "behind", 
-    "alternatives<>": 
-    }
+        "word": "soleado" , 
+        "pronunciation": "soh-leh-ah-doh",
+        "translation": "sunny", 
+        "alternatives<>": ["la lluvia" , "la nieve" , "adentro" , "el invierno" , "el verano" , "la primavera" , "la temperatura" , "el tiempo" , "el grado"]
+    },
 
-    // places 
+    
 
     {
-        "word": "detrás de" , 
-        "pronunciation": ,
-        "translation": "behind", 
-    "alternatives<>": 
-    }
+        "word": "hotel" , 
+        "pronunciation": "oh-tehl",
+        "translation": "hotel", 
+        "alternatives<>": ["Panadería " , "Biblioteca " , "Parque " , "Restaurante " , "Museo" , "zoológico" ,"Estadio" , "Escuela" , "Aeropuerto"]
+    },
     {
-        "word": "detrás de" , 
-        "pronunciation": ,
-        "translation": "behind", 
-    "alternatives<>": 
-    }
+        "word": "Panadería " , 
+        "pronunciation": "pah-nah-deh-ree-ah",
+        "translation": "bakery", 
+        "alternatives<>": ["hotel" , "Biblioteca " , "Parque " , "Restaurante " , "Museo" , "zoológico" ,"Estadio" , "Escuela" , "Aeropuerto"] 
+    },
     {
-        "word": "detrás de" , 
-        "pronunciation": ,
-        "translation": "behind", 
-    "alternatives<>": 
-    }
+        "word": "Biblioteca " , 
+        "pronunciation": "bee-blyoh-teh-kah",
+        "translation": "Library", 
+        "alternatives<>": ["hotel" , "Panadería " , "Parque " , "Restaurante " , "Museo" , "zoológico" ,"Estadio" , "Escuela" , "Aeropuerto"]
+    },
     {
-        "word": "detrás de" , 
-        "pronunciation": ,
-        "translation": "behind", 
-    "alternatives<>": 
-    }
+        "word": "Parque " , 
+        "pronunciation": "pahr-keh", 
+        "translation": "Park ", 
+        "alternatives<>": ["hotel" , "Panadería " , "Biblioteca " ,  "Restaurante " , "Museo" , "zoológico" ,"Estadio" , "Escuela" , "Aeropuerto"]
+    },
     {
-        "word": "detrás de" , 
-        "pronunciation": ,
-        "translation": "behind", 
-    "alternatives<>": 
-    }
+        "word": "Restaurante " , 
+        "pronunciation": "rrehs-tow-rahn-teh",
+        "translation": "Restaurant", 
+        "alternatives<>": ["hotel" , "Panadería " , "Biblioteca " , "Parque " , "Museo" , "zoológico" ,"Estadio" , "Escuela" , "Aeropuerto"]
+    },
+      
     {
-        "word": "detrás de" , 
-        "pronunciation": ,
-        "translation": "behind", 
-    "alternatives<>": 
-    }
+        "word": "Museo" , 
+        "pronunciation": "moo-seh-oh", 
+        "translation": "Museum", 
+        "alternatives<>": ["hotel" , "Panadería " , "Biblioteca " , "Parque " , "Restaurante " , "zoológico" ,"Estadio" , "Escuela" , "Aeropuerto"]
+    },
     {
-        "word": "detrás de" , 
-        "pronunciation": ,
-        "translation": "behind", 
-    "alternatives<>": 
-    }
+        "word": "zoológico" , 
+        "pronunciation": "thoh-oh-loh-hee-koh",
+        "translation": "Zoo", 
+        "alternatives<>": ["hotel" , "Panadería " , "Biblioteca " , "Parque " , "Restaurante " , "Museo" ,"Estadio" , "Escuela" , "Aeropuerto"]
+    },
     {
-        "word": "detrás de" , 
-        "pronunciation": ,
-        "translation": "behind", 
-    "alternatives<>": 
-    }
+        "word": "Estadio" , 
+        "pronunciation": "ehs-tah-dyoh",
+        "translation": "Stadium", 
+        "alternatives<>": ["hotel" , "Panadería " , "Biblioteca " , "Parque " , "Restaurante " , "Museo" , "zoológico" ,"Escuela" , "Aeropuerto"]
+    },
     {
-        "word": "detrás de" , 
-        "pronunciation": ,
-        "translation": "behind", 
-    "alternatives<>": 
+        "word": "Escuela" , 
+        "pronunciation": "ehs-kweh-lah",
+        "translation": "School", 
+        "alternatives<>": ["hotel" , "Panadería " , "Biblioteca " , "Parque " , "Restaurante " , "Museo" , "zoológico" ,"Estadio" ,"Aeropuerto"]
+    },
+    {
+        "word": "Aeropuerto" , 
+        "pronunciation": "ah-eh-roh-pwehr-toh",
+        "translation": "Airport", 
+        "alternatives<>": ["hotel" , "Panadería " , "Biblioteca " , "Parque " , "Restaurante " , "Museo" , "zoológico" ,"Estadio" , "Escuela"]
     }
+    
 ]
 
