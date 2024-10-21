@@ -14,16 +14,21 @@ public class Progress {
     private int progressInCategory;
     private ArrayList<String> missedWords;
 
+    public Progress(int totalQuestionsAnswered, int numCorrectAnswers, Category currentCategory, int progressInCategory, ArrayList<String> missedWords) {
+        this.totalQuestionsAnswered = totalQuestionsAnswered;
+        this.numCorrectAnswers = numCorrectAnswers;
+        this.currentCategory = currentCategory;
+        this.progressInCategory = progressInCategory;
+        this.missedWords = new ArrayList<String>();
+    }
+
     public int getTotalQuestionsAnswered() {    
         return totalQuestionsAnswered;
     }
 
     public void setTotalQuestionsAnswered(int totalQuestionsAnswered) {
         this.totalQuestionsAnswered = totalQuestionsAnswered;
-        this.numCorrectAnswers = numCorrectAnswers;
-        this.currentCategory = currentCategory;
-        this.progressInCategory = progressInCategory;
-        this.missedWords = new ArrayList<String>();
+
     }
 
      /**
@@ -50,7 +55,7 @@ public class Progress {
      * tracks the user's daily participation
      */
     public void trackDaily() {
-
+        streak++;
         System.out.print("Tracking the user's daily progress");
     }
 
@@ -100,11 +105,21 @@ public class Progress {
         return missedWords;
     }
 
+    public ArrayList<String> getProgress() {
+        ArrayList<String> progressInfo = new ArrayList<>();
+        progressInfo.add("Total Questions Answered: " + totalQuestionsAnswered);
+        progressInfo.add("Number of Correct Answers: " + numCorrectAnswers);
+        progressInfo.add("Progress in Category: " + progressInCategory);
+        progressInfo.add("Missed Words: " + missedWords.toString());
+        return progressInfo;
+    }
+
      /**
      * saveProgress method
      * saves the user's progress in the language and category
      */
     public void saveProgress() {
+        boolean savedProgress = DataWriter.saveProgress(this);
         System.out.println("Saving the user's progress");
     }   
 }

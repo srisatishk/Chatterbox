@@ -5,7 +5,7 @@
         "lastName" : "Doe",
         "email" : "johndoe@gmail.com",
         "phoneNumber" : "627-917-2739",
-        "dateOfBirth" : "2001-01-05",
+        "dateOfBirth" : "01/05/2001",
         "username" : "johndoe73",
         "password" : "IlovemyCat",
         "streak" : 8
@@ -18,7 +18,7 @@
 "lastName": "Smith", 
 "email": "jsmith@gmail.com",
 "phoneNumber":"817-902-3201",
-"dateofBirth": "10-07-1998", 
+"dateOfBirth": "10/07/2004", 
 "userName": "janesmith10",
 "password": "IlovemyCat", 
 "streak": 19

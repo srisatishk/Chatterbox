@@ -2,13 +2,13 @@ package language;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.UUID;
 
 public class Language {
     
     private String sentenceStructure; 
     private Category currentCategory; 
     private int progressInCategory; 
-<<<<<<< HEAD
     private static ArrayList<Word> translation; 
 
     public Language(String sentenceStructure, String currentCategory, int progressInCategory) {
@@ -17,16 +17,9 @@ public class Language {
         this.progressInCategory = progressInCategory; 
         this.translation = new ArrayList<>();
     }
-  
+
     public String getSentenceStructure() { 
         
-=======
-    private HashMap<Word, Definition> translation; 
-
-  
-    public String sentenceStructure()
-    { 
->>>>>>> 8bfe4bbed17606a0c4e85a154910c103e56c8053
         return sentenceStructure; 
     }
     public void progressInLanguage()

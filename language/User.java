@@ -17,13 +17,13 @@ public class User{
     private String lastName;
     private String email;
     private String phoneNumber;
-    private String dateOfBirth;
+    private LocalDate dateOfBirth;
     private String username;
     private String password;
     private HashMap<Language,Progress> languages;
     private int streak;
 
-    public User(UUID id, String firstName, String lastName, String email, String phoneNumber, String dateOfBirth, String username, String password, int streak){
+    public User(UUID id, String firstName, String lastName, String email, String phoneNumber, LocalDate dateOfBirth, String username, String password, int streak){
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -36,7 +36,7 @@ public class User{
         this.streak = streak; 
     }
 
-    public User(UUID id, String firstName, String lastName, String email, String username, String dateOfBirth, String password, int streak) {
+    public User(UUID id, String firstName, String lastName, String email, String username, LocalDate dateOfBirth, String password, int streak) {
         this(id, firstName, lastName, email, "", dateOfBirth, username, password, streak);
         // this.id = UUID.randomUUID();
         // this.firstName = firstName;
@@ -121,18 +121,18 @@ public class User{
         this.phoneNumber = phoneNumber;
     }
 
-    public String getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
-    // public String getFormattedDateOfBirth() {
-    //     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-    //     return dateOfBirth.format(formatter);
-    // }
+    public String getFormattedDateOfBirth() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        return dateOfBirth.format(formatter);
+    }
 
     // public static LocalDate parseDateOfBirth(String dobString) {
     //     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");

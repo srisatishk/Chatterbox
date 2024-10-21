@@ -3,10 +3,12 @@ package language;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import java.time.LocalDate;
-
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -24,6 +26,7 @@ public class DataLoader extends DataConstants{
         FileReader reader = new FileReader(FILE_NAME_USER);
         JSONParser parser = new JSONParser();
         JSONArray usersJSON = (JSONArray)new JSONParser().parse(reader);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 
         for (int i=0; i < usersJSON.size(); i++) {
             JSONObject userJSON = (JSONObject)usersJSON.get(i);
@@ -32,12 +35,20 @@ public class DataLoader extends DataConstants{
             String lastName = (String)userJSON.get(USER_LAST_NAME);
             String email = (String)userJSON.get(USER_EMAIL);
             String phoneNumber = (String)userJSON.get(USER_PHONE_NUMBER);
-            String dateOfBirth = (String) userJSON.get(USER_DATE_OF_BIRTH);
-            //LocalDate dateOfBirth = LocalDate.parse(dobString);
+            String dobString = (String) userJSON.get(USER_DATE_OF_BIRTH);
+            LocalDate dateOfBirth = null;
+            // if (dobString != null) {
+            //     try {
+                     dateOfBirth = LocalDate.parse(dobString, formatter);
+            //     } catch (DateTimeParseException e) {
+            //         System.out.println("Invalid date format for user: " + firstName + " " + lastName);
+            //     }
+            // } else {
+            //     System.out.println("Date of birth is missing for user: " + firstName + " " + lastName);
+            // }
             String username = (String)userJSON.get(USER_USERNAME);
             String password = (String)userJSON.get(USER_PASSWORD);
             int streak = ((Long)userJSON.get(USER_STREAK)).intValue();
-            
             User newUser = new User(id, firstName, lastName, email, phoneNumber, dateOfBirth, username, password, streak);
             userList.add(newUser);
         }   
@@ -52,7 +63,7 @@ public class DataLoader extends DataConstants{
 public static ArrayList<Language> getLanguages () {
     ArrayList<Language> languageList = new ArrayList<Language>();
     try {
-        FileReader reader = new FileReader(FILE_NAME_USER);
+        FileReader reader = new FileReader(FILE_NAME_CATEGORY);
         JSONParser parser = new JSONParser();
         JSONArray languagesJSON = (JSONArray)new JSONParser().parse(reader);
 
@@ -72,11 +83,12 @@ public static ArrayList<Language> getLanguages () {
                 missedWords.add((String) word);
             }
 
-            Category newCategory = new Category()
-            
-
+           Category newCategory = new Category(currentCategory, totalQuestionsAnswered, progressInCategory, numCorrectAnswers, missedWords);
+           Language newLanguage = new Language(languageID, language, title, question, newCategory);
+           languageList.add(newLanguage);
 
         }
+        return languageList;
     }
     catch (Exception e) {
     e.printStackTrace();
@@ -85,7 +97,7 @@ return null;
 }
 
 // Main method to test getUsers
-/* 
+
 public static void main(String[] args) {
     ArrayList<User> users = getUsers();
     if (users != null) {
@@ -93,14 +105,14 @@ public static void main(String[] args) {
             System.out.println("No users found in the data.");
         } else {
             for (User user : users) {
-                System.out.println("User: " + user.getFirstName() + " " + user.getLastName() + ", Email: " + user.getEmail());
+                System.out.println("User: " + user.getFirstName() + " " + user.getLastName() + ", Email: " + user.getEmail() + " Date of Birth: " + user.getDateOfBirth());
             }
         }
     } else {
         System.out.println("Failed to load user data.");
     }
 }
-*/
+
 
 // Loads the list of flashcards
     public static List<Flashcards> loadFlashcards() {
@@ -162,89 +174,6 @@ public static void main(String[] args) {
         }
 
         return questionsList;  // Return the list of questions
-    }
-
-    
-/**
- * Loads the progress data for the user from a JSON file and returns it as a list of Progress objects.
- * This method reads the JSON file, parses the data, and converts it into a list of Progress objects
- * representing the user's progress in different categories.
- *
- * @return A list of Progress objects parsed from the JSON file.
- */
-public static List<Progress> loadProgress() {
-    List<Progress> progressList = new ArrayList<>();
-
-    // Try to read and parse the JSON file
-    try (FileReader reader = new FileReader(FILE_NAME_PROGRESS)) {
-        JSONParser jsonParser = new JSONParser();
-        
-        // Parse the JSON array from the file
-        Object obj = jsonParser.parse(reader);
-        JSONArray flashcardList = (JSONArray) obj;
-
-        // Iterate through each JSON object in the array and convert it to a Progress object
-        for (Object flashcardObject : flashcardList) {
-            JSONObject flashcardJSON = (JSONObject) flashcardObject;
-
-            // Extract progress data from the JSON object
-            int totalQuestionsAnswered = (Integer) flashcardJSON.get("TotalQuestionAnswered");
-            int numCorrectAnswers = (Integer) flashcardJSON.get("NumCorrectAnswers");
-            Category currentCategory = (Category) flashcardJSON.get("CurrentCategory");
-            int progressInCategory = (Integer) flashcardJSON.get("ProgressinCategory");
-            JSONArray missedWords = (JSONArray) flashcardJSON.get("MissedWords");
-
-            // Convert the missed words JSON array into an ArrayList of Strings
-            ArrayList<String> result = convertJsonArrayToStringArray(missedWords);
-
-            // Create a new Progress object and populate its fields
-                // Progress progress = new Progress();
-                // progress.setTotalQuestionsAnswered(totalQuestionsAnswered);
-                // progress.setNumCorrectAnswers(numCorrectAnswers);
-                // progress.setCurrentCategory(currentCategory);
-                // progress.setProgressInCategory(progressInCategory);
-                // progress.setMissedWords(result);
-
-            // Add the Progress object to the progress list
-                // progressList.add(progress);
-        }
-
-    } catch (IOException | ParseException e) {
-        e.printStackTrace();  // Handle errors in reading or parsing the file
-    }
-
-    return progressList;  // Return the list of Progress objects
-}
-
-
-    public static List<Flashcards> loadCategorySystem() {
-        List<Flashcards> flashcards = new ArrayList<>();
-
-        // Try to read and parse the JSON file
-        try (FileReader reader = new FileReader(FILE_NAME_CATEGORY_SYSTEM)) {
-            JSONParser jsonParser = new JSONParser();
-            
-            // Parse the JSON array from the file
-            Object obj = jsonParser.parse(reader);
-            JSONArray flashcardList = (JSONArray) obj;
-
-            // Iterate through each JSON object in the array and convert it to a Flashcard
-            for (Object flashcardObject : flashcardList) {
-                JSONObject flashcardJSON = (JSONObject) flashcardObject;
-
-                String word = (String) flashcardJSON.get("word");
-                String translation = (String) flashcardJSON.get("translation");
-                String phrase = (String) flashcardJSON.get("phrase");
-                
-                // Create a new Flashcard object and add it to the list
-                Flashcards flashcard = new Flashcards(word, translation, phrase);
-                flashcards.add(flashcard);
-            }
-        }  catch (IOException | ParseException e) {
-            e.printStackTrace();  // Handle errors in reading or parsing the file
-        }
-
-        return flashcards;  // Return the list of flashcards
     }
 
     // Method to convert JSONArray to a String array
