@@ -12,13 +12,15 @@ public class Progress {
     private int numCorrectAnswers;
     private Category currentCategory;
     private int progressInCategory;
+    private int streak;
     private ArrayList<String> missedWords;
 
-    public Progress(int totalQuestionsAnswered, int numCorrectAnswers, Category currentCategory, int progressInCategory, ArrayList<String> missedWords) {
+    public Progress(int totalQuestionsAnswered, int numCorrectAnswers, Category currentCategory, int progressInCategory, ArrayList<String> missedWords, int streak) {
         this.totalQuestionsAnswered = totalQuestionsAnswered;
         this.numCorrectAnswers = numCorrectAnswers;
         this.currentCategory = currentCategory;
         this.progressInCategory = progressInCategory;
+        this.streak = streak;
         this.missedWords = new ArrayList<String>();
     }
 
@@ -121,5 +123,9 @@ public class Progress {
     public void saveProgress() {
         boolean savedProgress = DataWriter.saveProgress(this);
         System.out.println("Saving the user's progress");
-    }   
+    }  
+    
+    public int getStreak() {
+        return streak;
+    }
 }

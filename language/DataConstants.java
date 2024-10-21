@@ -35,9 +35,18 @@ public abstract class DataConstants {
     protected static final String MISSED_WORDS = "missedWords";
     protected static final String CATEGORY_WORDS = "words";
     protected static final String CATEGORY_WORD = "word";
-    protected static final String WORD_PRONINCIATION = "pronunciation";
-    protected static final String WORD_TRANSLATION = "translation";
+    //protected static final String WORD_PRONINCIATION = "pronunciation";
+    //protected static final String WORD_TRANSLATION = "translation";
     //Files for DataLoader - CATEGORY
+    //Files for DataLoader - WORDS
+    protected static final String FILE_NAME_WORDS = "PixelChicksProject/json/words.json";
+    protected static final String WORD = "word";
+    protected static final String WORD_PRONUNCIATION = "pronunciation";
+    protected static final String WORD_TRANSLATION = "translation";
+    protected static final String WORD_ALTERNATIVES = "alternatives";
+    //Files for DataLoader - PHRASES
     //Files for DataLoader - FLASHCARDS
+    //Files for DataLoader - FLASHCARDS
+
 
 }
