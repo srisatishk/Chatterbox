@@ -1,8 +1,37 @@
 {
     {
-        "words<>": ["What", "is", "the", "color", ],
-        "translation": 
-    }
+        "words<>": ["Strawberries" , "are", "red"],
+        "translation": [""]
+    },
+    {
+        "words<>": ["School", "buses" , "are", "yellow"],
+        "translation": [""]
+    },
+    {
+        "words<>": ["Black", "and", "white", "make", "gray"],
+        "translation": [""]
+    },
+
+
+
+    {
+        "words<>": ["two", "plus", "seven", "equals", "nine"],
+        "translation": [""]
+    },
+    {
+        "words<>": ["ten", "minus", "four", "equals", "six"],
+        "translation": [""]
+    },
+    {
+        "words<>": ["four", "times" ,"two", "equals" ,"eight"],
+        "translation": [""]
+    },
+
+    {
+        "words<>": ["When", "you", "are", "married", "you", "become", "husband", "and", "wife"],
+        "translation": [""]
+    },
+    
 }
 
 
