@@ -125,13 +125,122 @@
     
 //people
     {
-        "word": " izquierda" , 
+        "word": "Mama", 
         "pronunciation": ,
-        "translation": "left", 
-       "alternatives<>": [ "derecha" , "recto" , "atrás" , "cerca" , "lejos" ,"al lado de" , "frente a" ,"detrás de"]
+        "translation": "mom", 
+       "alternatives<>": ["Papa", "Hijo", "Hija", "Hermano", "Hermana", "Esposo", "Esposa", "abuelo", "abuela" ]
+    }
+    {
+        "word": "Papa", 
+        "pronunciation": ,
+        "translation": "dad", 
+       "alternatives<>": ["Mama", "Hijo", "Hija", "Hermano", "Hermana", "Esposo", "Esposa", "abuelo", "abuela" ]
+    }
+    {
+        "word": "Hijo", 
+        "pronunciation": ,
+        "translation": "son", 
+       "alternatives<>": ["Mama","Papa", "Hija", "Hermano", "Hermana", "Esposo", "Esposa", "abuelo", "abuela" ]
+    }
+    {
+        "word": "Hija", 
+        "pronunciation": ,
+        "translation": "daughter", 
+       "alternatives<>": ["Mama","Papa", "Hijo", "Hermano", "Hermana", "Esposo", "Esposa", "abuelo", "abuela" ]
+    }
+    {
+        "word": "Hermano", 
+        "pronunciation": ,
+        "translation": "Brother", 
+       "alternatives<>": ["Mama","Papa", "Hijo", "Hija", "Hermana", "Esposo", "Esposa", "abuelo", "abuela" ]
+    }
+    {
+        "word": "Hermana", 
+        "pronunciation": ,
+        "translation": "Sister", 
+       "alternatives<>":["Mama","Papa", "Hijo", "Hija", "Hermano","Esposo", "Esposa", "abuelo", "abuela" ]
+    }
+    {
+        "word": "Esposo", 
+        "pronunciation": ,
+        "translation": "Husband", 
+       "alternatives<>": ["Mama","Papa", "Hijo", "Hija", "Hermano", "Hermana", "Esposa", "abuelo", "abuela" ]
+    }
+    {
+        "word": "Esposa", 
+        "pronunciation": ,
+        "translation": "wife", 
+       "alternatives<>":["Mama","Papa", "Hijo", "Hija", "Hermano", "Hermana", "Esposo", "abuelo", "abuela" ]
+    }
+    {
+        "word": "abuelo", 
+        "pronunciation": , 
+        "translation": "grandfather", 
+       "alternatives<>": ["Mama","Papa", "Hijo", "Hija", "Hermano", "Hermana", "Esposo", "Esposa", "abuela" ]
+    }
+    {
+        "word": "abuela", 
+        "pronunciation": ,
+        "translation": "grandmother", 
+       "alternatives<>": ["Mama","Papa", "Hijo", "Hija", "Hermano", "Hermana", "Esposo", "Esposa", "abuelo"]
     }
 
+    
     //weather 
+    {
+        "word": "el grado" , 
+        "pronunciation": "grah-doh",
+        "translation": "degree", 
+        "alternatives<>": 
+    }
+    {
+        "word": "el tiempo" , 
+        "pronunciation": "tyehm-poh",
+        "translation": "weather", 
+        "alternatives<>": 
+    }
+    {
+        "word": "la temperatura" , 
+        "pronunciation": "tehm-peh-rah-too-rah",
+        "translation": "temperature", 
+        "alternatives<>": 
+    }
+    {
+        "word": "la primavera" , 
+        "pronunciation": "pree-mah-beh-rah",
+        "translation": "spring", 
+        "alternatives<>": 
+    }
+    {
+        "word": "el verano" , 
+        "pronunciation": "beh-rah-noh",
+        "translation": "summer", 
+        "alternatives<>": 
+    }
+    {
+        "word": "el invierno" , 
+        "pronunciation": "enn-byehr-noh",
+        "translation": "winter", 
+    "alternatives<>": 
+    }
+    {
+        "word": "detrás de" , 
+        "pronunciation": ,
+        "translation": "behind", 
+    "alternatives<>": 
+    }
+    {
+        "word": "detrás de" , 
+        "pronunciation": ,
+        "translation": "behind", 
+    "alternatives<>": 
+    }
+    {
+        "word": "detrás de" , 
+        "pronunciation": ,
+        "translation": "behind", 
+    "alternatives<>": 
+    }
     {
         "word": "detrás de" , 
         "pronunciation": ,
