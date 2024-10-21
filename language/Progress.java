@@ -1,6 +1,7 @@
 package language;
     
 import java.util.ArrayList;
+import java.time.LocalDate;
 /**
  * @author gracie
  */
@@ -13,6 +14,7 @@ public class Progress {
     private Category currentCategory;
     private int progressInCategory;
     private int streak;
+    private LocalDate loginDate;
     private ArrayList<String> missedWords;
 
     public Progress(int totalQuestionsAnswered, int numCorrectAnswers, Category currentCategory, int progressInCategory, ArrayList<String> missedWords, int streak) {
@@ -57,9 +59,20 @@ public class Progress {
      * tracks the user's daily participation
      */
     public void trackDaily() {
-        streak++;
-        System.out.print("Tracking the user's daily progress");
+        LocalDate today = LocalDate.now();
+        if (loginDate != null) {
+            long daysSinceLogin = java.time.temporal.ChronoUnit.DAYS.between(loginDate, today);
+            if (daysSinceLogin == 1) {
+                streak++;
+            }
+            else if (daysSinceLogin > 1 ) {
+                streak = 0;
+            }
+        }
+        loginDate = today;
+        System.out.print("Tracking the user's daily progress. Current streak: streak");
     }
+    
 
     /**
      * trackPercentCorrect method
@@ -122,10 +135,12 @@ public class Progress {
      */
     public void saveProgress() {
         boolean savedProgress = DataWriter.saveProgress(this);
-        System.out.println("Saving the user's progress");
+        
     }  
     
     public int getStreak() {
         return streak;
     }
+
+
 }
