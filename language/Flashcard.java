@@ -11,7 +11,7 @@ package language;
  * This class is designed to be used in a language learning app.
  */
 
-public class Flashcards {
+public class Flashcard {
 
     /** The word or term on the flashcard in the target language. */
     private String word;
@@ -29,7 +29,7 @@ public class Flashcards {
      * @param translation The translation of the word in the learner's native language.
      * @param phrase An example phrase using the word for contextual understanding.
      */
-    public Flashcards(String word, String translation, String phrase) {
+    public Flashcard(String word, String translation, String phrase) {
         this.word = word;
         this.translation = translation;
         this.phrase = phrase;
@@ -113,22 +113,4 @@ public class Flashcards {
         System.out.println(toString());
     }
 
-    /**
-     * Main method for testing the Flashcards class.
-     * Creates and displays Flashcard objects with word, translation, and example phrases.
-     * 
-     * @param args Command-line arguments (not used).
-     */
-    public static void main(String[] args) {
-        // Create flashcard objects
-        Flashcards flashcard1 = new Flashcards("Bonjour", "Hello", "Bonjour! Je m'appelle Pierre.");
-        Flashcards flashcard2 = new Flashcards("Hola", "Hello", "Hola! Me llamo Juan.");
-
-        // Display flashcard details
-        System.out.println("Flashcard 1: ");
-        flashcard1.showFlashcard();
-
-        System.out.println("\nFlashcard 2: ");
-        flashcard2.showFlashcard();
-    }
 }
