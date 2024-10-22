@@ -4,6 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashMap;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -60,6 +61,31 @@ public class DataWriter extends DataConstants {
 		userDetails.put(USER_PHONE_NUMBER, user.getPhoneNumber());
         userDetails.put(USER_DATE_OF_BIRTH, user.getDateOfBirth());
         userDetails.put(USER_PASSWORD, user.getPassword());
+        JSONArray languagesJSON = new JSONArray();
+        HashMap<Language, Progress> languages = user.getLanguages();
+        for (Language language : languages.keySet()) {
+            JSONObject languageJSON = new JSONObject();
+            languageJSON.put(LANGUAGE_ID, language.getLanguageID().toString());
+            languageJSON.put(LANGUAGE, Language.getLanguage());
+
+            Progress progress = languages.get(language);
+            JSONObject progressJSON = new JSONObject();
+            progressJSON.put(TOT_QUESTIONS_ANSWERED, progress.getTotalQuestionsAnswered());
+            progressJSON.put(NUM_CORRECT_ANSWERS, progress.getNumCorrectAnswers());
+            progressJSON.put(CURRENT_CATEGORY,progress.currentCategory());
+            progressJSON.put(PROGRESS_IN_CATEGORY, progress.progressInCategory());
+            progressJSON.put(USER_STREAK, progress.getStreak());
+
+            JSONArray missedWordsJSON = new JSONArray();
+            List<String> missedWords = progress.getMissedWords();
+            for (String missedWord : missedWords) {
+                missedWordsJSON.add(missedWord);
+            }
+            progressJSON.put(MISSED_WORDS, missedWordsJSON);
+
+            languageJSON.put(PROGRESS, progressJSON);
+            languagesJSON.add(languageJSON);
+        }
 
         return userDetails;
     }

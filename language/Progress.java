@@ -17,7 +17,7 @@ public class Progress {
     private LocalDate loginDate;
     private ArrayList<String> missedWords;
 
-    public Progress(int totalQuestionsAnswered, int numCorrectAnswers, Category currentCategory, int progressInCategory, ArrayList<String> missedWords, int streak) {
+    public Progress(int totalQuestionsAnswered, int numCorrectAnswers, String currentCategory2, int progressInCategory, int streak2, ArrayList<String> missedWords2) {
         this.totalQuestionsAnswered = totalQuestionsAnswered;
         this.numCorrectAnswers = numCorrectAnswers;
         this.currentCategory = currentCategory;
@@ -26,6 +26,7 @@ public class Progress {
         this.missedWords = new ArrayList<String>();
     }
 
+
     public int getTotalQuestionsAnswered() {    
         return totalQuestionsAnswered;
     }
@@ -33,6 +34,10 @@ public class Progress {
     public void setTotalQuestionsAnswered(int totalQuestionsAnswered) {
         this.totalQuestionsAnswered = totalQuestionsAnswered;
 
+    }
+
+    public int getNumCorrectAnswers() {
+        return numCorrectAnswers;
     }
 
      /**

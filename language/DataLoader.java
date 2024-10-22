@@ -40,8 +40,30 @@ public class DataLoader extends DataConstants{
             dateOfBirth = LocalDate.parse(dobString, formatter);
             String username = (String)userJSON.get(USER_USERNAME);
             String password = (String)userJSON.get(USER_PASSWORD);
-            String 
             User newUser = new User(id, firstName, lastName, email, phoneNumber, dateOfBirth, username, password);
+            JSONArray languagesJSON = (JSONArray) userJSON.get(USER_LANGUAGES);
+            for (int j = 0; j < languagesJSON.size(); j++) {
+                JSONObject languageJSON = (JSONObject) languagesJSON.get(j);
+                UUID languageID = UUID.fromString(String.valueOf(languageJSON.get(LANGUAGE_ID)));
+                String language = (String)languageJSON.get(LANGUAGE);
+
+                Language languageAt = new Language(languageID, language);
+
+                JSONObject progressJSON = (JSONObject)languageJSON.get(PROGRESS);
+                int totalQuestionsAnswered = ((Long) progressJSON.get(TOT_QUESTIONS_ANSWERED)).intValue();
+                int numCorrectAnswers = ((Long) progressJSON.get(NUM_CORRECT_ANSWERS)).intValue();
+                String currentCategory = (String)progressJSON.get(CURRENT_CATEGORY);
+                int progressInCategory = ((Long) progressJSON.get(PROGRESS_IN_CATEGORY)).intValue();
+                int streak = ((Long) progressJSON.get(USER_STREAK)).intValue();
+                JSONArray missedWordsJSON = (JSONArray)languageJSON.get(MISSED_WORDS);
+                ArrayList<String> missedWords = new ArrayList<>();
+                for (Object word : missedWordsJSON) {
+                    missedWords.add((String) word);
+                }
+
+                Progress progressAt = new Progress(totalQuestionsAnswered, numCorrectAnswers, currentCategory, progressInCategory, streak, missedWords);
+                newUser.getLanguages().put(languageAt, progressAt);
+            }
             userList.add(newUser);
         }   
         return userList;
@@ -51,6 +73,7 @@ public class DataLoader extends DataConstants{
     }
     return null;
 }
+
 
 public static ArrayList<Language> getLanguages () {
     ArrayList<Language> languageList = new ArrayList<Language>();
