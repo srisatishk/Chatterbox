@@ -20,10 +20,6 @@ public class DataWriter extends DataConstants {
    /** 
     * Path to the JSON file where user data will be written.
     */
-<<<<<<< HEAD
-   private static final String FILE_PATH = "json/data.json";
-=======
->>>>>>> 20e453dff83ef8f61f249928b330302b899a8ca0
 
 
        /**
@@ -124,18 +120,12 @@ public static void writeFlashcards(List<Flashcard> flashcards) {
         }
 
         // Write the JSON array to the file
-<<<<<<< HEAD
-        try {
-            FileWriter file = new FileWriter(FILE_PATH);
-=======
         try (FileWriter file = new FileWriter(FILE_NAME_FLASHCARDS)) {
->>>>>>> 20e453dff83ef8f61f249928b330302b899a8ca0
             file.write(flashcardList.toJSONString());  // Write JSON data to file
             file.flush();  // Ensure all data is written
         } catch (IOException e) {
             e.printStackTrace();  // Handle errors in writing to the file
         }
-<<<<<<< HEAD
     }
 
     public static JSONObject getFlashcard(Flashcard card){
@@ -158,8 +148,7 @@ public static void writeFlashcards(List<Flashcard> flashcards) {
 
         writeFlashcards(cards);
     }
-=======
-   }
+   
 
    @SuppressWarnings("unchecked")
    public static void writeUsers(List<User> users) {
@@ -184,5 +173,4 @@ public static void writeFlashcards(List<Flashcard> flashcards) {
             e.printStackTrace();
         }
    }
->>>>>>> 20e453dff83ef8f61f249928b330302b899a8ca0
 }
