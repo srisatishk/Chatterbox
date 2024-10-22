@@ -11,17 +11,17 @@ public class LanguageList {
    // private LanguageList languagelist; 
     private String language; 
     private ArrayList<Category> categories; 
-    private ArrayList<Word> wordlist; 
+    private ArrayList<Word> wordList; 
     private ArrayList<String> languages; 
-    private ArrayList<Phrase> phraselist; 
+    private ArrayList<Phrase> phraseList; 
 
   
-    public void LanguageList()
+    public LanguageList()
     { 
        this.categories = new ArrayList<>(); 
-       this.wordlist =new ArrayList<>(); 
+       this.wordList =new ArrayList<>(); 
        this.languages = new ArrayList<>(); 
-       this.phraselist = new ArrayList<>(); 
+       this.phraseList = new ArrayList<>(); 
     }
     public String toString()
     { 
@@ -29,15 +29,31 @@ public class LanguageList {
     }
     public void listLanguages()
     { 
-        return; 
+        System.out.println("The available languages are" + languages); 
     }
     public ArrayList<String> chooseLanguage () 
     { 
-        return languages; 
+        return new ArrayList<>(languages); 
+    }
+    public void listCategories()
+    { 
+        System.out.println("The available languages are" + categories); 
+    }
+    public ArrayList<Category> chooseCatergory() 
+    { 
+        return new ArrayList<>(categories); 
     }
     public ArrayList<String> getLanguage () 
     { 
-        return languages; 
+        return new ArrayList<>(languages);
+    }
+    public ArrayList<Word> getwordlist () 
+    { 
+        return new ArrayList<>(wordList);
+    }
+    public ArrayList<Phrase> getphraselist () 
+    { 
+        return new ArrayList<>(phraseList);
     }
 
 }
