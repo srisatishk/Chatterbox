@@ -87,6 +87,7 @@ public class DataWriter extends DataConstants {
             languagesJSON.add(languageJSON);
         }
 
+        userDetails.put(USER_LANGUAGES,languagesJSON);
         return userDetails;
     }
 
