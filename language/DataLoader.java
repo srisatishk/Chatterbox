@@ -47,7 +47,8 @@ public class DataLoader extends DataConstants{
                 UUID languageID = UUID.fromString(String.valueOf(languageJSON.get(LANGUAGE_ID)));
                 String language = (String)languageJSON.get(LANGUAGE);
 
-                Language languageAt = new Language(languageID, language);
+                //Language languageAt = new Language(languageID, language);
+                Language languageAt = LanguageList.getInstance();
 
                 JSONObject progressJSON = (JSONObject)languageJSON.get(PROGRESS);
                 int totalQuestionsAnswered = ((Long) progressJSON.get(TOT_QUESTIONS_ANSWERED)).intValue();
@@ -61,10 +62,8 @@ public class DataLoader extends DataConstants{
                     missedWords.add((String) word);
                 }
 
-<<<<<<< HEAD
     public static List<Flashcard> loadFlashcards() {
         List<Flashcard> flashcards = new ArrayList<>();
-=======
                 Progress progressAt = new Progress(totalQuestionsAnswered, numCorrectAnswers, currentCategory, progressInCategory, streak, missedWords);
                 newUser.getLanguages().put(languageAt, progressAt);
             }
@@ -72,14 +71,15 @@ public class DataLoader extends DataConstants{
         }   
         return userList;
 
-    } catch (Exception e) {
+    } 
+    catch (Exception e) {
         e.printStackTrace();
     }
     return null;
 }
 
 
-public static ArrayList<Language> getLanguages () {
+public static ArrayList<Language> getLanguages() {
     ArrayList<Language> languageList = new ArrayList<Language>();
     try {
         FileReader reader = new FileReader(FILE_NAME_CATEGORY);
@@ -136,7 +136,6 @@ public static void main(String[] args) {
 // Loads the list of flashcards
     public static List<Flashcards> loadFlashcards() {
         List<Flashcards> flashcards = new ArrayList<>();
->>>>>>> 20e453dff83ef8f61f249928b330302b899a8ca0
 
         // Try to read and parse the JSON file
         try (FileReader reader = new FileReader(FILE_NAME_FLASHCARDS)) {
@@ -196,7 +195,6 @@ public static void main(String[] args) {
         return questionsList;  // Return the list of questions
     }
 
-<<<<<<< HEAD
     
 /**
  * Loads the progress data for the user from a JSON file and returns it as a list of Progress objects.
@@ -280,8 +278,6 @@ public static List<Progress> loadProgress() {
         return flashcards;  // Return the list of flashcards
     }
 
-=======
->>>>>>> 20e453dff83ef8f61f249928b330302b899a8ca0
     // Method to convert JSONArray to a String array
      private static ArrayList<String> convertJsonArrayToStringArray(JSONArray jsonArray) {
         // Create a String array with the same size as the JSONArray
@@ -296,4 +292,9 @@ public static List<Progress> loadProgress() {
         return missedWords;
     }
         
+}
+
+
+
+
 }

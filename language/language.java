@@ -15,6 +15,9 @@ public class Language {
         this.progressInCategory = progressInCategory; 
         this.translations = new ArrayList<>();
     }
+    public Language(UUID languageID2, String language, String title, String question, Category newCategory) {
+        //TODO Auto-generated constructor stub
+    }
     //language ID is a random UUID
     public UUID getLanguageID() 
     {

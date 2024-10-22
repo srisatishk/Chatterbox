@@ -1,6 +1,7 @@
 package language;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 /** @author grace 
  * 
@@ -14,7 +15,6 @@ public class LanguageList {
     private ArrayList<Word> wordList; 
     private ArrayList<String> languages; 
     private ArrayList<Phrase> phraseList; 
-
   
     public LanguageList()
     { 
@@ -56,6 +56,10 @@ public class LanguageList {
     public ArrayList<Phrase> getphraselist () 
     { 
         return new ArrayList<>(phraseList);
+    }
+    public static Language getInstance(UUID languageID) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getInstance'");
     }
 
 }
