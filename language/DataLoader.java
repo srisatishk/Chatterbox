@@ -303,6 +303,18 @@ public static List<Progress> loadProgress() {
         
 }
 
+    // public static ArrayList<Category> getCategory() {
+    // }
+
+    // public static ArrayList<Word> getwordlist() {
+    // }
+
+    public static ArrayList<language> getLanguages() {
+    }
+
+    // public static ArrayList<Phrase> getphraselist() {
+    // }
+
 
 
 
