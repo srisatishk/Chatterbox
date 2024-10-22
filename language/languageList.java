@@ -25,7 +25,9 @@ public class LanguageList {
     }
     public String toString()
     { 
-        return language; 
+        return "Current Language: " + language + "\nAvailable Languages: " + languages + 
+               "\nCategories: " + categories + "\nWords: " + wordList + 
+               "\nPhrases: " + phraseList; 
     }
     public void listLanguages()
     { 
