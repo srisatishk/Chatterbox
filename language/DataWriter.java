@@ -101,4 +101,28 @@ public static void writeFlashcards(List<Flashcards> flashcards) {
             e.printStackTrace();  // Handle errors in writing to the file
         }
    }
+
+   @SuppressWarnings("unchecked")
+   public static void writeUsers(List<User> users) {
+        JSONArray userList = new JSONArray();
+        for (User user : users) {
+            JSONObject userDetails = new JSONObject();
+            userDetails.put("id", user.getId().toString());
+            userDetails.put("firstName", user.getFirstName());
+            userDetails.put("lastName", user.getLastName());
+            userDetails.put("email", user.getEmail());
+            userDetails.put("phoneNumber", user.getPhoneNumber());
+            userDetails.put("dateOfBirth", user.getDateOfBirth().toString());
+            userDetails.put("username", user.getUsername());
+            userDetails.put("password", user.getPassword());
+            userList.add(userDetails);
+        }
+
+        try (FileWriter file = new FileWriter(FILE_NAME_USER_INTERFACE)) {
+            file.write(userList.toJSONString());
+            file.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+   }
 }

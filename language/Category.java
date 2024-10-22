@@ -47,11 +47,18 @@ public class Category{
         return "";
     }
 
-    public void listCategories(ArrayList<Category> categories){
-        System.out.println("Categories to choose from:");
-        for(Category category : categories){
-            System.out.println(category.course);
-        }
+     /**
+     * Method to return available category names
+     */
+    public ArrayList<String> getAvailableCategory() {
+        ArrayList<String> categories = new ArrayList<>();
+        categories.add("Words");
+        categories.add("Phrases");
+        categories.add("Mock Conversations");
+        categories.add("Fill in the Blank");
+        categories.add("Flashcards");
+        categories.add("Matching");
+        return categories;
     }
 
     public String chooseCategory(ArrayList<String> categoryNames){
@@ -78,7 +85,7 @@ public class Category{
         }
         // show which category the user chose
         String selectedCategory = categoryNames.get(choice - 1);
-        System.out.println("You have chosen: " + selectedCategory);
+        System.out.println("Curreny Category: " + selectedCategory);
         return selectedCategory;
     }
 
@@ -86,17 +93,17 @@ public class Category{
         System.out.println( course + " saved successfully!");
     }
 
-    public static void main(String[] args) {
-        ArrayList<String> categories = new ArrayList<>();
-        categories.add("Words");
-        categories.add("Phrases");
-        categories.add("Mock Conversations");
-        categories.add("Fill in the Blank");
-        categories.add("Flashcards");
-        categories.add("Matching");
+    // public static void main(String[] args) {
+    //     ArrayList<String> categories = new ArrayList<>();
+    //     categories.add("Words");
+    //     categories.add("Phrases");
+    //     categories.add("Mock Conversations");
+    //     categories.add("Fill in the Blank");
+    //     categories.add("Flashcards");
+    //     categories.add("Matching");
 
-        Category category = new Category("", new ArrayList<Question>(), new Story());
-        category.chooseCategory(categories);
-    }
+    //     Category category = new Category("", new ArrayList<Question>(), new Story());
+    //     category.chooseCategory(categories);
+    // }
 
 }
