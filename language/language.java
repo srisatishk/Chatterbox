@@ -6,21 +6,15 @@ import java.util.UUID;
 public class language {
     private UUID languageID;
     private ArrayList<Category> categories;
-    private language language; 
 
     public language(UUID languageID) {
         this.languageID = UUID.randomUUID();
         this.categories = new ArrayList<>();
-        this.language = new language; 
     }
     //language ID is a random UUID
     public UUID getLanguageID() 
     {
         return languageID;
-    }
-    public language getLanguage()
-    { 
-        return language;
     }
     public ArrayList<Category> getCatergories() 
     {
