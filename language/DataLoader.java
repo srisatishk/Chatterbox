@@ -47,7 +47,8 @@ public class DataLoader extends DataConstants{
                 UUID languageID = UUID.fromString(String.valueOf(languageJSON.get(LANGUAGE_ID)));
                 String language = (String)languageJSON.get(LANGUAGE);
 
-                Language languageAt = new Language(languageID, language);
+                //Language languageAt = new Language(languageID, language);
+                Language languageAt = LanguageList.getInstance();
 
                 JSONObject progressJSON = (JSONObject)languageJSON.get(PROGRESS);
                 int totalQuestionsAnswered = ((Long) progressJSON.get(TOT_QUESTIONS_ANSWERED)).intValue();
@@ -70,14 +71,15 @@ public class DataLoader extends DataConstants{
         }   
         return userList;
 
-    } catch (Exception e) {
+    } 
+    catch (Exception e) {
         e.printStackTrace();
     }
     return null;
 }
 
 
-public static ArrayList<Language> getLanguages () {
+public static ArrayList<Language> getLanguages() {
     ArrayList<Language> languageList = new ArrayList<Language>();
     try {
         FileReader reader = new FileReader(FILE_NAME_CATEGORY);
@@ -299,4 +301,9 @@ public static List<Progress> loadProgress() {
         return missedWords;
     }
         
+}
+
+
+
+
 }

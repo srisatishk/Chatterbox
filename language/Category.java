@@ -18,6 +18,11 @@ public class Category{
         this.story = story;
     }
 
+    public Category(String currentCategory, int totalQuestionsAnswered, int progressInCategory, int numCorrectAnswers,
+            ArrayList<String> missedWords) {
+        //TODO Auto-generated constructor stub
+    }
+
     // Getters and setters
     public String getCourse() {
         return course;
