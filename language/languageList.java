@@ -1,6 +1,7 @@
 package language;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 /** @author grace 
  * 
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 public class LanguageList {
 
    // private LanguageList languagelist; 
+   private UUID userID;
     private String language; 
     private ArrayList<Category> categories; 
     private ArrayList<Word> wordList; 
@@ -56,6 +58,23 @@ public class LanguageList {
     public ArrayList<Phrase> getphraselist () 
     { 
         return new ArrayList<>(phraseList);
+    }
+
+    
+    private static LanguageList languageList; 
+
+    public static LanguageList getInstance()
+    { 
+        if (languageList == null)
+        { 
+            languageList = new LanguageList();
+        }
+        return languageList;
+    }
+
+    public UUID getuserID()
+    { 
+        return getuserID();
     }
 
 }
