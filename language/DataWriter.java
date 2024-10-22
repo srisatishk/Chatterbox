@@ -92,7 +92,7 @@ public class DataWriter extends DataConstants {
         return userDetails;
     }
 
-    public static void saveProgress() {
+    public static void saveProgress(Progress progress) {
 
     }
 

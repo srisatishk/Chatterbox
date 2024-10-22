@@ -16,14 +16,28 @@ public class LanguageList {
     private ArrayList<Word> wordList; 
     private ArrayList<String> languages; 
     private ArrayList<Phrase> phraseList; 
-  
-    public LanguageList()
+    private static LanguageList languageList; 
+
+    //load content from json
+    private LanguageList()
     { 
        this.categories = new ArrayList<>(); 
        this.wordList =new ArrayList<>(); 
        this.languages = new ArrayList<>(); 
        this.phraseList = new ArrayList<>(); 
     }
+
+    
+
+    public static LanguageList getInstance()
+    { 
+        if (languageList == null)
+        { 
+            languageList = new LanguageList();
+        }
+        return languageList;
+    }
+
     public String toString()
     { 
         return "Current Language: " + language + "\nAvailable Languages: " + languages + 
@@ -58,22 +72,8 @@ public class LanguageList {
     { 
         return new ArrayList<>(phraseList);
     }
-    public static Language getInstance(UUID languageID) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getInstance'");
-    }
-
     
-    private static LanguageList languageList; 
-
-    public static LanguageList getInstance()
-    { 
-        if (languageList == null)
-        { 
-            languageList = new LanguageList();
-        }
-        return languageList;
-    }
+    
 
     public UUID getuserID()
     { 

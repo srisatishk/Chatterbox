@@ -4,7 +4,7 @@ import java.util.ArrayList;
 /**
  * @author zaniah and grace 
  */
-public class Word extends Question{
+public class Word {
     /**
      * attributes for word class
      */

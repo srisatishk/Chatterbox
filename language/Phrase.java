@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * @author zaniah ang grace 
  */
-public class Phrase extends Question {
+public class Phrase {
     /**
      * attributes for phrase class
      */

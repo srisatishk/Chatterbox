@@ -117,6 +117,12 @@ public class Progress {
         return progressInCategory;
     }
 
+     //the progress in the category keeps going up//
+     public void progressInLanguage()
+     { 
+         // how many catergories they complete 
+        progressInCategory++; 
+     }
      /**
      * getMissedWords method
      * @return the list of missed words
