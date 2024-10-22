@@ -91,7 +91,7 @@ public class UserList {
             return false;
         }
 
-        User newUser = new User(id, firstName, lastName, email, username, null, password, 0);
+        User newUser = new User(id, firstName, lastName, email, username, null, password);
         users.add(newUser);
         return true;
     }
