@@ -1,4 +1,4 @@
-{
+[
     {
         "translation": ["Strawberries" , "are", "red"],
         "words<>":  ["Las", "fresas", "son", "rojas"]
@@ -66,13 +66,13 @@
     },
     {
         "translation":["There", "are", "animals", "at", "the", "zoo"],
-        "words<>":  ["Hay", "animales", "en", "el", "zoológico"],
+        "words<>":  ["Hay", "animales", "en", "el", "zoológico"]
     },
     {
         "translation": ["I", "can", "not", "wait", "to", "get", "to", "the" ,"airport"],
         "words<>":["No", "puedo", "esperar", "a", "llegar", "al", "avión"]
-    },
-}
+    }
+]
 
 
 
