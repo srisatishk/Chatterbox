@@ -44,16 +44,39 @@ public class CategorySystemFacade {
      * @return true or false if they were successfully added
      */
     public boolean addUser(){
-        return true;
+        UserList userList = UserList.getInstance();
+        String username = user.getUsername();
+
+        if(userList.getUser(username) != null){
+            return false;
+        }
+
+        boolean adduser = userList.addUser(user.getFirstName(), user.getLastName(), user.getEmail(),
+                                         user.getUsername(), user.getPassword());
+        
+        if(adduser)
+         return true;
+        else{
+            return false;
+        } 
     }
 
-    /**
+    /** 
      * login method
      * user can login if they already have an account
      * @return true or false if login is successful
      */
-    public boolean login(){
-        return true;
+    public boolean login(String username, String password){
+        UserList userList = UserList.getInstance();
+        String userLogin = userList.getUser(username);
+
+        if (userLogin == null)
+        {
+            return false;
+        }
+
+        if(userLogin.getPassword().equals(password))
+        
     }
 
     /**
@@ -62,15 +85,16 @@ public class CategorySystemFacade {
      * @return the category that the user chose
      */
     public List<String> getCategory(){
-        return null;
+        
     }
 
     /**
      * getProgress method
      * @return the user progress
      */
-    public Progress getProgress(){
-        return null;
+
+    public Language getProgress(){
+    
     }
 
     /**

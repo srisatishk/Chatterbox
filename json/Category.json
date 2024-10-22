@@ -3,7 +3,7 @@
 "id" : 1,
 "languageID" : 1,
 "language" : "French",
-"title" : "numbers",
+"course" : "numbers",
 "question" : "Would you like to read a fun story or play a cool game?",
 "fillintheBlank": [
     {
@@ -22,7 +22,7 @@
 "id" : 2,
 "languageID" : 2,
 "language" : "Spanish",
-"title" : "colors",
+"course" : "colors",
 "question" : "Would you like to read a fun story or play a cool game?",
 "flashcard": [
     {
