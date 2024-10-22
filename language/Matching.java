@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Matching extends Question{
 
     private ArrayList<String> imageList;
-    private ArrayList<String> wordlst;  
+    private ArrayList<String> wordList;  
     
 
     public String getImageList(){
@@ -19,12 +19,12 @@ public class Matching extends Question{
     }
     public String setImageList() 
     {
-        return null; 
+        this.imageList = imageList;
 
     }
     public String setWordList()
     {
-        return null; 
+        this.wordList = wordList;
         
     }
 } 

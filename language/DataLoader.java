@@ -48,7 +48,7 @@ public class DataLoader extends DataConstants{
                 String language = (String)languageJSON.get(LANGUAGE);
 
                 //Language languageAt = new Language(languageID, language);
-                Language languageAt = LanguageList.getInstance();
+                LanguageList languageAt = LanguageList.getInstance();
 
                 JSONObject progressJSON = (JSONObject)languageJSON.get(PROGRESS);
                 int totalQuestionsAnswered = ((Long) progressJSON.get(TOT_QUESTIONS_ANSWERED)).intValue();
