@@ -20,10 +20,6 @@ public class DataWriter extends DataConstants {
    /** 
     * Path to the JSON file where user data will be written.
     */
-<<<<<<< HEAD
-   private static final String FILE_PATH = "json/data.json";
-=======
->>>>>>> 20e453dff83ef8f61f249928b330302b899a8ca0
 
 
        /**

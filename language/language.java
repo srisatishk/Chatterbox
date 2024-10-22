@@ -9,7 +9,7 @@ public class Language {
     private int progressInCategory; 
     private ArrayList<Word> translations;
 
-    public Language(UUID languageID, String currentCategory, int progressInCategory) {
+    public Language(UUID languageID, Category currentCategory, int progressInCategory) {
         this.languageID = UUID.randomUUID();
         this.currentCategory = currentCategory;
         this.progressInCategory = progressInCategory; 
@@ -35,11 +35,6 @@ public class Language {
         return new ArrayList<>(translations);
         // Return the list of translations
         
-    }
-    public void getTranslation(Word, translation)
-    {
-        //how would i do this? 
-        //all the translations are in the json file 
     }
 
 

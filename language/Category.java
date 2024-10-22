@@ -52,12 +52,11 @@ public class Category{
      */
     public ArrayList<String> getAvailableCategory() {
         ArrayList<String> categories = new ArrayList<>();
-        categories.add("Words");
-        categories.add("Phrases");
-        categories.add("Mock Conversations");
-        categories.add("Fill in the Blank");
-        categories.add("Flashcards");
-        categories.add("Matching");
+        categories.add("Numbers");
+        categories.add("Colors");
+        categories.add("People");
+        categories.add("Weather");
+        categories.add("Places");
         return categories;
     }
 
