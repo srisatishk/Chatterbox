@@ -1,7 +1,10 @@
 package language;
 import java.time.LocalDate;
-import java.util.HashMap;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.UUID;
+import java.util.ArrayList;
+import java.util.HashMap;
 /**
  * @author sri
  */
@@ -17,17 +20,26 @@ public class User{
     private LocalDate dateOfBirth;
     private String username;
     private String password;
-    private HashMap<language, Progress> languages;
-    private int streak;
+    private HashMap<Language,Progress> languages;
 
-    public User(String firstName, String lastName, String email){
-        this.id = UUID.randomUUID();
+    public User(UUID id, String firstName, String lastName, String email, String phoneNumber, LocalDate dateOfBirth, String username, String password){
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        this.languages = new HashMap<>();
-        this.streak = 0; 
+        this.dateOfBirth = dateOfBirth;
+        this.username = username;
+        this.password = password;
+        this.languages = new HashMap <>();
+    }
+
+    public User(UUID id, String firstName, String lastName, String email, String username, LocalDate dateOfBirth, String password) {
+        this(id, firstName, lastName, email, "", dateOfBirth, username, password);
+    }
+
+    public UUID getId() {
+        return id;
     }
 
     public String getFirstName() {
@@ -101,27 +113,21 @@ public class User{
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(int year, int month, int day) {
-        this.dateOfBirth = calculateDateOfBirth(year, month, day);
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
-    private LocalDate calculateDateOfBirth(int year, int month, int day) {
-        if (year >= 1900 && year <= LocalDate.now().getYear() && month >= 1 && month <= 12) {
-            boolean isLeapYear = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
-            int maxDays = (month == 2 && isLeapYear) ? 29 : (month == 2) ? 28 : (month == 4 || month == 6 || month == 9 || month == 11) ? 30 : 31;
-            if (day >= 1 && day <= maxDays) {
-                return LocalDate.of(year, month, day);
-            }
-        }
-        return LocalDate.of(2000, 1, 1); 
+    public String getFormattedDateOfBirth() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        return dateOfBirth.format(formatter);
     }
 
-    public int getStreak(){
-        return streak;
-    }
-
-    public HashMap<language, Progress> getLanguages(){
+    public HashMap<Language, Progress> getLanguages(){
         return languages;
+    }
+
+    public void setLanguages(HashMap<Language, Progress> langugages) {
+        this.languages = languages;
     }
 
     public void forgotPassword(String newPassword){

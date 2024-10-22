@@ -1,5 +1,7 @@
 package language;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 /**
  * @author zaniah
@@ -51,12 +53,13 @@ public class CategorySystemFacade {
             return false;
         }
 
-        boolean adduser = userList.addUser(user.getFirstName(), user.getLastName(), user.getEmail(),
-                                         user.getUsername(), user.getPassword());
-        
+        boolean adduser = userList.addUser(user.getFirstName(), user.getLastName(), user.getEmail(), user.getUsername(), user.getPassword());
         if(adduser)
-         return true;
-        else{
+        {
+            return true;
+        }
+        else
+        {
             return false;
         } 
     }
@@ -68,15 +71,23 @@ public class CategorySystemFacade {
      */
     public boolean login(String username, String password){
         UserList userList = UserList.getInstance();
-        String userLogin = userList.getUser(username);
+        User user = userList.getUser(username);
 
-        if (userLogin == null)
+        if (user == null)
         {
+            System.out.println("User not found.");
             return false;
         }
-
-        if(userLogin.getPassword().equals(password))
-        
+        if(user.getPassword().equals(password)){
+            this.user = user; 
+            return true;
+        }
+        //if user exists but enters an invalid password
+        else
+        {
+            System.out.println("Invalid password.");
+            return false;
+        }        
     }
 
     /**
@@ -85,7 +96,20 @@ public class CategorySystemFacade {
      * @return the category that the user chose
      */
     public List<String> getCategory(){
-        
+        LanguageList languageList = new LanguageList();
+        List<Category> categories = languageList.chooseCategories();
+
+        List<String> categoryNames = new ArrayList<>();
+
+        if (categories != null) { 
+        for (Category category : categories) {
+            if (category != null) {
+                categoryNames.add(category.toString()); 
+            }
+        }
+        }
+
+        return categoryNames;
     }
 
     /**
@@ -93,8 +117,11 @@ public class CategorySystemFacade {
      * @return the user progress
      */
 
-    public Language getProgress(){
-    
+    public Progress getProgress(){
+        if (this.progress == null) {
+            System.out.println("No progress has been made yet.");
+        }
+        return this.progress;
     }
 
     /**
@@ -102,7 +129,7 @@ public class CategorySystemFacade {
      * @return the language the user wants to study
      */
     public Language getLanguage(){
-        return null;
+        return this.language;
     }
 
     /**
@@ -111,7 +138,10 @@ public class CategorySystemFacade {
      * @return phrase for the user to learn in diff language
      */
     public List<Phrase> getPhraseList(){
-        return null;
+        LanguageList languageList = new LanguageList();
+        //we need to implement phrase list in language list
+        List<Phrase> phraseList = languageList.phraseList();
+        return phraseList;
     }
 
     /**
@@ -120,7 +150,14 @@ public class CategorySystemFacade {
      * @return
      */
     public List<Word> getWordList(){
-        return null;
+        List<Word> wordList = new ArrayList<>();
+
+        if (wordList != null) 
+        {
+            wordList.add(this.words); 
+        }
+
+        return wordList;
     }
 
     /**
@@ -128,7 +165,7 @@ public class CategorySystemFacade {
      * @return languages
      */
     public List<Language> getLanguageList(){
-        return null;
+        return this.languages;
     }
 
     /**
@@ -138,7 +175,20 @@ public class CategorySystemFacade {
      * @return a question for the user
      */
     public String getQuestion(){
-        return null;
+        //i wasnt exactly sure on this one- need help
+        if (category != null && language != null) {
+            // Example of a phrase question
+            if (phrases != null) {
+                return "Translate this phrase to " + language.getCurrentCategory() + ": " + phrases.getWords();
+            }
+    
+            // Example of a word question
+            if (words != null) {
+                return "What is the " + language.getCurrentCategory() + " word for: " + words.getLetters();
+            }
+        }
+        //if no more questions to be asked
+        return "No more questions available.";
     }
 
     /**
@@ -146,6 +196,20 @@ public class CategorySystemFacade {
      * a way for the user to study by having mock conversations
      */
     public void getMockConversation(){
+        
+        MockConversations mockConversation = new MockConversations();
+
+        String topic = mockConversation.getTopic();
+        System.out.println("Mock Conversation Topic: " + (topic != null ? topic : "No topic available."));
+
+        String script = mockConversation.getScript();
+        System.out.println("Conversation Script: " + (script != null ? script : "No script available."));
+
+        String roles = mockConversation.getRoles();
+        System.out.println("Conversation Roles: " + (roles != null ? roles : "No roles available."));
+
+        String answers = mockConversation.getAnswers();
+        System.out.println("Possible Answers: " + (answers != null ? answers : "No answers available."));
 
     }
 
@@ -154,15 +218,36 @@ public class CategorySystemFacade {
      * a way for the user to study by answering fill in the blank questions
      */
     public void getFillintheBlank(){
+        FillInTheBlank fillInBlank = new FillInTheBlank();
 
+        String sentence = fillInBlank.getSampleSentence();
+        String missingWord = fillInBlank.getMissingWord();
+        List<String> wordBank = fillInBlank.getWordBank();
+
+
+        System.out.println("Fill in the blank:");
+        System.out.println(sentence.replace(missingWord, " "));  
+
+   
+        if (wordBank != null) 
+        {
+            System.out.println("Use the word bank to help you fill in the blanks:");
+            for (String word : wordBank) {
+                System.out.println(word);
+            }
+    }
     }
 
     /**
      * getFlashcard method
      * a way for the user to study with flashcards
      */
-    public void getFlashcards(){
+    public List<Flashcard> getFlashcards(){
 
+        //need help here
+        Category currentCategory = progress.currentCategory();
+        List<Flashcard> flashcards = new ArrayList<>();
+        return flashcards;
     }
 
     /**
@@ -170,6 +255,14 @@ public class CategorySystemFacade {
      * a way for the user to study by matching words with an image
      */
     public void getMatching(){
-        
+        //fix the static/nonstatic in mathcing class
+        List<String> wordList = Matching.getImageList();
+        List<String> imageList = Matching.getWordList();
+
+        System.out.println("Match the words with the correct images:");
+        for (int i = 0; i < wordList.size(); i++) {
+            System.out.println("Word: " + wordList.get(i) + " - Image: " + imageList.get(i));
+        }
+
     }
 }

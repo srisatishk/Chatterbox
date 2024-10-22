@@ -1,39 +1,24 @@
 [
     {
-        "id" : 1,
+        "id" : "85e9d2cb-9847-4934-970c-442d081fffa4",
         "firstName" : "John" ,
         "lastName" : "Doe",
         "email" : "johndoe@gmail.com",
         "phoneNumber" : "627-917-2739",
-        "dateOfBirth" : "01-01-05",
+        "dateOfBirth" : "01/05/2001",
         "username" : "johndoe73",
-        "password" : "IlovemyCat",
-        "languages" : [{
-            "languageID" : 1,
-            "progressInLanguage" : 6,
-            "currentCategory" :"numbers",
-            "progressInCategory" : 16,
-            "numCorrectAnswers" : 55
-        }],
-        "streak" : 8
+        "password" : "IlovemyCat"
+        
     },
 
 {
-"id": 2, 
+"id": "9dfc6cef-6cd2-45e7-8a78-c24b0bfa1063", 
 "firstName": "Jane", 
 "lastName": "Smith", 
 "email": "jsmith@gmail.com",
 "phoneNumber":"817-902-3201",
-"dateofBirth": "10-07-98", 
+"dateOfBirth": "10/07/2004", 
 "userName": "janesmith10",
-"password": "IlovemyCat", 
-"languages": [{
-    "languageID" : 2,
-    "progressInLanguage" : 17,
-    "currentCategory" : "colors",
-    "progressInCategory" : 16,
-    "numCorrectAnswers" : 55    
-}], 
-"streak": 19
+"password": "IlovemyCat"
 }
 ]

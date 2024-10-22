@@ -1,0 +1,319 @@
+[
+    {
+        "word": "rojo",
+        "pronunciation": "roh-ho",
+        "translation": "red",
+       "alternatives<>": ["azul", "amarillo", "blanco", "gris", "morado" ,"naranja", "rosa", "verde", "negro"] 
+    },
+    {
+        "word": "azul",
+        "pronunciation": "ah-sool" , 
+        "translation": "blue",
+       "alternatives<>": ["rojo", "amarillo", "blanco", "gris", "morado" ,"naranja", "rosa", "verde", "negro"]
+    },
+    {
+        "word": "amarillo",
+        "pronunciation": "ah-mah-ree-yo",
+        "translation": "yello",
+       "alternatives<>": ["rojo", "azul", "blanco", "gris", "morado" ,"naranja", "rosa", "verde", "negro"]
+    },
+    {
+        "word": "blanco",
+        "pronunciation": "bahn-co",
+        "translation": "white",
+       "alternatives<>": ["rojo", "azul", "amarillo", "gris", "morado" ,"naranja", "rosa", "verde", "negro"]
+    },
+    {
+        "word": "gris",
+        "pronunciation": "greece",
+        "translation": "gray",
+       "alternatives<>": ["rojo", "azul", "amarillo", "blanco", "morado" ,"naranja", "rosa", "verde", "negro"]
+    },
+    {
+        "word": "morado",
+        "pronunciation": "moh-rah-do",
+        "translation": "purple",
+       "alternatives<>": ["rojo", "azul", "amarillo", "blanco", "gris", "naranja", "rosa", "verde", "negro"]
+    },
+    {
+        "word": "naranja",
+        "pronunciation": "nah-rahn-ha",
+        "translation": "orange",
+       "alternatives<>": ["rojo", "azul", "amarillo", "blanco", "gris", "morado" , "rosa", "verde", "negro"]
+    },
+    {
+        "word": "rosa",
+        "pronunciation": "roh-sa",
+        "translation": "pink",
+       "alternatives<>": ["rojo", "azul", "amarillo", "blanco", "gris", "morado" ,"naranja", "verde", "negro"]
+    },
+    {
+        "word": "verde",
+        "pronunciation": "ver-deh",
+        "translation": "green",
+       "alternatives<>": ["rojo", "azul", "amarillo", "blanco", "gris", "morado" ,"naranja", "rosa", "negro"]
+    },
+    {
+        "word": "negro",
+        "pronunciation": "new-eh-veh",
+        "translation": "black",
+       "alternatives<>": ["rojo", "azul", "amarillo", "blanco", "gris", "morado" ,"naranja", "rosa", "verde"]
+    },
+
+
+
+    {
+        "word": "uno",
+        "pronunciation": "oo-no",
+        "translation": "one",
+       "alternatives<>": [ "dos" , "tres" , "cuatro", "cinco", "seis" , "siete" ,"ocho", "nueve" ,"diez"]
+    },
+    {
+        "word": "dos",
+        "pronunciation": "dose",
+        "translation": "two",
+       "alternatives<>": ["uno", "tres" , "cuatro", "cinco", "seis" , "siete" ,"ocho", "nueve" ,"diez"]
+    },
+    {
+        "word": "tres",
+        "pronunciation": "trace",
+        "translation": "three",
+       "alternatives<>": ["uno", "dos" , "cuatro", "cinco", "seis" , "siete" ,"ocho", "nueve" ,"diez"]
+    },
+    {
+        "word": "cuatro",
+        "pronunciation": "kwat-ro",
+        "translation": "four",
+       "alternatives<>": ["uno", "dos" , "tres" , "cinco", "seis" , "siete" ,"ocho", "nueve" ,"diez"]
+    },
+    {
+        "word": "cinco",
+        "pronunciation": "sink-o",
+        "translation": "five",
+       "alternatives<>": ["uno", "dos" , "tres" , "cuatro", "seis" , "siete" ,"ocho", "nueve" ,"diez"]
+    },
+    {
+        "word": "seis",
+        "pronunciation": "saze",
+        "translation": "six",
+       "alternatives<>": ["uno", "dos" , "tres" , "cuatro", "cinco", "siete" ,"ocho", "nueve" ,"diez"]
+    },
+    {
+        "word": "siete",
+        "pronunciation": "see-yet-eh",
+        "translation": "seven",
+       "alternatives<>": ["uno", "dos" , "tres" , "cuatro", "cinco", "seis" , "ocho", "nueve" ,"diez"]
+    },
+    {
+        "word": "ocho",
+        "pronunciation": "och-o",
+        "translation": "eight",
+       "alternatives<>": ["uno", "dos" , "tres" , "cuatro", "cinco", "seis" , "siete" ,"nueve" ,"diez"]
+    },
+    {
+        "word": "nueve",
+        "pronunciation": "new-eh-veh",
+        "translation": "nine",
+       "alternatives<>": ["uno", "dos" , "tres" , "cuatro", "cinco", "seis" , "siete" ,"ocho","diez"]
+    },
+    {
+        "word": "diez",
+        "pronunciation": "dee-ace",
+        "translation": "ten",
+       "alternatives<>": ["uno", "dos" , "tres" , "cuatro", "cinco", "seis" , "siete" ,"ocho", "nueve"]
+    },
+    
+
+
+    {
+        "word": "Mama", 
+        "pronunciation": "mah-mah",
+        "translation": "mom", 
+       "alternatives<>": ["Papa", "Hijo", "Hija", "Hermano", "Hermana", "Esposo", "Esposa", "abuelo", "abuela" ]
+    },
+    {
+        "word": "Papa", 
+        "pronunciation": "pah-pah",
+        "translation": "dad", 
+       "alternatives<>": ["Mama", "Hijo", "Hija", "Hermano", "Hermana", "Esposo", "Esposa", "abuelo", "abuela" ]
+    },
+    {
+        "word": "Hijo", 
+        "pronunciation": "ee-hoh",
+        "translation": "son", 
+       "alternatives<>": ["Mama","Papa", "Hija", "Hermano", "Hermana", "Esposo", "Esposa", "abuelo", "abuela" ]
+    },
+    {
+        "word": "Hija", 
+        "pronunciation": "ee-hah",
+        "translation": "daughter", 
+       "alternatives<>": ["Mama","Papa", "Hijo", "Hermano", "Hermana", "Esposo", "Esposa", "abuelo", "abuela" ]
+    },
+    {
+        "word": "Hermano", 
+        "pronunciation": "ehr-mah-noh",
+        "translation": "Brother", 
+       "alternatives<>": ["Mama","Papa", "Hijo", "Hija", "Hermana", "Esposo", "Esposa", "abuelo", "abuela" ]
+    },
+    {
+        "word": "Hermana", 
+        "pronunciation": "ehr-mah-nah",
+        "translation": "Sister", 
+       "alternatives<>":["Mama","Papa", "Hijo", "Hija", "Hermano","Esposo", "Esposa", "abuelo", "abuela" ]
+    },
+    {
+        "word": "Esposo", 
+        "pronunciation": "ehs-poh-soh",
+        "translation": "Husband", 
+       "alternatives<>": ["Mama","Papa", "Hijo", "Hija", "Hermano", "Hermana", "Esposa", "abuelo", "abuela" ]
+    },
+    {
+        "word": "Esposa", 
+        "pronunciation": "ehs-poh-sah",
+        "translation": "wife", 
+       "alternatives<>":["Mama","Papa", "Hijo", "Hija", "Hermano", "Hermana", "Esposo", "abuelo", "abuela" ]
+    },
+    {
+        "word": "abuelo", 
+        "pronunciation": "ah-bweh-loh", 
+        "translation": "grandfather", 
+       "alternatives<>": ["Mama","Papa", "Hijo", "Hija", "Hermano", "Hermana", "Esposo", "Esposa", "abuela" ]
+    },
+    {
+        "word": "abuela", 
+        "pronunciation": "ah-bweh-lah",
+        "translation": "grandmother", 
+       "alternatives<>": ["Mama","Papa", "Hijo", "Hija", "Hermano", "Hermana", "Esposo", "Esposa", "abuelo"]
+    },
+
+    
+
+
+    {
+        "word": "el grado" , 
+        "pronunciation": "grah-doh",
+        "translation": "degree", 
+        "alternatives<>": ["soleado", "la lluvia" , "la nieve" , "adentro" , "el invierno" , "el verano" , "la primavera" , "la temperatura" , "el tiempo"]
+    },
+    {
+        "word": "el tiempo" , 
+        "pronunciation": "tyehm-poh",
+        "translation": "weather", 
+        "alternatives<>": ["soleado", "la lluvia" , "la nieve" , "adentro" , "el invierno" , "el verano" , "la primavera" , "la temperatura" ,"el grado"]
+    },
+    {
+        "word": "la temperatura" , 
+        "pronunciation": "tehm-peh-rah-too-rah",
+        "translation": "temperature", 
+        "alternatives<>": ["soleado", "la lluvia" , "la nieve" , "adentro" , "el invierno" , "el verano" , "la primavera" , "el tiempo" , "el grado"]
+    },
+    
+    {
+        "word": "la primavera" , 
+        "pronunciation": "pree-mah-beh-rah",
+        "translation": "spring", 
+        "alternatives<>": ["soleado", "la lluvia" , "la nieve" , "adentro" , "el invierno" , "el verano" ,"la temperatura" , "el tiempo" , "el grado"]
+    },
+    {
+        "word": "el verano" , 
+        "pronunciation": "beh-rah-noh",
+        "translation": "summer", 
+        "alternatives<>": ["soleado", "la lluvia" , "la nieve" , "adentro" , "el invierno" , "la primavera" , "la temperatura" , "el tiempo" , "el grado"]
+    },
+    {
+        "word": "el invierno" , 
+        "pronunciation": "enn-byehr-noh",
+        "translation": "winter", 
+        "alternatives<>": ["soleado", "la lluvia" , "la nieve" , "adentro" , "el verano" , "la primavera" , "la temperatura" , "el tiempo" , "el grado"]
+    },
+    {
+        "word": "adentro" , 
+        "pronunciation": "ah-dehn-troh",
+        "translation": "inside", 
+        "alternatives<>": ["soleado", "la lluvia" , "la nieve" , "el invierno" , "el verano" , "la primavera" , "la temperatura" , "el tiempo" , "el grado"]
+    },
+    {
+        "word": "la nieve" , 
+        "pronunciation": "nyeh-beh",
+        "translation": "snow", 
+        "alternatives<>": ["soleado", "la lluvia" , "adentro" , "el invierno" , "el verano" , "la primavera" , "la temperatura" , "el tiempo" , "el grado"]
+    },
+    {
+        "word": "la lluvia" , 
+        "pronunciation": "yoo-byah",
+        "translation": "rain", 
+        "alternatives<>": ["soleado", "la nieve" , "adentro" , "el invierno" , "el verano" , "la primavera" , "la temperatura" , "el tiempo" , "el grado"]
+    },
+    {
+        "word": "soleado" , 
+        "pronunciation": "soh-leh-ah-doh",
+        "translation": "sunny", 
+        "alternatives<>": ["la lluvia" , "la nieve" , "adentro" , "el invierno" , "el verano" , "la primavera" , "la temperatura" , "el tiempo" , "el grado"]
+    },
+
+    
+
+    {
+        "word": "hotel" , 
+        "pronunciation": "oh-tehl",
+        "translation": "hotel", 
+        "alternatives<>": ["Panadería " , "Biblioteca " , "Parque " , "Restaurante " , "Museo" , "zoológico" ,"Estadio" , "Escuela" , "Aeropuerto"]
+    },
+    {
+        "word": "Panadería " , 
+        "pronunciation": "pah-nah-deh-ree-ah",
+        "translation": "bakery", 
+        "alternatives<>": ["hotel" , "Biblioteca " , "Parque " , "Restaurante " , "Museo" , "zoológico" ,"Estadio" , "Escuela" , "Aeropuerto"] 
+    },
+    {
+        "word": "Biblioteca " , 
+        "pronunciation": "bee-blyoh-teh-kah",
+        "translation": "Library", 
+        "alternatives<>": ["hotel" , "Panadería " , "Parque " , "Restaurante " , "Museo" , "zoológico" ,"Estadio" , "Escuela" , "Aeropuerto"]
+    },
+    {
+        "word": "Parque " , 
+        "pronunciation": "pahr-keh", 
+        "translation": "Park ", 
+        "alternatives<>": ["hotel" , "Panadería " , "Biblioteca " ,  "Restaurante " , "Museo" , "zoológico" ,"Estadio" , "Escuela" , "Aeropuerto"]
+    },
+    {
+        "word": "Restaurante " , 
+        "pronunciation": "rrehs-tow-rahn-teh",
+        "translation": "Restaurant", 
+        "alternatives<>": ["hotel" , "Panadería " , "Biblioteca " , "Parque " , "Museo" , "zoológico" ,"Estadio" , "Escuela" , "Aeropuerto"]
+    },
+      
+    {
+        "word": "Museo" , 
+        "pronunciation": "moo-seh-oh", 
+        "translation": "Museum", 
+        "alternatives<>": ["hotel" , "Panadería " , "Biblioteca " , "Parque " , "Restaurante " , "zoológico" ,"Estadio" , "Escuela" , "Aeropuerto"]
+    },
+    {
+        "word": "zoológico" , 
+        "pronunciation": "thoh-oh-loh-hee-koh",
+        "translation": "Zoo", 
+        "alternatives<>": ["hotel" , "Panadería " , "Biblioteca " , "Parque " , "Restaurante " , "Museo" ,"Estadio" , "Escuela" , "Aeropuerto"]
+    },
+    {
+        "word": "Estadio" , 
+        "pronunciation": "ehs-tah-dyoh",
+        "translation": "Stadium", 
+        "alternatives<>": ["hotel" , "Panadería " , "Biblioteca " , "Parque " , "Restaurante " , "Museo" , "zoológico" ,"Escuela" , "Aeropuerto"]
+    },
+    {
+        "word": "Escuela" , 
+        "pronunciation": "ehs-kweh-lah",
+        "translation": "School", 
+        "alternatives<>": ["hotel" , "Panadería " , "Biblioteca " , "Parque " , "Restaurante " , "Museo" , "zoológico" ,"Estadio" ,"Aeropuerto"]
+    },
+    {
+        "word": "Aeropuerto" , 
+        "pronunciation": "ah-eh-roh-pwehr-toh",
+        "translation": "Airport", 
+        "alternatives<>": ["hotel" , "Panadería " , "Biblioteca " , "Parque " , "Restaurante " , "Museo" , "zoológico" ,"Estadio" , "Escuela"]
+    }
+    
+]
+

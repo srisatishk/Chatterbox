@@ -1,6 +1,7 @@
 package language;
 
 import java.util.ArrayList;
+import java.util.UUID;
 /**
  * @author zaniah
  */
@@ -8,8 +9,10 @@ public class UserList {
     /**
      * attributes for userlist
      */
+   // private static UserList userList;
     private static UserList userList;
     private ArrayList<User> users;
+    private UUID id;
 
     /**
      * private constructor
@@ -17,7 +20,8 @@ public class UserList {
    private UserList(){
         //this.users = new ArrayList<>();
         //users = DataLoader.getUserList();
-        userList = DataLoader.getUser();
+        users = DataLoader.getUsers();
+        this.id = UUID.randomUUID();
     }
 
     /**
@@ -87,7 +91,7 @@ public class UserList {
             return false;
         }
 
-        User newUser = new User(firstName, lastName, email);
+        User newUser = new User(id, firstName, lastName, email, username, null, password);
         users.add(newUser);
         return true;
     }
@@ -152,7 +156,7 @@ public class UserList {
      * saves all the users info (first, last, email)
      */
     public void saveUsers(){
-        DataWriter.saveUsers;
+        DataWriter.saveUsers();
     }
     
     /**
@@ -177,5 +181,9 @@ public class UserList {
      */
     private boolean validEmail(String email) {
         return email != null && email.contains("@") && email.contains(".");
+    }
+
+    public ArrayList getUsers() {
+        return users;
     }
 }

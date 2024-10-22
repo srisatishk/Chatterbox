@@ -3,41 +3,140 @@ package language;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.UUID;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 /**
- * Author: Hardik Marlapudi
- * Date: 10/6/2024
+ * The DataLoader class is responsible for loading data from the JSON files.
+ * It parses the JSON data and converts it into a list of objects.
  */
+public class DataLoader extends DataConstants{
+    // Loads the lists of Users
+    public static ArrayList<User> getUsers() {
+        ArrayList<User> userList = new ArrayList<User>();
+    try {
+        FileReader reader = new FileReader(FILE_NAME_USER);
+        JSONParser parser = new JSONParser();
+        JSONArray usersJSON = (JSONArray)new JSONParser().parse(reader);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 
-/**
- * The DataLoader class is responsible for loading flashcard data from a JSON file.
- * It parses the JSON data and converts it into a list of Flashcard objects.
- */
-public class DataLoader {
+        for (int i=0; i < usersJSON.size(); i++) {
+            JSONObject userJSON = (JSONObject)usersJSON.get(i);
+            UUID id = UUID.fromString(String.valueOf(userJSON.get(USER_ID)));
+            String firstName = (String)userJSON.get(USER_FIRST_NAME);
+            String lastName = (String)userJSON.get(USER_LAST_NAME);
+            String email = (String)userJSON.get(USER_EMAIL);
+            String phoneNumber = (String)userJSON.get(USER_PHONE_NUMBER);
+            String dobString = (String) userJSON.get(USER_DATE_OF_BIRTH);
+            LocalDate dateOfBirth = null;
+            dateOfBirth = LocalDate.parse(dobString, formatter);
+            String username = (String)userJSON.get(USER_USERNAME);
+            String password = (String)userJSON.get(USER_PASSWORD);
+            User newUser = new User(id, firstName, lastName, email, phoneNumber, dateOfBirth, username, password);
+            JSONArray languagesJSON = (JSONArray) userJSON.get(USER_LANGUAGES);
+            for (int j = 0; j < languagesJSON.size(); j++) {
+                JSONObject languageJSON = (JSONObject) languagesJSON.get(j);
+                UUID languageID = UUID.fromString(String.valueOf(languageJSON.get(LANGUAGE_ID)));
+                String language = (String)languageJSON.get(LANGUAGE);
 
-   /** 
-    * Path to the JSON file where flashcard data is stored. 
-    */
-   private static final String FILE_NAME_FLASHCARDS = "data.json";
-   private static final String FILE_NAME_QUESTIONS = "question.json";
-   private static final String FILE_NAME_PROGRESS = "progress.json";
-   private static final String FILE_NAME_CATEGORY_SYSTEM = "categorysystem.json";
+                Language languageAt = new Language(languageID, language);
 
-   /**
-    * Loads the flashcards from the JSON file specified in the FILE_NAME.
-    * This method reads the JSON file, parses the flashcard data, and converts
-    * each JSON object into a Flashcard pojo object.
-    *
-    * @return A list of Flashcard objects parsed from the JSON file.
-    */
+                JSONObject progressJSON = (JSONObject)languageJSON.get(PROGRESS);
+                int totalQuestionsAnswered = ((Long) progressJSON.get(TOT_QUESTIONS_ANSWERED)).intValue();
+                int numCorrectAnswers = ((Long) progressJSON.get(NUM_CORRECT_ANSWERS)).intValue();
+                String currentCategory = (String)progressJSON.get(CURRENT_CATEGORY);
+                int progressInCategory = ((Long) progressJSON.get(PROGRESS_IN_CATEGORY)).intValue();
+                int streak = ((Long) progressJSON.get(USER_STREAK)).intValue();
+                JSONArray missedWordsJSON = (JSONArray)languageJSON.get(MISSED_WORDS);
+                ArrayList<String> missedWords = new ArrayList<>();
+                for (Object word : missedWordsJSON) {
+                    missedWords.add((String) word);
+                }
 
+<<<<<<< HEAD
     public static List<Flashcard> loadFlashcards() {
         List<Flashcard> flashcards = new ArrayList<>();
+=======
+                Progress progressAt = new Progress(totalQuestionsAnswered, numCorrectAnswers, currentCategory, progressInCategory, streak, missedWords);
+                newUser.getLanguages().put(languageAt, progressAt);
+            }
+            userList.add(newUser);
+        }   
+        return userList;
+
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    return null;
+}
+
+
+public static ArrayList<Language> getLanguages () {
+    ArrayList<Language> languageList = new ArrayList<Language>();
+    try {
+        FileReader reader = new FileReader(FILE_NAME_CATEGORY);
+        JSONParser parser = new JSONParser();
+        JSONArray languagesJSON = (JSONArray)new JSONParser().parse(reader);
+
+        for (int i=0; i < languagesJSON.size(); i++) {
+            JSONObject languageJSON = (JSONObject)languagesJSON.get(i);
+            UUID languageID = UUID.fromString(String.valueOf(languageJSON.get(LANGUAGE_ID)));
+            String language = (String)languageJSON.get(LANGUAGE);
+            String title = (String)languageJSON.get(CATEGORY_TITLE);
+            String question = (String)languageJSON.get(CATEGORY_QUESTION);
+            String currentCategory = (String)languageJSON.get(CURRENT_CATEGORY);
+            int totalQuestionsAnswered = ((Long)languageJSON.get(TOT_QUESTIONS_ANSWERED)).intValue();
+            int progressInCategory = ((Long)languageJSON.get(PROGRESS_IN_CATEGORY)).intValue();
+            int numCorrectAnswers = ((Long)languageJSON.get(NUM_CORRECT_ANSWERS)).intValue();
+            JSONArray missedWordsJSON = (JSONArray)languageJSON.get(MISSED_WORDS);
+            ArrayList<String> missedWords = new ArrayList<>();
+            for (Object word : missedWordsJSON) {
+                missedWords.add((String) word);
+            }
+
+           Category newCategory = new Category(currentCategory, totalQuestionsAnswered, progressInCategory, numCorrectAnswers, missedWords);
+           Language newLanguage = new Language(languageID, language, title, question, newCategory);
+           languageList.add(newLanguage);
+
+        }
+        return languageList;
+    }
+    catch (Exception e) {
+    e.printStackTrace();
+    }
+return null;
+}
+
+// Main method to test getUsers
+
+public static void main(String[] args) {
+    ArrayList<User> users = getUsers();
+    if (users != null) {
+        if (users.isEmpty()) {
+            System.out.println("No users found in the data.");
+        } else {
+            for (User user : users) {
+                System.out.println("User: " + user.getFirstName() + " " + user.getLastName() + ", Email: " + user.getEmail() + " Date of Birth: " + user.getDateOfBirth());
+            }
+        }
+    } else {
+        System.out.println("Failed to load user data.");
+    }
+}
+
+
+// Loads the list of flashcards
+    public static List<Flashcards> loadFlashcards() {
+        List<Flashcards> flashcards = new ArrayList<>();
+>>>>>>> 20e453dff83ef8f61f249928b330302b899a8ca0
 
         // Try to read and parse the JSON file
         try (FileReader reader = new FileReader(FILE_NAME_FLASHCARDS)) {
@@ -67,7 +166,7 @@ public class DataLoader {
     }
 
     
-
+    // loads the list of questions
     public static List<Question> loadQuestions() {
         List<Question> questionsList = new ArrayList<>();
 
@@ -97,6 +196,7 @@ public class DataLoader {
         return questionsList;  // Return the list of questions
     }
 
+<<<<<<< HEAD
     
 /**
  * Loads the progress data for the user from a JSON file and returns it as a list of Progress objects.
@@ -180,6 +280,8 @@ public static List<Progress> loadProgress() {
         return flashcards;  // Return the list of flashcards
     }
 
+=======
+>>>>>>> 20e453dff83ef8f61f249928b330302b899a8ca0
     // Method to convert JSONArray to a String array
      private static ArrayList<String> convertJsonArrayToStringArray(JSONArray jsonArray) {
         // Create a String array with the same size as the JSONArray

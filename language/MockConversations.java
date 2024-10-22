@@ -4,7 +4,7 @@ package language;
  */
 import java.util.ArrayList;
 public class MockConversations {
-    /** attributes of MockConversations class */x
+    /** attributes of MockConversations class */
     private String topic;
     private ArrayList<String> script;
     private ArrayList<String> roles;

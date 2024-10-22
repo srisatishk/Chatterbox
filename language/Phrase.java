@@ -1,33 +1,28 @@
 package language;
 import java.util.ArrayList;
 /**
- * @author zaniah
+ * @author zaniah ang grace 
  */
 public class Phrase extends Question {
     /**
      * attributes for phrase class
      */
     private ArrayList<Word> words;
-    private ArrayList<String> pronunciation;
-    private ArrayList<String> translation;
-    private boolean structure;
+    private String translation;
+   // private boolean structure;
+
+   public Phrase(String translation) {
+    this.words = new ArrayList<>();  // Initialize the words list
+    this.translation = translation;
+}
 
     /**
      * getWords method
      * @return the words that will be in the phrase
      */
-    public String getWords(){
+    public ArrayList<Word> getWords(){
         //return "words";
-        return null;
-    }
-
-    /**
-     * getPronunciation method
-     * @return the pronunciation for the pharse
-     */
-    public String getPronunciation(){
-        //return "pronunciation";
-        return null;
+        return words;
     }
 
     /**
@@ -36,7 +31,7 @@ public class Phrase extends Question {
      */
     public String getTranslation(){
         //return "translation";
-        return null;
+        return translation;
     }
 
     /**
