@@ -37,19 +37,11 @@ public class DataLoader extends DataConstants{
             String phoneNumber = (String)userJSON.get(USER_PHONE_NUMBER);
             String dobString = (String) userJSON.get(USER_DATE_OF_BIRTH);
             LocalDate dateOfBirth = null;
-            // if (dobString != null) {
-            //     try {
-                     dateOfBirth = LocalDate.parse(dobString, formatter);
-            //     } catch (DateTimeParseException e) {
-            //         System.out.println("Invalid date format for user: " + firstName + " " + lastName);
-            //     }
-            // } else {
-            //     System.out.println("Date of birth is missing for user: " + firstName + " " + lastName);
-            // }
+            dateOfBirth = LocalDate.parse(dobString, formatter);
             String username = (String)userJSON.get(USER_USERNAME);
             String password = (String)userJSON.get(USER_PASSWORD);
-            int streak = ((Long)userJSON.get(USER_STREAK)).intValue();
-            User newUser = new User(id, firstName, lastName, email, phoneNumber, dateOfBirth, username, password, streak);
+            String 
+            User newUser = new User(id, firstName, lastName, email, phoneNumber, dateOfBirth, username, password);
             userList.add(newUser);
         }   
         return userList;

@@ -46,9 +46,9 @@ public class DataWriter extends DataConstants {
            e.printStackTrace();
        }
        
-   }
+    }
   
-   // (@SuppressWarnings("unchecked"))
+    @SuppressWarnings("unchecked")
     public static JSONObject getUserJSON(User user) {
         JSONObject userDetails = new JSONObject();
         userDetails.put(USER_ID, user.getId().toString());
@@ -60,9 +60,12 @@ public class DataWriter extends DataConstants {
 		userDetails.put(USER_PHONE_NUMBER, user.getPhoneNumber());
         userDetails.put(USER_DATE_OF_BIRTH, user.getDateOfBirth());
         userDetails.put(USER_PASSWORD, user.getPassword());
-        userDetails.put(USER_STREAK, user.getStreak());
 
         return userDetails;
+    }
+
+    public static void saveProgress() {
+
     }
 
    

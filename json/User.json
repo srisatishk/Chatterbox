@@ -7,8 +7,7 @@
         "phoneNumber" : "627-917-2739",
         "dateOfBirth" : "01/05/2001",
         "username" : "johndoe73",
-        "password" : "IlovemyCat",
-        "streak" : 8
+        "password" : "IlovemyCat"
         
     },
 
@@ -20,7 +19,6 @@
 "phoneNumber":"817-902-3201",
 "dateOfBirth": "10/07/2004", 
 "userName": "janesmith10",
-"password": "IlovemyCat", 
-"streak": 19
+"password": "IlovemyCat"
 }
 ]
