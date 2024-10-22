@@ -2,23 +2,32 @@ package language;
 
 import java.util.ArrayList;
 /**
- * @author zaniah
+ * @author zaniah and grace 
  */
 public class Word extends Question{
     /**
      * attributes for word class
      */
-    private ArrayList<String> letters;
+  
+    private String word;
     private String pronunciation;
     private String translation;
+    private ArrayList<String> alternatives; 
 
+    public Word(String word, String pronunciation, String translation) {
+        this.word = word;
+        this.pronunciation = pronunciation;
+        this.translation = translation;
+        this.alternatives = new ArrayList<>();
+    }
+
+    // how to do all of these becuase are they parsing the JSON files 
     /**
-     * getLetters method
+     * getword method
      * @return the letters in the word
      */
-    public String getLetters(){
-        //return "get letters";
-        return null;
+    public String getword(){
+        return word;
     }
 
     /**
@@ -26,8 +35,8 @@ public class Word extends Question{
      * @return pronunciation of the word
      */
     public String getPronunciation(){
-        //return "get pronunciation";
-        return null;
+
+        return pronunciation;
     }
 
     /**
@@ -35,7 +44,10 @@ public class Word extends Question{
      * @return translation of the word
      */
     public String getTranslation(){
-        //return "get translation";
-        return null;
+        return translation;
+    }
+
+    public ArrayList<String> getAlternatives() {
+        return new ArrayList<>(alternatives); 
     }
 }

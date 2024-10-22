@@ -1,42 +1,78 @@
 {
     {
-        "words<>": ["Strawberries" , "are", "red"],
-        "translation": [""]
+        "translation": ["Strawberries" , "are", "red"],
+        "words<>":  ["Las", "fresas", "son", "rojas"]
     },
     {
-        "words<>": ["School", "buses" , "are", "yellow"],
-        "translation": [""]
+        "translation":["School", "buses" , "are", "yellow"],
+        "words<>": ["Los", " autobuses ", "escolares ", "son ", "amarillos"]
     },
     {
-        "words<>": ["Black", "and", "white", "make", "gray"],
-        "translation": [""]
+        "translation": ["Black", "and", "white", "make", "gray"],
+        "words<>": ["El", "blanco", "y", "el", "negro", "hacen", "gris"]
+    },
+
+
+
+    {
+        "translation":["two", "plus", "seven", "equals", "nine"],
+        "words<>":  ["Dos", "más", "siete", "es", "igual", "a", "nueve"]
+    },
+    {
+        "translation": ["ten", "minus", "four", "equals", "six"],
+        "words<>":  ["diez", "menos", "cuatro", "es igual", "a seis"]
+    },
+    {
+        "translation": ["four", "times" ,"two", "equals" ,"eight"],
+        "words<>": ["cuatro", "por", "dos", "es", "igual", "a ocho"]
     },
 
 
 
+
     {
-        "words<>": ["two", "plus", "seven", "equals", "nine"],
-        "translation": [""]
-    },
-    {
-        "words<>": ["ten", "minus", "four", "equals", "six"],
-        "translation": [""]
-    },
-    {
-        "words<>": ["four", "times" ,"two", "equals" ,"eight"],
-        "translation": [""]
+        "translation":  ["When", "you", "are", "married", "you", "become", "husband", "and", "wife"],
+        "words<>":  ["Cuando", "estás", "casado", "te", "conviertes", "en", "marido", "y", "mujer"]
     },
 
     {
-        "words<>": ["When", "you", "are", "married", "you", "become", "husband", "and", "wife"],
-        "translation": [""]
+        "translation":  ["I", "have", "one", "abuela", "still", "alive"],
+        "words<>":  ["Tengo", "una", "abuela", "que", "aún", "vive"]
+    },
+    {
+        "translation":  ["Mama", "is ", "a", "normal", "first", "word"],
+        "words<>":  ["Mamá", "es", "una", "primera", "palabra", "normal"]
     },
     
+
+    {
+        "translation":  ["April", ", May", "June", "are", "la primavera", "months"],
+        "words<>": ["Abril", "mayo", "y", "junio", "son", "las", "estaciones", "de", "primavera"]
+    },
+    {
+        "translation":  ["No", "School", "tomorrow", "it", "has", "snowed"],
+        "words<>":  ["No", "hay", "escuela", "mañana", "ha", "nevado"]
+    },
+    {
+        "translation":  ["The", "weather", "is", "nice", "outside", "today"],
+        "words<>": ["El", "clima", "es", "agradable", "afuera"]
+    },
+
+
+    {
+        "translation":  ["where", "is", "the", "libary"],
+       "words<>": ["Donde", "esta", "la", "biblioteca?"]
+       
+    },
+    {
+        "translation":["There", "are", "animals", "at", "the", "zoo"],
+        "words<>":  ["Hay", "animales", "en", "el", "zoológico"],
+    },
+    {
+        "translation": ["I", "can", "not", "wait", "to", "get", "to", "the" ,"airport"],
+        "words<>":["No", "puedo", "esperar", "a", "llegar", "al", "avión"]
+    },
 }
 
 
-colors 
-numbers 
-directions 
-weather 
-places 
+
