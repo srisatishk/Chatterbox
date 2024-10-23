@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * @author zaniah and grace 
  */
-public class Phrase extends Question {
+public class Phrase {
     /**
      * attributes for phrase class
      */
@@ -20,7 +20,7 @@ public class Phrase extends Question {
      * getWords method
      * @return the words that will be in the phrase
      */
-    public ArrayList<Word> getWords(){
+    public String getWords(){
         //return "words";
         return words;
     }

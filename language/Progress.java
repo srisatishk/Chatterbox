@@ -16,14 +16,20 @@ public class Progress {
     private int streak;
     private LocalDate loginDate;
     private ArrayList<String> missedWords;
+    private language language;
 
+<<<<<<< HEAD
     public Progress(int totalQuestionsAnswered, int numCorrectAnswers, String currentCategory, int progressInCategory, int streak, ArrayList<String> missedWords) {
+=======
+    public Progress(int totalQuestionsAnswered, int numCorrectAnswers, String currentCategory2, int progressInCategory, int streak2, ArrayList<String> missedWords, language language) {
+>>>>>>> c56eb3f641448da1150fb73a9bb81d5400154d2f
         this.totalQuestionsAnswered = totalQuestionsAnswered;
         this.numCorrectAnswers = numCorrectAnswers;
         this.currentCategory = currentCategory;
         this.progressInCategory = progressInCategory;
         this.streak = streak;
         this.missedWords = new ArrayList<String>();
+        this.language = language;
     }
 
 
@@ -38,6 +44,10 @@ public class Progress {
 
     public int getNumCorrectAnswers() {
         return numCorrectAnswers;
+    }
+
+    public void setNumCorrectAnswers(int numCorrectAnswers){
+        this.numCorrectAnswers = numCorrectAnswers;
     }
 
      /**
@@ -104,8 +114,12 @@ public class Progress {
      * currentCategory method
      * tracks the currentCategory the user is learning
      */
-    public Category currentCategory() {
+    public Category getCurrentCategory() {
         return currentCategory;
+    }
+
+    public void setCurrentCategory(Category currentCategory){
+        this.currentCategory = currentCategory;
     }
 
      /**
@@ -113,10 +127,28 @@ public class Progress {
      * @return the user's progress in the category
      * 
      */
-    public int progressInCategory() {
+    public int getProgressInCategory() {
         return progressInCategory;
     }
 
+    public void setProgressInCategory(int progressInCategory){
+        this.progressInCategory = progressInCategory;
+    }
+
+     //the progress in the category keeps going up//
+     public void progressInLanguage()
+     { 
+         // how many catergories they complete 
+        progressInCategory++; 
+     }
+
+     public language getLanguage(){
+        return language;
+     }
+
+     public void setLanguage(language language){
+        this.language = language;
+     }
      /**
      * getMissedWords method
      * @return the list of missed words
@@ -139,12 +171,21 @@ public class Progress {
      * saves the user's progress in the language and category
      */
     public void saveProgress() {
+<<<<<<< HEAD
         DataWriter.saveProgress();
+=======
+       // boolean savedProgress = DataWriter.saveProgress(this);
+       DataWriter.saveProgress(this);
+>>>>>>> c56eb3f641448da1150fb73a9bb81d5400154d2f
         
     }  
     
     public int getStreak() {
         return streak;
+    }
+
+    public void setStreak(int streak){
+        this.streak = streak;
     }
 
 

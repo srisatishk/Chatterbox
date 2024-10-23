@@ -11,7 +11,7 @@ package language;
  * This class is designed to be used in a language learning app.
  */
 
-public class Flashcard {
+public class Flashcard extends Question{
 
     /** The word or term on the flashcard in the target language. */
     private String word;

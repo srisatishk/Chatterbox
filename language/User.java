@@ -20,7 +20,7 @@ public class User{
     private LocalDate dateOfBirth;
     private String username;
     private String password;
-    private HashMap<Language,Progress> languages;
+    private HashMap<language,Progress> languages;
 
     /*
      * User constructor
@@ -34,7 +34,7 @@ public class User{
         this.dateOfBirth = dateOfBirth;
         this.username = username;
         this.password = password;
-        this.languages = new HashMap <>();
+       // this.languages = new HashMap <>();
     }
 
     public User(UUID id, String firstName, String lastName, String email, String username, LocalDate dateOfBirth, String password) {
@@ -182,6 +182,7 @@ public class User{
         return dateOfBirth.format(formatter);
     }
 
+<<<<<<< HEAD
     /**
      * Getter for user languages HashMap
      * @return languages
@@ -194,6 +195,13 @@ public class User{
      * Setter for languages
      */
     public void setLanguages(HashMap<Language, Progress> langugages) {
+=======
+    public HashMap<language, Progress> getLanguages(){
+        return languages;
+    }
+
+    public void setLanguages(HashMap<language, Progress> languages) {
+>>>>>>> c56eb3f641448da1150fb73a9bb81d5400154d2f
         this.languages = languages;
     }
 

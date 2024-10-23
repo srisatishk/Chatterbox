@@ -19,6 +19,11 @@ public class Question {
 
         return question;
     }
+
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
     /**
      * makeFlashcards method
      * @return question for flashcards
@@ -26,4 +31,6 @@ public class Question {
     public String makeFlashCards() {
         return "Question for flashcard" + question;
     }
+
+    
 }

@@ -20,7 +20,11 @@ public class DataWriter extends DataConstants {
    /** 
     * Path to the JSON file where user data will be written.
     */
+<<<<<<< HEAD
    private static final String FILE_PATH = "json/data.json";
+=======
+
+>>>>>>> c56eb3f641448da1150fb73a9bb81d5400154d2f
 
        /**
     * Writes a list of users to the JSON file specified in FILE_PATH.
@@ -63,18 +67,22 @@ public class DataWriter extends DataConstants {
         userDetails.put(USER_DATE_OF_BIRTH, user.getDateOfBirth());
         userDetails.put(USER_PASSWORD, user.getPassword());
         JSONArray languagesJSON = new JSONArray();
-        HashMap<Language, Progress> languages = user.getLanguages();
-        for (Language language : languages.keySet()) {
+        HashMap<language, Progress> languages = user.getLanguages();
+        for (language language : languages.keySet()) {
             JSONObject languageJSON = new JSONObject();
             languageJSON.put(LANGUAGE_ID, language.getLanguageID().toString());
+<<<<<<< HEAD
             languageJSON.put(LANGUAGE_NAME, language.getLanguageName());
+=======
+            languageJSON.put(LANGUAGE, language.getLanguage());
+>>>>>>> c56eb3f641448da1150fb73a9bb81d5400154d2f
 
             Progress progress = languages.get(language);
             JSONObject progressJSON = new JSONObject();
             progressJSON.put(TOT_QUESTIONS_ANSWERED, progress.getTotalQuestionsAnswered());
             progressJSON.put(NUM_CORRECT_ANSWERS, progress.getNumCorrectAnswers());
-            progressJSON.put(CURRENT_CATEGORY,progress.currentCategory());
-            progressJSON.put(PROGRESS_IN_CATEGORY, progress.progressInCategory());
+            progressJSON.put(CURRENT_CATEGORY,progress.getCurrentCategory());
+            progressJSON.put(PROGRESS_IN_CATEGORY, progress.getProgressInCategory());
             progressJSON.put(USER_STREAK, progress.getStreak());
 
             JSONArray missedWordsJSON = new JSONArray();
@@ -90,10 +98,6 @@ public class DataWriter extends DataConstants {
 
         userDetails.put(USER_LANGUAGES,languagesJSON);
         return userDetails;
-    }
-
-    public static void saveProgress() {
-
     }
 
    
@@ -120,8 +124,12 @@ public static void writeFlashcards(List<Flashcard> flashcards) {
         }
 
         // Write the JSON array to the file
+<<<<<<< HEAD
         try {
             FileWriter file = new FileWriter(FILE_PATH);
+=======
+        try (FileWriter file = new FileWriter(FILE_NAME_FLASHCARDS)) {
+>>>>>>> c56eb3f641448da1150fb73a9bb81d5400154d2f
             file.write(flashcardList.toJSONString());  // Write JSON data to file
             file.flush();  // Ensure all data is written
         } catch (IOException e) {
@@ -149,4 +157,57 @@ public static void writeFlashcards(List<Flashcard> flashcards) {
 
         writeFlashcards(cards);
     }
+<<<<<<< HEAD
+=======
+   
+
+   @SuppressWarnings("unchecked")
+   public static void writeUsers(List<User> users) {
+        JSONArray userList = new JSONArray();
+        for (User user : users) {
+            JSONObject userDetails = new JSONObject();
+            userDetails.put("id", user.getId().toString());
+            userDetails.put("firstName", user.getFirstName());
+            userDetails.put("lastName", user.getLastName());
+            userDetails.put("email", user.getEmail());
+            userDetails.put("phoneNumber", user.getPhoneNumber());
+            userDetails.put("dateOfBirth", user.getDateOfBirth().toString());
+            userDetails.put("username", user.getUsername());
+            userDetails.put("password", user.getPassword());
+            userList.add(userDetails);
+        }
+
+        try (FileWriter file = new FileWriter(FILE_NAME_USER_INTERFACE)) {
+            file.write(userList.toJSONString());
+            file.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+   }
+
+   @SuppressWarnings("unchecked")
+   public static void saveProgress(Progress progress) {
+       JSONObject progressDetails = new JSONObject();
+
+       progressDetails.put(TOT_QUESTIONS_ANSWERED, progress.getTotalQuestionsAnswered());
+       progressDetails.put(NUM_CORRECT_ANSWERS, progress.getNumCorrectAnswers());
+       progressDetails.put(CURRENT_CATEGORY, progress.getCurrentCategory().toString());
+       progressDetails.put(PROGRESS_IN_CATEGORY, progress.getProgressInCategory());
+       progressDetails.put(USER_STREAK, progress.getStreak());
+       progressDetails.put(LANGUAGE, progress.getLanguage().toString());
+
+       JSONArray missedWordsArray = new JSONArray();
+       for (String word : progress.getMissedWords()) {
+           missedWordsArray.add(word);
+       }
+       progressDetails.put(MISSED_WORDS, missedWordsArray);
+
+       try (FileWriter file = new FileWriter(FILE_NAME_PROGRESS)) {
+           file.write(progressDetails.toJSONString());
+           file.flush();
+       } catch (IOException e) {
+           e.printStackTrace();
+       }
+   }
+>>>>>>> c56eb3f641448da1150fb73a9bb81d5400154d2f
 }

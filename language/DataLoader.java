@@ -54,7 +54,12 @@ public class DataLoader extends DataConstants{
                     translations.add((String) translation);
                 }
 
+<<<<<<< HEAD
                 Language languageAt = new Language(languageID, languageName, currentCategory, progressInCategory, translations);
+=======
+                //Language languageAt = new Language(languageID, language);
+                LanguageList languageAt = LanguageList.getInstance();
+>>>>>>> c56eb3f641448da1150fb73a9bb81d5400154d2f
 
                 JSONObject progressJSON = (JSONObject)languageJSON.get(PROGRESS);
                 int totalQuestionsAnswered = ((Long) progressJSON.get(TOT_QUESTIONS_ANSWERED)).intValue();
@@ -68,6 +73,11 @@ public class DataLoader extends DataConstants{
                     missedWords.add((String) word);
                 }
 
+<<<<<<< HEAD
+=======
+    public static List<Flashcard> loadFlashcards() {
+        List<Flashcard> flashcards = new ArrayList<>();
+>>>>>>> c56eb3f641448da1150fb73a9bb81d5400154d2f
                 Progress progressAt = new Progress(totalQuestionsAnswered, numCorrectAnswers, currentCategory, progressInCategory, streak, missedWords);
                 newUser.getLanguages().put(languageAt, progressAt);
             }
@@ -75,14 +85,15 @@ public class DataLoader extends DataConstants{
         }   
         return userList;
 
-    } catch (Exception e) {
+    } 
+    catch (Exception e) {
         e.printStackTrace();
     }
     return null;
 }
 
 
-public static ArrayList<Language> getLanguages () {
+public static ArrayList<Language> getLanguages() {
     ArrayList<Language> languageList = new ArrayList<Language>();
     try {
         FileReader reader = new FileReader(FILE_NAME_CATEGORY);
@@ -117,6 +128,15 @@ public static ArrayList<Language> getLanguages () {
     }
 return null;
 }
+
+//string to date method 
+//languagelist.getinstance get languagebyID
+//makelanguagelist a singleton 
+//
+
+
+
+
 
 // Main method to test getUsers
 
@@ -295,4 +315,13 @@ public static List<Progress> loadProgress() {
         return missedWords;
     }
         
+}
+
+    public static ArrayList<language> getLanguages() 
+    {
+        //get languages and within that get the categories and then the wordlist and phraselist 
+    }
+
+
+
 }
