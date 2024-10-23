@@ -3,12 +3,18 @@ package language;
  * @author sri
  */
 import java.util.ArrayList;
-public class MockConversations {
+public class MockConversations extends Question{
+
     /** attributes of MockConversations class */
     private String topic;
     private ArrayList<String> script;
     private ArrayList<String> roles;
     private ArrayList<String> answers;
+
+    public MockConversations(String question) {
+        super(question);
+        //TODO Auto-generated constructor stub
+    }
 
 	public String getTopic(){
         return topic != null ? topic : "No topic available";
@@ -43,6 +49,7 @@ public class MockConversations {
     }
 
     public String getOptions(){
+        // what did we want this to do
         return null;
     }
 
