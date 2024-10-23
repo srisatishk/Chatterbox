@@ -19,7 +19,7 @@ public class Phrase {
      * getWords method
      * @return the words that will be in the phrase
      */
-    public ArrayList<Word> getWords(){
+    public String getWords(){
         //return "words";
         return words;
     }

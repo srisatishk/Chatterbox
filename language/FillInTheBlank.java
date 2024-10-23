@@ -35,7 +35,7 @@ public class FillInTheBlank extends Question{
     String sentence = sampleSentence.getWords();
     String[] words = sentence.split(" ");
     // the first word will always be the missing word
-    // example : __ is how you say "yellow" in french
+    // example : __ is how you say "yellow" in
     return words[0];
   }
 

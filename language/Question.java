@@ -6,7 +6,7 @@ public class Question {
     /**
      * attributes for progress class
      */
-    private String question;
+    protected String question;
 
     public Question(String question) {
         this.question = question;
