@@ -175,20 +175,7 @@ public class CategorySystemFacade {
      * @return a question for the user
      */
     public String getQuestion(){
-        //i wasnt exactly sure on this one- need help
-        if (category != null && language != null) {
-            // Example of a phrase question
-            if (phrases != null) {
-                return "Translate this phrase to " + language.getCurrentCategory() + ": " + phrases.getWords();
-            }
-    
-            // Example of a word question
-            if (words != null) {
-                return "What is the " + language.getCurrentCategory() + " word for: " + words.getLetters();
-            }
-        }
-        //if no more questions to be asked
-        return "No more questions available.";
+        //rewrite this shorter
     }
 
     /**
