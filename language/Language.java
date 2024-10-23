@@ -3,10 +3,10 @@ package language;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class language {
+public class Language {
     private UUID languageID;
     private ArrayList<Category> categories;
-    private language language;
+    private Language language;
 
     public language(UUID languageID) {
         this.languageID = UUID.randomUUID();
@@ -22,7 +22,7 @@ public class language {
         return new ArrayList<>(categories);
         
     }
-    public language getLanguage() {
+    public Language getLanguage() {
         return language;
     }
 
