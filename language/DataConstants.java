@@ -7,6 +7,7 @@ public abstract class DataConstants {
     protected static final String FILE_NAME_CATEGORY_SYSTEM = "categorysystem.json";
     protected static final String FILE_NAME_USER_INTERFACE = "user.json"; //added this for UI, not sure if done correctly tho
     protected static final String FILE_NAME_PHRASES = "phrases.json"; 
+    protected static final String FILE_NAME_COURSES = "Courses.json";
     //Files for DataLoader - USER
     protected static final String FILE_NAME_USER = "PixelChicksProject/json/User.json";
     protected static final String USER_ID = "id";
@@ -23,6 +24,7 @@ public abstract class DataConstants {
     //Files for DataLoader - LANGUAGE
     protected static final String FILE_NAME_CATEGORY = "PixelChicksProject/json/Category.json";
     protected static final String LANGUAGE_ID = "languageID";
+    protected static final String COURSE_ID = "courseID";
     protected static final String LANGUAGE = "language";
     protected static final String CATEGORY_TITLE = "title";
     protected static final String CATEGORY_QUESTION = "question";

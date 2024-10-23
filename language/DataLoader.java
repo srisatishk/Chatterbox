@@ -103,6 +103,34 @@ public static ArrayList<Language> getLanguages() {
 return null;
 }
 
+
+public static ArrayList<Course> getCourse() {
+    ArrayList<Course> CourseList = new ArrayList<Course>();
+    try {
+        FileReader reader = new FileReader(FILE_NAME_COURSES);
+        JSONParser parser = new JSONParser();
+        JSONArray CourseJSON = (JSONArray)new JSONParser().parse(reader);
+
+        for (int i=0; i < CourseJSON.size(); i++) {
+            JSONObject CourseJSON = (JSONObject)CourseJSON.get(i);
+            UUID userID = UUID.fromString(String.valueOf(CourseJSON.get(USER_ID)));
+            UUID courseID = UUID.fromString(String.valueOf(CourseJSON.get(COURSE_ID)));
+            String course = (String)CourseJSON.get(COURSE);
+            String language = (String)CourseJSON.get(LANGUAGE);
+            String category = (String)CourseJSON.get(CATEGORY_TITLE);
+            String question = (String)CourseJSON.get(CATEGORY_QUESTION);
+
+            Language newLanguage = new Language(userID, courseID, language, question, newCategory);
+            courseList.add(newCourse);
+        }
+        return courseList;
+    }
+    catch (Exception e) {
+    e.printStackTrace();
+    }
+return null;
+}
+
 //string to date method 
 //languagelist.getinstance get languagebyID
 //makelanguagelist a singleton 
@@ -160,22 +188,6 @@ public static void main(String[] args) {
 
         return flashcards;  // Return the list of flashcards
     }
-
-    // public static List<Flashcard> loadFlashcards() {
-    //     List<Flashcard> flashcards = new ArrayList<>();
-    //             Progress progressAt = new Progress(totalQuestionsAnswered, numCorrectAnswers, currentCategory, progressInCategory, streak, missedWords);
-    //             newUser.getLanguages().put(languageAt, progressAt);
-    //         }
-    //         userList.add(newUser);
-    //     }   
-    //     return userList;
-
-    // } 
-    // catch (Exception e) {
-    //     e.printStackTrace();
-    // }
-    // return null;
-
     
     // loads the list of questions
     public static List<Question> loadQuestions() {

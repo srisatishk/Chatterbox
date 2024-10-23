@@ -63,8 +63,8 @@ public class DataWriter extends DataConstants {
         userDetails.put(USER_DATE_OF_BIRTH, user.getDateOfBirth());
         userDetails.put(USER_PASSWORD, user.getPassword());
         JSONArray languagesJSON = new JSONArray();
-        HashMap<language, Progress> languages = user.getLanguages();
-        for (language language : languages.keySet()) {
+        HashMap<Language, Progress> languages = user.getLanguages();
+        for (Language language : languages.keySet()) {
             JSONObject languageJSON = new JSONObject();
             languageJSON.put(LANGUAGE_ID, language.getLanguageID().toString());
             languageJSON.put(LANGUAGE, language.getLanguage());
