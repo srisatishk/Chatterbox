@@ -16,9 +16,9 @@ public class Progress {
     private int streak;
     private LocalDate loginDate;
     private ArrayList<String> missedWords;
-    private language language;
+    private Language language;
 
-    public Progress(int totalQuestionsAnswered, int numCorrectAnswers, String currentCategory2, int progressInCategory, int streak2, ArrayList<String> missedWords, language language) {
+    public Progress(int totalQuestionsAnswered, int numCorrectAnswers, String currentCategory2, int progressInCategory, int streak2, ArrayList<String> missedWords, Language language) {
         this.totalQuestionsAnswered = totalQuestionsAnswered;
         this.numCorrectAnswers = numCorrectAnswers;
         this.currentCategory = currentCategory;
@@ -138,11 +138,11 @@ public class Progress {
         progressInCategory++; 
      }
 
-     public language getLanguage(){
+     public Language getLanguage(){
         return language;
      }
 
-     public void setLanguage(language language){
+     public void setLanguage(Language language){
         this.language = language;
      }
      /**
