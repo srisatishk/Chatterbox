@@ -8,7 +8,7 @@ public class Language {
     private ArrayList<Category> categories;
     private Language language;
 
-    public language(UUID languageID) {
+    public Language(UUID languageID) {
         this.languageID = UUID.randomUUID();
         this.categories = new ArrayList<>();
     }
