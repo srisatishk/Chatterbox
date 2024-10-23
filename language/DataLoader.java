@@ -62,20 +62,8 @@ public class DataLoader extends DataConstants{
                     missedWords.add((String) word);
                 }
 
-    public static List<Flashcard> loadFlashcards() {
-        List<Flashcard> flashcards = new ArrayList<>();
-                Progress progressAt = new Progress(totalQuestionsAnswered, numCorrectAnswers, currentCategory, progressInCategory, streak, missedWords);
-                newUser.getLanguages().put(languageAt, progressAt);
             }
-            userList.add(newUser);
-        }   
-        return userList;
-
-    } 
-    catch (Exception e) {
-        e.printStackTrace();
-    }
-    return null;
+            
 }
 
 
@@ -172,6 +160,21 @@ public static void main(String[] args) {
 
         return flashcards;  // Return the list of flashcards
     }
+
+    // public static List<Flashcard> loadFlashcards() {
+    //     List<Flashcard> flashcards = new ArrayList<>();
+    //             Progress progressAt = new Progress(totalQuestionsAnswered, numCorrectAnswers, currentCategory, progressInCategory, streak, missedWords);
+    //             newUser.getLanguages().put(languageAt, progressAt);
+    //         }
+    //         userList.add(newUser);
+    //     }   
+    //     return userList;
+
+    // } 
+    // catch (Exception e) {
+    //     e.printStackTrace();
+    // }
+    // return null;
 
     
     // loads the list of questions
@@ -307,6 +310,75 @@ public static List<Progress> loadProgress() {
     {
         //get languages and within that get the categories and then the wordlist and phraselist 
     }
+
+    public static ArrayList<Word> getWords() {
+        ArrayList<Word> words = new ArrayList<>(); 
+
+          // Try to read and parse the JSON file
+          try (FileReader reader = new FileReader(FILE_NAME_WORDS)) {
+            JSONParser jsonParser = new JSONParser();
+            
+            // Parse the JSON array from the file
+            Object obj = jsonParser.parse(reader);
+            JSONArray wordsList = (JSONArray) obj;
+
+            // Iterate through each JSON object in the array and convert it to a Flashcard
+            for (Object wordObject : wordsList) {
+                JSONObject wordsJSON = (JSONObject) wordObject;
+
+                String category = (String) wordsJSON.get("category"); 
+                String word = (String) wordsJSON.get("word");
+                String pronunciation = (String) wordsJSON.get("pronunciation");
+                String translation = (String) wordsJSON.get("translation");
+                
+                // Create a new Word object (assuming you have a Word constructor defined)
+                Word newWord = new Word(category, word, pronunciation, translation);
+                words.add(newWord); 
+            }
+        }  catch (IOException | ParseException e) {
+            e.printStackTrace();  // Handle errors in reading or parsing the file
+        }
+
+        return words;  // Return the list of words
+    }
+
+    
+    public static String getCategory() {
+        throw new UnsupportedOperationException("Unimplemented method 'getCategory'");
+    }
+
+    public static ArrayList<Phrase> getPhrases() {
+
+        ArrayList<Phrase> phrases = new ArrayList<>(); 
+    
+              // Try to read and parse the JSON file
+              try (FileReader reader = new FileReader(FILE_NAME_PHRASES)) {
+                JSONParser jsonParser = new JSONParser();
+                
+                // Parse the JSON array from the file
+                Object obj = jsonParser.parse(reader);
+                JSONArray phrasesList = (JSONArray) obj;
+    
+                // Iterate through each JSON object in the array and convert it to a Flashcard
+                for (Object phraseObject : phrasesList) {
+                    JSONObject phrasesJSON = (JSONObject) phraseObject;
+    
+                    String category = (String) phrasesJSON.get("category"); 
+                    String wordsArray= (JSONArray) phrasesJSON.get("words");
+                    String translation = (String) phrasesJSON.get("translation");
+                    
+                    Phrase newPhrase = new Phrase(category, wordsArray, translation);
+                    Phrase.add(newPhrase); 
+                }
+            }  catch (IOException | ParseException e) {
+                e.printStackTrace();  // Handle errors in reading or parsing the file
+            }
+    
+            return phrases;  // Return the list of phrases
+    }
+
+
+},
 
 
 

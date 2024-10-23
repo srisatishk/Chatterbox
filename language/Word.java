@@ -4,6 +4,8 @@ import java.util.ArrayList;
 /**
  * @author zaniah and grace 
  */
+
+
 public class Word {
     /**
      * attributes for word class
@@ -13,7 +15,7 @@ public class Word {
     private String translation;
     private ArrayList<String> alternatives; 
 
-    public Word(String word, String pronunciation, String translation) {
+    public Word(String word, String pronunciation, String translation, String translation2) {
        this.word = word;
        this.pronunciation = pronunciation;
        this.translation = translation;

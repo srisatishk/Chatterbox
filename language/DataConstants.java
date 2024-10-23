@@ -6,6 +6,7 @@ public abstract class DataConstants {
     protected static final String FILE_NAME_PROGRESS = "progress.json";
     protected static final String FILE_NAME_CATEGORY_SYSTEM = "categorysystem.json";
     protected static final String FILE_NAME_USER_INTERFACE = "user.json"; //added this for UI, not sure if done correctly tho
+    protected static final String FILE_NAME_PHRASES = "phrases.json"; 
     //Files for DataLoader - USER
     protected static final String FILE_NAME_USER = "PixelChicksProject/json/User.json";
     protected static final String USER_ID = "id";
