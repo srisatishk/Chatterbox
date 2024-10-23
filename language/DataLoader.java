@@ -62,7 +62,8 @@ public class DataLoader extends DataConstants{
                     missedWords.add((String) word);
                 }
 
-    
+            }
+            
 }
 
 
@@ -366,8 +367,7 @@ public static List<Progress> loadProgress() {
                     String wordsArray= (JSONArray) phrasesJSON.get("words");
                     String translation = (String) phrasesJSON.get("translation");
                     
-                    // Create a new Word object (assuming you have a Word constructor defined)
-                    Phrase newPhrase = new Word(category, words, translation);
+                    Phrase newPhrase = new Phrase(category, wordsArray, translation);
                     Phrase.add(newPhrase); 
                 }
             }  catch (IOException | ParseException e) {
@@ -376,6 +376,7 @@ public static List<Progress> loadProgress() {
     
             return phrases;  // Return the list of phrases
     }
+
 
 },
 
