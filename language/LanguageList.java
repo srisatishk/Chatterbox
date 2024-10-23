@@ -25,7 +25,7 @@ public class LanguageList {
         return languageList;
     }
 
-    public ArrayList<language> getLanguages() 
+    public ArrayList<Language> getLanguages() 
     { 
         return languages;
     }
