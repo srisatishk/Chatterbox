@@ -1,7 +1,7 @@
 package language;
 import java.util.ArrayList;
 /**
- * @author zaniah ang grace 
+ * @author zaniah and grace 
  */
 public class Phrase extends Question {
     /**

@@ -45,9 +45,16 @@ public class DataLoader extends DataConstants{
             for (int j = 0; j < languagesJSON.size(); j++) {
                 JSONObject languageJSON = (JSONObject) languagesJSON.get(j);
                 UUID languageID = UUID.fromString(String.valueOf(languageJSON.get(LANGUAGE_ID)));
-                String language = (String)languageJSON.get(LANGUAGE);
+                String languageName = (String)languageJSON.get(LANGUAGE_NAME);
+                Category currentCategory = Category.fromString(String.valueOf(languageJSON.get(CURRENT_CATEGORY)));
+                int progressInCategory = ((Long) languageJSON.get(PROGRESS_IN_CATEGORY)).intValue();
+                JSONArray translationsJSON = (JSONArray)languageJSON.get(TRANSLATIONS);
+                ArrayList<String> translations = new ArrayList<>();
+                for (Object translation : translationsJSON) {
+                    translations.add((String) translation);
+                }
 
-                Language languageAt = new Language(languageID, language);
+                Language languageAt = new Language(languageID, languageName, currentCategory, progressInCategory, translations);
 
                 JSONObject progressJSON = (JSONObject)languageJSON.get(PROGRESS);
                 int totalQuestionsAnswered = ((Long) progressJSON.get(TOT_QUESTIONS_ANSWERED)).intValue();
@@ -61,10 +68,6 @@ public class DataLoader extends DataConstants{
                     missedWords.add((String) word);
                 }
 
-<<<<<<< HEAD
-    public static List<Flashcard> loadFlashcards() {
-        List<Flashcard> flashcards = new ArrayList<>();
-=======
                 Progress progressAt = new Progress(totalQuestionsAnswered, numCorrectAnswers, currentCategory, progressInCategory, streak, missedWords);
                 newUser.getLanguages().put(languageAt, progressAt);
             }
@@ -136,7 +139,6 @@ public static void main(String[] args) {
 // Loads the list of flashcards
     public static List<Flashcards> loadFlashcards() {
         List<Flashcards> flashcards = new ArrayList<>();
->>>>>>> 20e453dff83ef8f61f249928b330302b899a8ca0
 
         // Try to read and parse the JSON file
         try (FileReader reader = new FileReader(FILE_NAME_FLASHCARDS)) {
@@ -196,7 +198,6 @@ public static void main(String[] args) {
         return questionsList;  // Return the list of questions
     }
 
-<<<<<<< HEAD
     
 /**
  * Loads the progress data for the user from a JSON file and returns it as a list of Progress objects.
@@ -280,8 +281,6 @@ public static List<Progress> loadProgress() {
         return flashcards;  // Return the list of flashcards
     }
 
-=======
->>>>>>> 20e453dff83ef8f61f249928b330302b899a8ca0
     // Method to convert JSONArray to a String array
      private static ArrayList<String> convertJsonArrayToStringArray(JSONArray jsonArray) {
         // Create a String array with the same size as the JSONArray

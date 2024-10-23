@@ -5,14 +5,16 @@ import java.util.UUID;
 
 public class Language {
     private UUID languageID;
+    private String languageName;
     private Category currentCategory; 
     private int progressInCategory; 
     private ArrayList<Word> translations;
 
-    public Language(UUID languageID, String currentCategory, int progressInCategory) {
+    public Language(UUID languageID, String languageName, String currentCategory, int progressInCategory) {
         this.languageID = UUID.randomUUID();
-        this.currentCategory = currentCategory;
-        this.progressInCategory = progressInCategory; 
+        this.languageName = languageName; 
+        this.currentCategory = currentCategory; // Move to progress
+        this.progressInCategory = progressInCategory; // Move to progress
         this.translations = new ArrayList<>();
     }
     //language ID is a random UUID
@@ -20,6 +22,11 @@ public class Language {
     {
         return languageID;
     }
+
+    public String getLanguageName() {
+        return languageName;
+    }
+
     //the progress in the category keeps going up//
     public void progressInLanguage()
     { 

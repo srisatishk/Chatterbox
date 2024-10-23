@@ -17,7 +17,7 @@ public class Progress {
     private LocalDate loginDate;
     private ArrayList<String> missedWords;
 
-    public Progress(int totalQuestionsAnswered, int numCorrectAnswers, String currentCategory2, int progressInCategory, int streak2, ArrayList<String> missedWords2) {
+    public Progress(int totalQuestionsAnswered, int numCorrectAnswers, String currentCategory, int progressInCategory, int streak, ArrayList<String> missedWords) {
         this.totalQuestionsAnswered = totalQuestionsAnswered;
         this.numCorrectAnswers = numCorrectAnswers;
         this.currentCategory = currentCategory;
@@ -88,7 +88,7 @@ public class Progress {
             System.out.print("The user has not answered any questions yet.");
         }
         int perCorrect = (numCorrectAnswers / totalQuestionsAnswered) * 100;
-        System.out.print("Tracking the percentage of correct answers. : The percentage of correct answers is: " + perCorrect + "%");
+        System.out.print("Tracking the percentage of correct answers. The percentage of correct answers is: " + perCorrect + "%");
     }
 
     /**
@@ -139,7 +139,7 @@ public class Progress {
      * saves the user's progress in the language and category
      */
     public void saveProgress() {
-        boolean savedProgress = DataWriter.saveProgress(this);
+        DataWriter.saveProgress();
         
     }  
     

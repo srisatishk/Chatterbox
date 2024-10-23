@@ -20,11 +20,7 @@ public class DataWriter extends DataConstants {
    /** 
     * Path to the JSON file where user data will be written.
     */
-<<<<<<< HEAD
    private static final String FILE_PATH = "json/data.json";
-=======
->>>>>>> 20e453dff83ef8f61f249928b330302b899a8ca0
-
 
        /**
     * Writes a list of users to the JSON file specified in FILE_PATH.
@@ -71,7 +67,7 @@ public class DataWriter extends DataConstants {
         for (Language language : languages.keySet()) {
             JSONObject languageJSON = new JSONObject();
             languageJSON.put(LANGUAGE_ID, language.getLanguageID().toString());
-            languageJSON.put(LANGUAGE, Language.getLanguage());
+            languageJSON.put(LANGUAGE_NAME, language.getLanguageName());
 
             Progress progress = languages.get(language);
             JSONObject progressJSON = new JSONObject();
@@ -124,18 +120,13 @@ public static void writeFlashcards(List<Flashcard> flashcards) {
         }
 
         // Write the JSON array to the file
-<<<<<<< HEAD
         try {
             FileWriter file = new FileWriter(FILE_PATH);
-=======
-        try (FileWriter file = new FileWriter(FILE_NAME_FLASHCARDS)) {
->>>>>>> 20e453dff83ef8f61f249928b330302b899a8ca0
             file.write(flashcardList.toJSONString());  // Write JSON data to file
             file.flush();  // Ensure all data is written
         } catch (IOException e) {
             e.printStackTrace();  // Handle errors in writing to the file
         }
-<<<<<<< HEAD
     }
 
     public static JSONObject getFlashcard(Flashcard card){
@@ -158,31 +149,4 @@ public static void writeFlashcards(List<Flashcard> flashcards) {
 
         writeFlashcards(cards);
     }
-=======
-   }
-
-   @SuppressWarnings("unchecked")
-   public static void writeUsers(List<User> users) {
-        JSONArray userList = new JSONArray();
-        for (User user : users) {
-            JSONObject userDetails = new JSONObject();
-            userDetails.put("id", user.getId().toString());
-            userDetails.put("firstName", user.getFirstName());
-            userDetails.put("lastName", user.getLastName());
-            userDetails.put("email", user.getEmail());
-            userDetails.put("phoneNumber", user.getPhoneNumber());
-            userDetails.put("dateOfBirth", user.getDateOfBirth().toString());
-            userDetails.put("username", user.getUsername());
-            userDetails.put("password", user.getPassword());
-            userList.add(userDetails);
-        }
-
-        try (FileWriter file = new FileWriter(FILE_NAME_USER_INTERFACE)) {
-            file.write(userList.toJSONString());
-            file.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-   }
->>>>>>> 20e453dff83ef8f61f249928b330302b899a8ca0
 }
