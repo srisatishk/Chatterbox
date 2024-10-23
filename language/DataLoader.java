@@ -308,6 +308,26 @@ public static List<Progress> loadProgress() {
         //get languages and within that get the categories and then the wordlist and phraselist 
     }
 
+    public static ArrayList<Word> getwords() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getwords'");
+    }
+
+    public static String getCategory() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getCategory'");
+    }
+
+    public static ArrayList<Word> getWords() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getWords'");
+    }
+
+    public static ArrayList<Phrase> getPhrases() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPhrases'");
+    }
+
 
 
 }

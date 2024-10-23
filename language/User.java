@@ -20,7 +20,7 @@ public class User{
     private LocalDate dateOfBirth;
     private String username;
     private String password;
-    private HashMap<language,Progress> languages;
+    private HashMap<Language,Progress> languages;
 
     public User(UUID id, String firstName, String lastName, String email, String phoneNumber, LocalDate dateOfBirth, String username, String password){
         this.id = id;
@@ -122,11 +122,11 @@ public class User{
         return dateOfBirth.format(formatter);
     }
 
-    public HashMap<language, Progress> getLanguages(){
+    public HashMap<Language, Progress> getLanguages(){
         return languages;
     }
 
-    public void setLanguages(HashMap<language, Progress> languages) {
+    public void setLanguages(HashMap<Language, Progress> languages) {
         this.languages = languages;
     }
 

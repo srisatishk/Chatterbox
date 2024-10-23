@@ -4,6 +4,8 @@ import java.util.ArrayList;
 /**
  * @author zaniah and grace 
  */
+
+
 public class Word {
     /**
      * attributes for word class

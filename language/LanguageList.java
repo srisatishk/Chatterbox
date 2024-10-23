@@ -7,7 +7,7 @@ import java.util.ArrayList;
 **/
 
 public class LanguageList {
-    private ArrayList<language> languages; 
+    private ArrayList<Language> languages; 
     private static LanguageList languageList;
 
     //load content from json
