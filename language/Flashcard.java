@@ -29,6 +29,7 @@ public class Flashcard extends Question{
      * @param translation The translation of the word in the learner's native language.
      * @param phrase An example phrase using the word for contextual understanding.
      */
+
     public Flashcard(String word, String translation, String phrase) {
         this.word = word;
         this.translation = translation;
