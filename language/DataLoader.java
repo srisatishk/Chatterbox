@@ -188,7 +188,7 @@ public static void main(String[] args) {
 
         return flashcards;  // Return the list of flashcards
     }
-    
+
     // loads the list of questions
     public static List<Question> loadQuestions() {
         List<Question> questionsList = new ArrayList<>();
@@ -355,7 +355,7 @@ public static List<Progress> loadProgress() {
     }
 
     
-    public static String getCategory() {
+    public static Category getCategory() {
         throw new UnsupportedOperationException("Unimplemented method 'getCategory'");
     }
 

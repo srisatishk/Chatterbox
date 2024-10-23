@@ -1,24 +1,32 @@
 [
     {
-        "id" : "85e9d2cb-9847-4934-970c-442d081fffa4",
+        "userid" : "85e9d2cb-9847-4934-970c-442d081fffa4",
         "firstName" : "John" ,
         "lastName" : "Doe",
         "email" : "johndoe@gmail.com",
         "phoneNumber" : "627-917-2739",
         "dateOfBirth" : "01/05/2001",
         "username" : "johndoe73",
-        "password" : "IlovemyCat"
+        "password" : "IlovemyCat",
+        "currentCategory" : "numbers",
+        "totalQuestionsAnswered" : 1,
+        "numCorrectAnswers" : 1,
+        "missedWords" : []
         
     },
 
-{
-"id": "9dfc6cef-6cd2-45e7-8a78-c24b0bfa1063", 
-"firstName": "Jane", 
-"lastName": "Smith", 
-"email": "jsmith@gmail.com",
-"phoneNumber":"817-902-3201",
-"dateOfBirth": "10/07/2004", 
-"userName": "janesmith10",
-"password": "IlovemyCat"
-}
+    {
+        "userid": "9dfc6cef-6cd2-45e7-8a78-c24b0bfa1063", 
+        "firstName": "Jane", 
+        "lastName": "Smith", 
+        "email": "jsmith@gmail.com",
+        "phoneNumber":"817-902-3201",
+        "dateOfBirth": "10/07/2004", 
+        "userName": "janesmith10",
+        "password": "IlovemyCat",
+        "currentCategory" : "colors",
+        "totalQuestionsAnswered" : 1,
+        "progressInCategory" : 17,
+        "missedWords" : []
+    }
 ]

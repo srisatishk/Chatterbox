@@ -205,24 +205,13 @@ public class CategorySystemFacade {
      * a way for the user to study by answering fill in the blank questions
      */
     public void getFillintheBlank(){
-        FillInTheBlank fillInBlank = new FillInTheBlank();
+        FillInTheBlank fillInBlank = new FillInTheBlank(null, phrases, null);
 
         String sentence = fillInBlank.getSampleSentence();
         String missingWord = fillInBlank.getMissingWord();
-        List<String> wordBank = fillInBlank.getWordBank();
-
 
         System.out.println("Fill in the blank:");
         System.out.println(sentence.replace(missingWord, " "));  
-
-   
-        if (wordBank != null) 
-        {
-            System.out.println("Use the word bank to help you fill in the blanks:");
-            for (String word : wordBank) {
-                System.out.println(word);
-            }
-    }
     }
 
     /**
@@ -231,8 +220,8 @@ public class CategorySystemFacade {
      */
     public List<Flashcard> getFlashcards(){
 
-        //need help here
-        Category currentCategory = progress.currentCategory();
+        //need help here- load data from flashcard ask user question
+        Category currentCategory = progress.getCurrentCategory();
         List<Flashcard> flashcards = new ArrayList<>();
         return flashcards;
     }

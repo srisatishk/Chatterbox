@@ -21,6 +21,7 @@ public class WordList {
         hashMap.put(category, words); 
     }
 
+
     //hashmap category to arraylistwords 
 
 
