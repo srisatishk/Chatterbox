@@ -67,21 +67,6 @@ private String sentenceStructure;
          }
     }
 
-    /**
-     * asks if user wants to logout
-     */
-    // public void askLogout() {
-    //     Scanner scanner = new Scanner(System.in);
-    //     System.out.print("Do you want to logout? Enter yes or no: ");
-    //     String response = scanner.nextLine().toLowerCase();
-
-    //     if (response.equals("yes")) {
-    //         logout();
-    //     } else {
-    //         System.out.println("You are still logged in as " + currentUser.getUsername());
-    //     }
-    // }
-
      /**
      * createAccount method 
      * asks user for information then creates a User object
@@ -168,12 +153,9 @@ private String sentenceStructure;
         if (login(username, password)) {
             System.out.println("Welcome, " + currentUser.getFirstName() + " " + currentUser.getLastName() + "!");
         }
-        
-
         chooseLangauage();
         chooseCourse();
         chooseCategory();
-        //askLogout();
     }
 
 
