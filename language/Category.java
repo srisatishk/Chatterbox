@@ -85,7 +85,6 @@ public class Category{
         System.out.println( course + " saved successfully!");
     }
 
-<<<<<<< HEAD
     // public static void main(String[] args) {
     //     ArrayList<String> categories = new ArrayList<>();
     //     categories.add("Words");
@@ -100,6 +99,4 @@ public class Category{
     // }
 
 }
-=======
-}
->>>>>>> 385d9b2db888fa3beef9031391e3cf5e075e80a5
+
