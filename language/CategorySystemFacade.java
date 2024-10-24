@@ -76,19 +76,15 @@ public class CategorySystemFacade {
      * @return the category that the user chose
      */
     public List<String> getCategory(){
-        LanguageList languageList = new LanguageList();
-        List<Category> categories = languageList.chooseCategories();
-
         List<String> categoryNames = new ArrayList<>();
-
-        if (categories != null) { 
-        for (Category category : categories) {
+        List<Language> languages = (List<Language>) LanguageList.getInstance().getLanguages();
+        for (Language language : languages) {
+                for (Category category : language.getCategories()) { 
             if (category != null) {
-                categoryNames.add(category.toString()); 
+                categoryNames.add(category.toString());
             }
         }
         }
-
         return categoryNames;
     }
 
@@ -145,7 +141,7 @@ public class CategorySystemFacade {
      * @return languages
      */
     public List<Language> getLanguageList(){
-        return this.languages;
+        return this.language;
     }
 
     /**
@@ -167,7 +163,7 @@ public class CategorySystemFacade {
         MockConversations mockConversation = new MockConversations();
 
         String topic = mockConversation.getTopic();
-        System.out.println("Mock Conversation Topic: " + (topic != null ? topic : "No topic available."));
+        System.out.println("Mock Conversation Topic: " + (topic != null ? topic: "No topic available."));
 
         String script = mockConversation.getScript();
         System.out.println("Conversation Script: " + (script != null ? script : "No script available."));
@@ -212,10 +208,10 @@ public class CategorySystemFacade {
      */
     public void getMatching(){
         //fix the static/nonstatic in mathcing class
-        List<String> wordList = Matching.getImageList();
+        List<String> wordList = Matching.getImageList(); //how do i fix this
         List<String> imageList = Matching.getWordList();
 
-        System.out.println("Match the words with the correct images:");
+        System.out.println("Match the words correctly with the corresponding images:");
         for (int i = 0; i < wordList.size(); i++) {
             System.out.println("Word: " + wordList.get(i) + " - Image: " + imageList.get(i));
         }
