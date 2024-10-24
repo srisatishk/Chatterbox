@@ -8,6 +8,9 @@ public class Question {
      */
     protected String question;
 
+    public Question(){  
+    }
+
     public Question(String question) {
         this.question = question;
     }

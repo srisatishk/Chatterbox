@@ -10,6 +10,10 @@ public class MockConversations extends Question{
         //TODO Auto-generated constructor stub
     }
 
+    public MockConversations() {
+        //TODO Auto-generated constructor stub
+    }
+
     /** attributes of MockConversations class */
     private String topic;
     private ArrayList<String> script;
