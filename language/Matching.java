@@ -10,17 +10,17 @@ public class Matching extends Question{
         //TODO Auto-generated constructor stub
             }
 
-    private ArrayList<String> imageList;
-    private ArrayList<String> wordList;  
+    private static ArrayList<String> imageList;
+    private static ArrayList<String> wordList;  
     
 
-    public ArrayList<String> getImageList(){
-        return this.imageList;
+    public static ArrayList<String> getImageList(){
+        return imageList;
     }
 
-    public ArrayList<String> getWordList()
+    public static ArrayList<String> getWordList()
     {
-       return this.wordList; 
+       return wordList; 
 
     }
 
