@@ -62,25 +62,25 @@ private String sentenceStructure;
         if (currentUser != null) {
             System.out.println("User " + currentUser.getUsername() + " has been logged out.");
             currentUser = null;
-        } else {
-            System.out.println("No user is currently logged in.");
-        }
+          } else {
+              System.out.println("No user is currently logged in.");
+         }
     }
 
     /**
      * asks if user wants to logout
      */
-    public void askLogout() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Do you want to logout? Enter yes or no: ");
-        String response = scanner.nextLine().toLowerCase();
+    // public void askLogout() {
+    //     Scanner scanner = new Scanner(System.in);
+    //     System.out.print("Do you want to logout? Enter yes or no: ");
+    //     String response = scanner.nextLine().toLowerCase();
 
-        if (response.equals("yes")) {
-            logout();
-        } else {
-            System.out.println("You are still logged in as " + currentUser.getUsername());
-        }
-    }
+    //     if (response.equals("yes")) {
+    //         logout();
+    //     } else {
+    //         System.out.println("You are still logged in as " + currentUser.getUsername());
+    //     }
+    // }
 
      /**
      * createAccount method 
@@ -102,26 +102,33 @@ private String sentenceStructure;
     }
 
     public void chooseCourse(){
-         Course course = new Course("", new ArrayList<>());
+         Course course = new Course(UUID.randomUUID(), UUID.randomUUID(), null, null, null, null);
          ArrayList<String> availableCourses = course.getAvailableCourse();
- 
          String chosenCourse= course.chooseCourse(availableCourses);
- 
-         currentCourse = new Course(chosenCourse, new ArrayList<Question>());
+         currentCourse = new Course(UUID.randomUUID(), UUID.randomUUID(), chosenCourse, "Spanish", new ArrayList<>(), "Numbers");
+         System.out.println("you have chosen the " + chosenCourse + " course");
     }
 
 
     public void chooseCategory() {
-        // Create an instance of Category and use it to list and choose categories
         Category category = new Category("", new ArrayList<>());
         ArrayList<String> availableCategories = category.getAvailableCategory();
-
-        // Use the Category class's chooseCategory method
         String chosenCategory = category.chooseCategory(availableCategories);
-
-        // Store the chosen category
         currentCategory = new Category(chosenCategory, new ArrayList<Question>());
+        System.out.println("You have chosen the " + chosenCategory + " category");
     }
+
+       /**
+     * progressLearning method 
+     * tracks what the user has learned
+     */
+    public void progressLearning() {
+        System.out.print("Tracking the progress of what the user has learned.");
+    }
+
+    // public void showUsers(){
+    //     DataWriter.printUsers();
+    // }
 
     //  // Scenario 1: simple login
     //  public void scenario1() {
@@ -142,7 +149,9 @@ private String sentenceStructure;
     // Scenario 2: create account
     public void scenarioJim() {
         System.out.println("Scenario: Jim Smith");
-
+        //Prior to this scenario, show that Jim Smith is not in the users.json
+        //showUsers();
+        //Jim creates a new user account with his specified information.
         String firstName = "Jim";
         String lastName = "Smith";
         String email = "jimsmith@gmail.com";
@@ -150,10 +159,12 @@ private String sentenceStructure;
         LocalDate dateOfBirth = LocalDate.of(2005, 1, 1); 
         String username = "jimsmith44";
         String password = "smithj1";
-
         createAccount(firstName, lastName, email, phoneNumber, dateOfBirth, username, password);
-
-        // After creating the account, try to log in with the new account
+        //Jim logs out of the system.
+        logout();
+        //Show the users.json -> illustrating that Jim is now in the file.
+        //showUsers();
+        // Now have Jim successfully login to the system
         if (login(username, password)) {
             System.out.println("Welcome, " + currentUser.getFirstName() + " " + currentUser.getLastName() + "!");
         }
@@ -162,17 +173,9 @@ private String sentenceStructure;
         chooseLangauage();
         chooseCourse();
         chooseCategory();
-        askLogout();
+        //askLogout();
     }
 
-
-     /**
-     * progressLearning method 
-     * tracks what the user has learned
-     */
-    public void progressLearning() {
-        System.out.print("Tracking the progress of what the user has learned.");
-    }
 
      // Main method to test the scenarios
      public static void main(String[] args) {

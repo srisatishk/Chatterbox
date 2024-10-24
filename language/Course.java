@@ -1,12 +1,8 @@
 package language;
 import java.util.UUID;
-<<<<<<< HEAD
-import java.util.ArrayList;
-=======
 
 import org.json.simple.JSONArray;
-
->>>>>>> 77f92913752c3fc55ee1b749f4514ed771a25474
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -21,7 +17,7 @@ public class Course {
     private List<String> categories;
     private String category;
 
-    public Course(UUID id, UUID courseID, String course, String language, List<String> categories, String category ){
+    public Course(UUID userid, UUID courseID, String course, String language, List<String> categories, String category ){
         this.userid = userid;
         this.courseID = courseID;
         this.course = course;
@@ -30,14 +26,10 @@ public class Course {
         this.category = category;
     }
 
-<<<<<<< HEAD
-    public Course(String chosenCategory, ArrayList<Question> arrayList) {
-=======
-    public Course(UUID userID, UUID courseID2, String course2, String language2, String category2,
-            JSONArray categories2) {
->>>>>>> 77f92913752c3fc55ee1b749f4514ed771a25474
-        //TODO Auto-generated constructor stub
-    }
+    // public Course(UUID userID, UUID courseID2, String course2, String language2, String category2,
+    //         JSONArray categories2) {
+    //     //TODO Auto-generated constructor stub
+    // }
 
     public UUID getId(){
         return userid;
@@ -95,28 +87,31 @@ public class Course {
     }
 
     public String chooseCourse(ArrayList<String> courseNames){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Choose a course");
-        for(int i = 0; i < courseNames.size(); i++){
-            System.out.println((i + 1) + ". " + courseNames.get(i));
-        }
-        int choice = 0;
-        while (choice < 1 || choice > courseNames.size()) {
-            System.out.print("You have chosen 1.) Phrases");
-            if (scanner.hasNextInt()) {
-                choice = scanner.nextInt();
-                if (choice < 1 || choice > courseNames.size()) {
-                    System.out.println("Invalid choice. Please select a valid category number.");
-                }
-            } else {
-                System.out.println("Please enter a number.");
-                scanner.next(); 
-            }
+        String selectedCourse = "Phrases";
+        return selectedCourse;
+        
+        // Scanner scanner = new Scanner(System.in);
+        // System.out.println("Choose a course");
+        // for(int i = 0; i < courseNames.size(); i++){
+        //     System.out.println((i + 1) + ". " + courseNames.get(i));
+        // }
+        // int choice = 0;
+        // while (choice < 1 || choice > courseNames.size()) {
+        //     System.out.print("You have chosen 1.) Phrases");
+        //     if (scanner.hasNextInt()) {
+        //         choice = scanner.nextInt();
+        //         if (choice < 1 || choice > courseNames.size()) {
+        //             System.out.println("Invalid choice. Please select a valid category number.");
+        //         }
+        //     } else {
+        //         System.out.println("Please enter a number.");
+        //         scanner.next(); 
+        //     }
         }
         // show which category the user chose
-        String selectedCourse = courseNames.get(choice - 1);
-        System.out.println("Current Course: " + selectedCourse);
-        return selectedCourse;
-    }
+        // String selectedCourse = courseNames.get(choice - 1);
+        // System.out.println("Current Course: " + selectedCourse);
+        // return selectedCourse;
+
 
 }
