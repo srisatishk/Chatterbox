@@ -7,21 +7,22 @@ public class Phrase {
     /**
      * attributes for phrase class
      */
-    private ArrayList<Word> words;
+    private ArrayList<Word> phrasewords;
     private String translation;
 
-   public Phrase(String translation) {
-    this.words = new ArrayList<>();  // Initialize the words list
+   public Phrase(String translation, String phrasewords) {
+    this.phrasewords = new ArrayList<>();  // Initialize the words list
     this.translation = translation;
 }
 
+    
     /**
      * getWords method
      * @return the words that will be in the phrase
      */
     public ArrayList<Word> getWords(){
         //return "words";
-        return words;
+        return phrasewords;
     }
 
     /**

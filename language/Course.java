@@ -1,35 +1,41 @@
 package language;
 import java.util.UUID;
+
+import org.json.simple.JSONArray;
+
 import java.util.List;
 
 public class Course {
     /**
      * attributes to match courses.json
      */
-    private UUID id; 
+    private UUID userid; 
     private UUID courseID;
     private String course;
     private String language;
     private List<String> categories;
-    private List<String> lessons;
     private String category;
 
-    public Course(UUID id, UUID courseID, String course, String language, List<String> categories, List<String> lessons, String category ){
-        this.id = id;
+    public Course(UUID id, UUID courseID, String course, String language, List<String> categories, String category ){
+        this.userid = userid;
         this.courseID = courseID;
         this.course = course;
         this.language = language;
         this.categories = categories;
-        this.lessons = lessons;
         this.category = category;
     }
 
+    public Course(UUID userID, UUID courseID2, String course2, String language2, String category2,
+            JSONArray categories2) {
+        //TODO Auto-generated constructor stub
+    }
+
     public UUID getId(){
-        return id;
+        return userid;
     }
 
     public void setId(UUID id){
-        this.id = id;
+        this.userid = id;
     }
     
     public UUID getCourseID(){
@@ -62,14 +68,6 @@ public class Course {
 
     public void setCategories(List<String> categories){
         this.categories = categories;
-    }
-
-    public List<String> getLessons(){
-        return lessons;
-    }
-
-    public void setLessons(List<String> lessons){
-        this.lessons = lessons;
     }
 
     public String getCategory(){
