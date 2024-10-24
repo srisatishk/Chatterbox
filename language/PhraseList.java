@@ -8,18 +8,17 @@ import java.util.HashMap;
     */
 public class PhraseList {
     
-    private String category;
+    private Category category;
     private ArrayList<Phrase> phrases;
-    private HashMap<String, ArrayList<Phrase>> hashmap;
+    HashMap<Category, ArrayList<Phrase>> hashMap = new HashMap<>();
 
 
     public PhraseList()
     { 
         phrases = DataLoader.getPhrases(); 
         category = DataLoader.getCategory();
-        hashmap = new HashMap<>();
-       
-        hashmap.put(category, phrases); 
+        hashMap = new HashMap<>();
+        hashMap.put(category, phrases); 
     }
 
 

@@ -5,18 +5,18 @@ package language;
 import java.util.ArrayList;
 public class MockConversations extends Question{
 
+    public MockConversations(String question) {
+        super(question);
+        //TODO Auto-generated constructor stub
+    }
+
     /** attributes of MockConversations class */
     private String topic;
     private ArrayList<String> script;
     private ArrayList<String> roles;
     private ArrayList<String> answers;
 
-    public MockConversations(String question) {
-        super(question);
-        //TODO Auto-generated constructor stub
-    }
-
-	public String getTopic(){
+    public String getTopic(){
         return topic != null ? topic : "No topic available";
 	}
 

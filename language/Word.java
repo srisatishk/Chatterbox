@@ -5,6 +5,7 @@ import java.util.ArrayList;
  * @author zaniah and grace 
  */
 
+ //what is the difference by changing String to word
 
 public class Word {
     /**
@@ -13,7 +14,7 @@ public class Word {
     private String word;
     private String pronunciation;
     private String translation;
-    private ArrayList<String> alternatives; 
+    private ArrayList<Word> alternatives; 
 
     public Word(String word, String pronunciation, String translation, String translation2) {
        this.word = word;
@@ -27,7 +28,7 @@ public class Word {
      * getword method
      * @return the letters in the word
      */
-    public String getword(){
+    public String getWord(){
         return word;
     }
 
@@ -48,7 +49,7 @@ public class Word {
         return translation;
     }
 
-    public ArrayList<String> getAlternatives() {
+    public ArrayList<Word> getAlternatives() {
         return new ArrayList<>(alternatives); 
     }
 }

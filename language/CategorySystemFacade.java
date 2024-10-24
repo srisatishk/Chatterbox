@@ -175,20 +175,7 @@ public class CategorySystemFacade {
      * @return a question for the user
      */
     public String getQuestion(){
-        //i wasnt exactly sure on this one- need help
-        if (category != null && language != null) {
-            // Example of a phrase question
-            if (phrases != null) {
-                return "Translate this phrase to " + language.getCurrentCategory() + ": " + phrases.getWords();
-            }
-    
-            // Example of a word question
-            if (words != null) {
-                return "What is the " + language.getCurrentCategory() + " word for: " + words.getLetters();
-            }
-        }
-        //if no more questions to be asked
-        return "No more questions available.";
+        //rewrite this shorter
     }
 
     /**
@@ -218,24 +205,13 @@ public class CategorySystemFacade {
      * a way for the user to study by answering fill in the blank questions
      */
     public void getFillintheBlank(){
-        FillInTheBlank fillInBlank = new FillInTheBlank();
+        FillInTheBlank fillInBlank = new FillInTheBlank(null, phrases, null);
 
         String sentence = fillInBlank.getSampleSentence();
         String missingWord = fillInBlank.getMissingWord();
-        List<String> wordBank = fillInBlank.getWordBank();
-
 
         System.out.println("Fill in the blank:");
         System.out.println(sentence.replace(missingWord, " "));  
-
-   
-        if (wordBank != null) 
-        {
-            System.out.println("Use the word bank to help you fill in the blanks:");
-            for (String word : wordBank) {
-                System.out.println(word);
-            }
-    }
     }
 
     /**
@@ -244,8 +220,8 @@ public class CategorySystemFacade {
      */
     public List<Flashcard> getFlashcards(){
 
-        //need help here
-        Category currentCategory = progress.currentCategory();
+        //need help here- load data from flashcard ask user question
+        Category currentCategory = progress.getCurrentCategory();
         List<Flashcard> flashcards = new ArrayList<>();
         return flashcards;
     }

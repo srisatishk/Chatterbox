@@ -9,7 +9,6 @@ public class Phrase {
      */
     private ArrayList<Word> words;
     private String translation;
-   // private boolean structure;
 
    public Phrase(String translation) {
     this.words = new ArrayList<>();  // Initialize the words list
@@ -20,7 +19,7 @@ public class Phrase {
      * getWords method
      * @return the words that will be in the phrase
      */
-    public ArrayList<Word> getWords(){
+    public String getWords(){
         //return "words";
         return words;
     }
@@ -32,13 +31,5 @@ public class Phrase {
     public String getTranslation(){
         //return "translation";
         return translation;
-    }
-
-    /**
-     * hasStructure method
-     * @return true or false if the phrase has structure ??
-     */
-    public boolean hasStructure(){
-        return true;
     }
 }
