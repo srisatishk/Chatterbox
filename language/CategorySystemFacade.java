@@ -119,7 +119,7 @@ public class CategorySystemFacade {
      */
     public List<Phrase> getPhraseList(){
         LanguageList languageList = new LanguageList();
-        //we need to implement phrase list in language list
+        //we need to implement phrase list in language list? its in the uml
         List<Phrase> phraseList = languageList.phraseList();
         return phraseList;
     }

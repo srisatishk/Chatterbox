@@ -1,6 +1,8 @@
 package language;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class FillInTheBlank extends Question{
 
@@ -28,22 +30,20 @@ public class FillInTheBlank extends Question{
         }
   }
 
-
-    
   public String getMissingWord() 
   {
-    String sentence = sampleSentence.getWords();
+    String sentence = sampleSentence.getTranslation();
     String[] words = sentence.split(" ");
-    // the first word will always be the missing word
-    // example : __ is how you say "yellow" in
-    return words[0];
+    Random random = new Random();
+    int index = random.nextInt(words.length);
+    return words[index];
   }
 
     
   public String getSampleSentence() {
-        String sentence = sampleSentence.getWords();
-        String missingWord = getMissingWord();
-        return sentence.replace(missingWord, "___"); 
+    String sentence = sampleSentence.getTranslation();
+    String missingWord = getMissingWord();
+    return sentence.replace(missingWord, "___"); 
   }
  
 }
