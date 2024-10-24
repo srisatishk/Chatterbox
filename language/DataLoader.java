@@ -117,7 +117,8 @@ public static ArrayList<Course> getCourse() {
             UUID courseID = UUID.fromString(String.valueOf(CourseJSON.get(COURSE_ID)));
             String course = (String)CourseJSON.get(COURSE);
             String language = (String)CourseJSON.get(LANGUAGE);
-            String category = (String)CourseJSON.get(CATEGORY_TITLE);
+            
+            String category = (String)CourseJSON.get(CURRENT_CATEGORY_TITLE);
             String question = (String)CourseJSON.get(CATEGORY_QUESTION);
             String newCategory = (String)CourseJSON.get(NEW_CATEGORY);
 
