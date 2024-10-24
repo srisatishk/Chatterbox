@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 /**
- * @author zaniah
+ * @author zaniah and sri
  */
 public class CategorySystemFacade {
     /**
@@ -48,20 +48,11 @@ public class CategorySystemFacade {
     public boolean addUser(){
         UserList userList = UserList.getInstance();
         String username = user.getUsername();
-
+        //check if user already exists
         if(userList.getUser(username) != null){
             return false;
         }
-
-        boolean adduser = userList.addUser(user.getFirstName(), user.getLastName(), user.getEmail(), user.getUsername(), user.getPassword());
-        if(adduser)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        } 
+        return userList.addUser(user.getFirstName(), user.getLastName(), user.getEmail(), user.getUsername(), user.getPassword());
     }
 
     /** 
@@ -72,22 +63,11 @@ public class CategorySystemFacade {
     public boolean login(String username, String password){
         UserList userList = UserList.getInstance();
         User user = userList.getUser(username);
-
-        if (user == null)
-        {
-            System.out.println("User not found.");
-            return false;
+        if (user != null && user.getPassword().equals(password)) {
+        this.user = user;
+        return true;
         }
-        if(user.getPassword().equals(password)){
-            this.user = user; 
-            return true;
-        }
-        //if user exists but enters an invalid password
-        else
-        {
-            System.out.println("Invalid password.");
-            return false;
-        }        
+        return false; 
     }
 
     /**
