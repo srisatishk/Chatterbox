@@ -8,6 +8,48 @@
         "dateOfBirth" : "01/05/2001",
         "username" : "johndoe73",
         "password" : "IlovemyCat",
+<<<<<<< HEAD
+        "languages" : {
+            "language" : {
+                "languageID" : "d72a4eb2-adb0-41f4-aeea-8bb743a1c095",
+                "languageName" : "French",
+                "Progress" : {
+                    "totalQuestionsAnswered" : "10",
+                    "numCorrectAnswers" : "7",
+                    "currentCategory" : "Numbers",
+                    "progressInCategory" : "7",
+                    "streak" : "3",
+                    "missedWords" : ["un", "neuf", "dix"]
+                }
+            }
+        }
+    },
+
+{
+"id": "9dfc6cef-6cd2-45e7-8a78-c24b0bfa1063", 
+"firstName": "Jane", 
+"lastName": "Smith", 
+"email": "jsmith@gmail.com",
+"phoneNumber":"817-902-3201",
+"dateOfBirth": "10/07/2004", 
+"userName": "janesmith10",
+"password": "IlovemyCat",
+"languages" : {
+    "language" : {
+        "languageID" : "d72a4eb2-adb0-41f4-aeea-8bb743a1c095",
+        "languageName" : "Spanish",
+        "Progress" : {
+            "totalQuestionsAnswered" : "5",
+            "numCorrectAnswers" : "2",
+            "currentCategory" : "Numbers",
+            "progressInCategory" : "3",
+            "streak" : "1",
+            "missedWords" : ["rojo", "azule", "verde"]
+        }
+    }
+}
+}
+=======
         "currentCategory" : "numbers",
         "totalQuestionsAnswered" : 1,
         "numCorrectAnswers" : 1,
@@ -29,4 +71,5 @@
         "progressInCategory" : 17,
         "missedWords" : []
     }
+>>>>>>> 8924bbcc37c2e072cf04a0869f2e21d255ff5d88
 ]

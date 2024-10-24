@@ -10,19 +10,13 @@ public class Category{
     */
     private String course;
     private ArrayList<Question> questions;
-    private Story story;
 
-    public Category(String course, ArrayList<Question> questions, Story story){
+    public Category(String course, ArrayList<Question> questions){
         this.course = course;
         this.questions = questions;
-        this.story = story;
     }
 
-    public Category(String currentCategory, int totalQuestionsAnswered, int progressInCategory, int numCorrectAnswers,
-            ArrayList<String> missedWords) {
-        //TODO Auto-generated constructor stub
-    }
-
+    
     // Getters and setters
     public String getCourse() {
         return course;
@@ -40,13 +34,6 @@ public class Category{
         this.questions = questions;
     }
 
-    public Story getStory() {
-        return story;
-    }
-
-    public void setStory(Story story) {
-        this.story = story;
-    }
 
     public String toString(){
         return "";
@@ -73,6 +60,7 @@ public class Category{
             System.out.println((i + 1) + ". " + categoryNames.get(i));
         }
 
+        // would all of this go into the data loader? 
         // checks the user entered a valid number
         int choice = 0;
         while (choice < 1 || choice > categoryNames.size()) {
@@ -97,6 +85,7 @@ public class Category{
         System.out.println( course + " saved successfully!");
     }
 
+<<<<<<< HEAD
     // public static void main(String[] args) {
     //     ArrayList<String> categories = new ArrayList<>();
     //     categories.add("Words");
@@ -111,3 +100,6 @@ public class Category{
     // }
 
 }
+=======
+}
+>>>>>>> 385d9b2db888fa3beef9031391e3cf5e075e80a5
