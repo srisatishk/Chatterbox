@@ -209,7 +209,7 @@ public class CategorySystemFacade {
     public void getMatching(){
         //fix the static/nonstatic in mathcing class
         List<String> wordList = Matching.getImageList(); //how do i fix this
-        List<String> imageList = Matching.getWordList();
+        List<String> imageList = Matching.getWordList(); 
 
         System.out.println("Match the words correctly with the corresponding images:");
         for (int i = 0; i < wordList.size(); i++) {
