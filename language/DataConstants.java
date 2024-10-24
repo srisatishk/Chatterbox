@@ -55,7 +55,7 @@ public abstract class DataConstants {
     protected static final String WORD_TRANSLATION = "translation";
     protected static final String WORD_ALTERNATIVES = "alternatives";
     //Files for DataLoader - PHRASES
-    protected static final String Phrases= "phrases";
+    protected static final String PHRASES= "phrases";
     protected static final String PHRASE_CATEGORY = "category";
     protected static final String PHRASE_TRANSLATION = "translation";
     protected static final String PHRASE_WORDS = "words<>";
