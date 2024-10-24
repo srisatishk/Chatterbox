@@ -85,18 +85,6 @@ public class Category{
         System.out.println( course + " saved successfully!");
     }
 
-    // public static void main(String[] args) {
-    //     ArrayList<String> categories = new ArrayList<>();
-    //     categories.add("Words");
-    //     categories.add("Phrases");
-    //     categories.add("Mock Conversations");
-    //     categories.add("Fill in the Blank");
-    //     categories.add("Flashcards");
-    //     categories.add("Matching");
-
-    //     Category category = new Category("", new ArrayList<Question>(), new Story());
-    //     category.chooseCategory(categories);
-    // }
 
 }
 
