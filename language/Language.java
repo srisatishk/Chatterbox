@@ -20,7 +20,7 @@ public class Language {
     {
         return languageID;
     }
-    public ArrayList<Category> getCatergories() 
+    public ArrayList<Category> getCategories() 
     {
         return new ArrayList<>(categories);
         

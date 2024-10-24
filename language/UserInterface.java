@@ -98,14 +98,14 @@ private String sentenceStructure;
 
     public void chooseCategory() {
         // Create an instance of Category and use it to list and choose categories
-        Category category = new Category("", new ArrayList<>(), new Story());
+        Category category = new Category("", new ArrayList<>());
         ArrayList<String> availableCategories = category.getAvailableCategory();
 
         // Use the Category class's chooseCategory method
         String chosenCategory = category.chooseCategory(availableCategories);
 
         // Store the chosen category
-        currentCategory = new Category(chosenCategory, new ArrayList<Question>(), new Story());
+        currentCategory = new Category(chosenCategory, new ArrayList<Question>());
     }
 
      // Scenario 1: simple login
