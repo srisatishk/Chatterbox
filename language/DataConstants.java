@@ -40,6 +40,7 @@ public abstract class DataConstants {
     protected static final String MISSED_WORDS = "missedWords";
     protected static final String CATEGORY_WORDS = "words";
     protected static final String CATEGORY_WORD = "word";
+    protected static final String NEW_CATEGORY = "category";
     //protected static final String WORD_PRONINCIATION = "pronunciation";
     //protected static final String WORD_TRANSLATION = "translation";
     //Files for DataLoader - CATEGORY
@@ -50,6 +51,9 @@ public abstract class DataConstants {
     protected static final String WORD_TRANSLATION = "translation";
     protected static final String WORD_ALTERNATIVES = "alternatives";
     //Files for DataLoader - PHRASES
+    protected static final String PHRASE_CATEGORY = "category";
+    protected static final String PHRASE_TRANSLATION = "translation";
+    protected static final String PHRASE_WORDS = "words<>";
     //Files for DataLoader - FLASHCARDS
     //Files for DataLoader - FLASHCARDS
 
