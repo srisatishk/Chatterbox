@@ -9,15 +9,15 @@ public class Course {
     /**
      * attributes to match courses.json
      */
-    private UUID userid; 
+    private UUID userID; 
     private UUID courseID;
     private String course;
     private String language;
     private List<String> categories;
     private String category;
 
-    public Course(UUID id, UUID courseID, String course, String language, List<String> categories, String category ){
-        this.userid = userid;
+    public Course(UUID userID, UUID courseID, String course, String language, List<String> categories, String category ){
+        this.userID = userID;
         this.courseID = courseID;
         this.course = course;
         this.language = language;
@@ -25,17 +25,13 @@ public class Course {
         this.category = category;
     }
 
-    public Course(UUID userID, UUID courseID2, String course2, String language2, String category2,
-            JSONArray categories2) {
-        //TODO Auto-generated constructor stub
+
+    public UUID getID(){
+        return userID;
     }
 
-    public UUID getId(){
-        return userid;
-    }
-
-    public void setId(UUID id){
-        this.userid = id;
+    public void setId(UUID ID){
+        this.userID = ID;
     }
     
     public UUID getCourseID(){

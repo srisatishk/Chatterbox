@@ -19,6 +19,9 @@ import org.json.simple.parser.ParseException;
  * It parses the JSON data and converts it into a list of objects.
  */
 public class DataLoader extends DataConstants{
+
+
+
     // Loads the lists of Users
     public static ArrayList<User> getUsers() {
         ArrayList<User> userList = new ArrayList<User>();
@@ -30,7 +33,7 @@ public class DataLoader extends DataConstants{
 
         for (int i=0; i < usersJSON.size(); i++) {
             JSONObject userJSON = (JSONObject)usersJSON.get(i);
-            UUID id = UUID.fromString(String.valueOf(userJSON.get(USER_ID)));
+            UUID userID = UUID.fromString(String.valueOf(userJSON.get(USER_ID)));
             String firstName = (String)userJSON.get(USER_FIRST_NAME);
             String lastName = (String)userJSON.get(USER_LAST_NAME);
             String email = (String)userJSON.get(USER_EMAIL);
@@ -40,68 +43,76 @@ public class DataLoader extends DataConstants{
             dateOfBirth = LocalDate.parse(dobString, formatter);
             String username = (String)userJSON.get(USER_USERNAME);
             String password = (String)userJSON.get(USER_PASSWORD);
-            User newUser = new User(id, firstName, lastName, email, phoneNumber, dateOfBirth, username, password);
-            JSONArray languagesJSON = (JSONArray) userJSON.get(USER_LANGUAGES);
-            for (int j = 0; j < languagesJSON.size(); j++) {
-                JSONObject languageJSON = (JSONObject) languagesJSON.get(j);
-                UUID languageID = UUID.fromString(String.valueOf(languageJSON.get(LANGUAGE_ID)));
-                String language = (String)languageJSON.get(LANGUAGE);
+            
+            JSONArray course = (JSONArray) userJSON.get(USER_LANGUAGES);
+            for (int j = 0; j < course.size(); j++) {
+                JSONObject courses = (JSONObject) course.get(j);
+                UUID courseID = UUID.fromString(String.valueOf(courses.get(LANGUAGE_ID)));
 
                 //Language languageAt = new Language(languageID, language);
                 LanguageList languageAt = LanguageList.getInstance();
 
-                JSONObject progressJSON = (JSONObject)languageJSON.get(PROGRESS);
+                JSONObject progressJSON = (JSONObject)courses.get(PROGRESS);
                 int totalQuestionsAnswered = ((Long) progressJSON.get(TOT_QUESTIONS_ANSWERED)).intValue();
                 int numCorrectAnswers = ((Long) progressJSON.get(NUM_CORRECT_ANSWERS)).intValue();
                 String currentCategory = (String)progressJSON.get(CURRENT_CATEGORY);
                 int progressInCategory = ((Long) progressJSON.get(PROGRESS_IN_CATEGORY)).intValue();
                 int streak = ((Long) progressJSON.get(USER_STREAK)).intValue();
-                JSONArray missedWordsJSON = (JSONArray)languageJSON.get(MISSED_WORDS);
+                JSONArray missedWordsJSON = (JSONArray)courses.get(MISSED_WORDS);
                 ArrayList<String> missedWords = new ArrayList<>();
                 for (Object word : missedWordsJSON) {
                     missedWords.add((String) word);
                 }
 
             }
-            
-}
-
-
-public static ArrayList<Language> getLanguages() {
-    ArrayList<Language> languageList = new ArrayList<Language>();
-    try {
-        FileReader reader = new FileReader(FILE_NAME_CATEGORY);
-        JSONParser parser = new JSONParser();
-        JSONArray languagesJSON = (JSONArray)new JSONParser().parse(reader);
-
-        for (int i=0; i < languagesJSON.size(); i++) {
-            JSONObject languageJSON = (JSONObject)languagesJSON.get(i);
-            UUID languageID = UUID.fromString(String.valueOf(languageJSON.get(LANGUAGE_ID)));
-            String language = (String)languageJSON.get(LANGUAGE);
-            String title = (String)languageJSON.get(CATEGORY_TITLE);
-            String question = (String)languageJSON.get(CATEGORY_QUESTION);
-            String currentCategory = (String)languageJSON.get(CURRENT_CATEGORY);
-            int totalQuestionsAnswered = ((Long)languageJSON.get(TOT_QUESTIONS_ANSWERED)).intValue();
-            int progressInCategory = ((Long)languageJSON.get(PROGRESS_IN_CATEGORY)).intValue();
-            int numCorrectAnswers = ((Long)languageJSON.get(NUM_CORRECT_ANSWERS)).intValue();
-            JSONArray missedWordsJSON = (JSONArray)languageJSON.get(MISSED_WORDS);
-            ArrayList<String> missedWords = new ArrayList<>();
-            for (Object word : missedWordsJSON) {
-                missedWords.add((String) word);
-            }
-
-           Category newCategory = new Category(currentCategory, totalQuestionsAnswered, progressInCategory, numCorrectAnswers, missedWords);
-           Language newLanguage = new Language(languageID, language, title, question, newCategory);
-           languageList.add(newLanguage);
-
+            User newUser = new User(userID, firstName, lastName, email, phoneNumber, dateOfBirth, username, password);
+            userList.add(newUser);
         }
-        return languageList;
+            return userList;
+        }
+        catch (Exception e) {
+        e.printStackTrace();
+        }
+    return null;
     }
-    catch (Exception e) {
-    e.printStackTrace();
-    }
-return null;
-}
+            
+
+
+// public static ArrayList<Language> getLanguages() {
+//     ArrayList<Language> languageList = new ArrayList<Language>();
+//     try {
+//         FileReader reader = new FileReader(FILE_NAME_CATEGORY);
+//         JSONParser parser = new JSONParser();
+//         JSONArray languagesJSON = (JSONArray)new JSONParser().parse(reader);
+
+//         for (int i=0; i < languagesJSON.size(); i++) {
+//             JSONObject languageJSON = (JSONObject)languagesJSON.get(i);
+//             UUID languageID = UUID.fromString(String.valueOf(languageJSON.get(LANGUAGE_ID)));
+//             String language = (String)languageJSON.get(LANGUAGE);
+//             String title = (String)languageJSON.get(CATEGORY_TITLE);
+//             String question = (String)languageJSON.get(CATEGORY_QUESTION);
+//             String currentCategory = (String)languageJSON.get(CURRENT_CATEGORY);
+//             int totalQuestionsAnswered = ((Long)languageJSON.get(TOT_QUESTIONS_ANSWERED)).intValue();
+//             int progressInCategory = ((Long)languageJSON.get(PROGRESS_IN_CATEGORY)).intValue();
+//             int numCorrectAnswers = ((Long)languageJSON.get(NUM_CORRECT_ANSWERS)).intValue();
+//             JSONArray missedWordsJSON = (JSONArray)languageJSON.get(MISSED_WORDS);
+//             ArrayList<String> missedWords = new ArrayList<>();
+//             for (Object word : missedWordsJSON) {
+//                 missedWords.add((String) word);
+//             }
+
+//            Category newCategory = new Category(currentCategory, totalQuestionsAnswered, progressInCategory, numCorrectAnswers, missedWords);
+//            Language newLanguage = new Language(languageID, language, title, question, newCategory);
+//            languageList.add(newLanguage);
+
+//         }
+//         return languageList;
+//     }
+//     catch (Exception e) {
+//     e.printStackTrace();
+//     }
+// return null;
+// }
 
 
 public static ArrayList<Course> getCourse() {
@@ -147,7 +158,7 @@ public static ArrayList<Course> getCourse() {
                         PhraseList.add(newPhrase); 
                     }
             }
-            Course newCourse = new Course(userID, courseID, course, language, category, categories);
+            Course newCourse = new Course(userID, courseID, course, language, categories, category);
             courseList.add(newCourse);
         }
         return courseList;
@@ -157,14 +168,6 @@ public static ArrayList<Course> getCourse() {
     }
 return null;
 }
-
-//string to date method 
-//languagelist.getinstance get languagebyID
-//makelanguagelist a singleton 
-//
-
-
-
 
 
 // Main method to test getUsers
@@ -185,66 +188,66 @@ public static void main(String[] args) {
 }
 
 
-// Loads the list of flashcards
-    public static List<Flashcards> loadFlashcards() {
-        List<Flashcards> flashcards = new ArrayList<>();
+// // Loads the list of flashcards
+//     public static List<Flashcards> loadFlashcards() {
+//         List<Flashcards> flashcards = new ArrayList<>();
 
-        // Try to read and parse the JSON file
-        try (FileReader reader = new FileReader(FILE_NAME_FLASHCARDS)) {
-            JSONParser jsonParser = new JSONParser();
+//         // Try to read and parse the JSON file
+//         try (FileReader reader = new FileReader(FILE_NAME_FLASHCARDS)) {
+//             JSONParser jsonParser = new JSONParser();
             
-            // Parse the JSON array from the file
-            Object obj = jsonParser.parse(reader);
-            JSONArray flashcardList = (JSONArray) obj;
+//             // Parse the JSON array from the file
+//             Object obj = jsonParser.parse(reader);
+//             JSONArray flashcardList = (JSONArray) obj;
 
-            // Iterate through each JSON object in the array and convert it to a Flashcard
-            for (Object flashcardObject : flashcardList) {
-                JSONObject flashcardJSON = (JSONObject) flashcardObject;
+//             // Iterate through each JSON object in the array and convert it to a Flashcard
+//             for (Object flashcardObject : flashcardList) {
+//                 JSONObject flashcardJSON = (JSONObject) flashcardObject;
 
-                String word = (String) flashcardJSON.get("word");
-                String translation = (String) flashcardJSON.get("translation");
-                String phrase = (String) flashcardJSON.get("phrase");
+//                 String word = (String) flashcardJSON.get("word");
+//                 String translation = (String) flashcardJSON.get("translation");
+//                 String phrase = (String) flashcardJSON.get("phrase");
                 
-                // Create a new Flashcard object and add it to the list
-                Flashcard flashcard = new Flashcard(word, translation, phrase);
-                flashcards.add(flashcard);
-            }
-        }  catch (IOException | ParseException e) {
-            e.printStackTrace();  // Handle errors in reading or parsing the file
-        }
+//                 // Create a new Flashcard object and add it to the list
+//                 Flashcard flashcard = new Flashcard(word, translation, phrase);
+//                 flashcards.add(flashcard);
+//             }
+//         }  catch (IOException | ParseException e) {
+//             e.printStackTrace();  // Handle errors in reading or parsing the file
+//         }
 
-        return flashcards;  // Return the list of flashcards
-    }
+//         return flashcards;  // Return the list of flashcards
+//     }
 
-    // loads the list of questions
-    public static List<Question> loadQuestions() {
-        List<Question> questionsList = new ArrayList<>();
+    // // loads the list of questions
+    // public static List<Question> loadQuestions() {
+    //     List<Question> questionsList = new ArrayList<>();
 
-        // Try to read and parse the JSON file
-        try (FileReader reader = new FileReader(FILE_NAME_QUESTIONS)) {
-            JSONParser jsonParser = new JSONParser();
+    //     // Try to read and parse the JSON file
+    //     try (FileReader reader = new FileReader(FILE_NAME_QUESTIONS)) {
+    //         JSONParser jsonParser = new JSONParser();
             
-            // Parse the JSON array from the file
-            Object obj = jsonParser.parse(reader);
-            JSONArray flashcardList = (JSONArray) obj;
+    //         // Parse the JSON array from the file
+    //         Object obj = jsonParser.parse(reader);
+    //         JSONArray flashcardList = (JSONArray) obj;
 
-            // Iterate through each JSON object in the array and convert it to a Flashcard
-            for (Object flashcardObject : flashcardList) {
-                JSONObject flashcardJSON = (JSONObject) flashcardObject;
+    //         // Iterate through each JSON object in the array and convert it to a Flashcard
+    //         for (Object flashcardObject : flashcardList) {
+    //             JSONObject flashcardJSON = (JSONObject) flashcardObject;
 
-                String questionFromJson = (String) flashcardJSON.get("Question");
+    //             String questionFromJson = (String) flashcardJSON.get("Question");
                 
                 
-                // Create a new Flashcard object and add it to the list
-                Question question = new Question(questionFromJson);
-                questionsList.add(question);
-            }
-        }  catch (IOException | ParseException e) {
-            e.printStackTrace();  // Handle errors in reading or parsing the file
-        }
+    //             // Create a new Flashcard object and add it to the list
+    //             Question question = new Question(questionFromJson);
+    //             questionsList.add(question);
+    //         }
+    //     }  catch (IOException | ParseException e) {
+    //         e.printStackTrace();  // Handle errors in reading or parsing the file
+    //     }
 
-        return questionsList;  // Return the list of questions
-    }
+    //     return questionsList;  // Return the list of questions
+    // }
 
     
 /**
@@ -345,80 +348,71 @@ public static List<Progress> loadProgress() {
         
 }
 
-    public static ArrayList<language> getLanguages() 
-    {
-        //get languages and within that get the categories and then the wordlist and phraselist 
-    }
+    // public static ArrayList<Word> getWords() {
+    //     ArrayList<Word> words = new ArrayList<>(); 
 
-    public static ArrayList<Word> getWords() {
-        ArrayList<Word> words = new ArrayList<>(); 
-
-          // Try to read and parse the JSON file
-          try (FileReader reader = new FileReader(FILE_NAME_WORDS)) {
-            JSONParser jsonParser = new JSONParser();
+    //       // Try to read and parse the JSON file
+    //       try (FileReader reader = new FileReader(FILE_NAME_WORDS)) {
+    //         JSONParser jsonParser = new JSONParser();
             
-            // Parse the JSON array from the file
-            Object obj = jsonParser.parse(reader);
-            JSONArray wordsList = (JSONArray) obj;
+    //         // Parse the JSON array from the file
+    //         Object obj = jsonParser.parse(reader);
+    //         JSONArray wordsList = (JSONArray) obj;
 
-            // Iterate through each JSON object in the array and convert it to a Flashcard
-            for (Object wordObject : wordsList) {
-                JSONObject wordsJSON = (JSONObject) wordObject;
+    //         // Iterate through each JSON object in the array and convert it to a Flashcard
+    //         for (Object wordObject : wordsList) {
+    //             JSONObject wordsJSON = (JSONObject) wordObject;
 
-                String category = (String) wordsJSON.get("category"); 
-                String word = (String) wordsJSON.get("word");
-                String pronunciation = (String) wordsJSON.get("pronunciation");
-                String translation = (String) wordsJSON.get("translation");
+    //             String category = (String) wordsJSON.get("category"); 
+    //             String word = (String) wordsJSON.get("word");
+    //             String pronunciation = (String) wordsJSON.get("pronunciation");
+    //             String translation = (String) wordsJSON.get("translation");
                 
-                // Create a new Word object (assuming you have a Word constructor defined)
-                Word newWord = new Word(category, word, pronunciation, translation);
-                words.add(newWord); 
-            }
-        }  catch (IOException | ParseException e) {
-            e.printStackTrace();  // Handle errors in reading or parsing the file
-        }
+    //             // Create a new Word object (assuming you have a Word constructor defined)
+    //             Word newWord = new Word(category, word, pronunciation, translation);
+    //             words.add(newWord); 
+    //         }
+    //     }  catch (IOException | ParseException e) {
+    //         e.printStackTrace();  // Handle errors in reading or parsing the file
+    //     }
 
-        return words;  // Return the list of words
-    }
+    //     return words;  // Return the list of words
+    // }
 
+//     public static ArrayList<Phrase> getPhrases() {
+
+//         ArrayList<Phrase> phrases = new ArrayList<>(); 
     
-    public static Category getCategory() {
-        throw new UnsupportedOperationException("Unimplemented method 'getCategory'");
-    }
-
-    public static ArrayList<Phrase> getPhrases() {
-
-        ArrayList<Phrase> phrases = new ArrayList<>(); 
-    
-              // Try to read and parse the JSON file
-              try (FileReader reader = new FileReader(FILE_NAME_PHRASES)) {
-                JSONParser jsonParser = new JSONParser();
+//               // Try to read and parse the JSON file
+//               try (FileReader reader = new FileReader(FILE_NAME_PHRASES)) {
+//                 JSONParser jsonParser = new JSONParser();
                 
-                // Parse the JSON array from the file
-                Object obj = jsonParser.parse(reader);
-                JSONArray phrasesList = (JSONArray) obj;
+//                 // Parse the JSON array from the file
+//                 Object obj = jsonParser.parse(reader);
+//                 JSONArray phrasesList = (JSONArray) obj;
     
-                // Iterate through each JSON object in the array and convert it to a Flashcard
-                for (Object phraseObject : phrasesList) {
-                    JSONObject phrasesJSON = (JSONObject) phraseObject;
+//                 // Iterate through each JSON object in the array and convert it to a Flashcard
+//                 for (Object phraseObject : phrasesList) {
+//                     JSONObject phrasesJSON = (JSONObject) phraseObject;
     
-                    String category = (String) phrasesJSON.get("category"); 
-                    String wordsArray= (JSONArray) phrasesJSON.get("words");
-                    String translation = (String) phrasesJSON.get("translation");
+//                     String category = (String) phrasesJSON.get("category"); 
+//                     String wordsArray= (JSONArray) phrasesJSON.get("words");
+//                     String translation = (String) phrasesJSON.get("translation");
                     
-                    Phrase newPhrase = new Phrase(category, wordsArray, translation);
-                    Phrase.add(newPhrase); 
-                }
-            }  catch (IOException | ParseException e) {
-                e.printStackTrace();  // Handle errors in reading or parsing the file
-            }
+//                     Phrase newPhrase = new Phrase(category, wordsArray, translation);
+//                     Phrase.add(newPhrase); 
+//                 }
+//             }  catch (IOException | ParseException e) {
+//                 e.printStackTrace();  // Handle errors in reading or parsing the file
+//             }
     
-            return phrases;  // Return the list of phrases
-    }
+//             return phrases;  // Return the list of phrases
+//     }
 
 
-},
+// },
 
 
 
+}
 }
