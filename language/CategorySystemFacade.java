@@ -114,7 +114,7 @@ public class CategorySystemFacade {
      * @return phrase for the user to learn in diff language
      */
     public List<Phrase> getPhraseList(){
-        LanguageList languageList = new LanguageList();
+        LanguageList languageList = LanguageList.getInstance();
         //we need to implement phrase list in language list? its in the uml
         List<Phrase> phraseList = languageList.phraseList();
         return phraseList;
@@ -141,7 +141,7 @@ public class CategorySystemFacade {
      * @return languages
      */
     public List<Language> getLanguageList(){
-        return this.language;
+        //fix this make it shorter
     }
 
     /**
