@@ -16,6 +16,7 @@ public class UserInterface {
  */
 private String sentenceStructure;
     private Category currentCategory;
+    private Course currentCourse;
     private int progressInLanguage;
     private HashMap<Word, String> translation;
     private ArrayList<Category> categories;
@@ -95,7 +96,19 @@ private String sentenceStructure;
         dataWriter.writeUsers(userList); 
 
     }
+    
+    public void chooseLangauage(){
+        System.out.println("You have chosen to learn Spanish");
+    }
 
+    public void chooseCourse(){
+         Course course = new Course("", new ArrayList<>());
+         ArrayList<String> availableCourses = course.getAvailableCourse();
+ 
+         String chosenCourse= course.chooseCourse(availableCourses);
+ 
+         currentCourse = new Course(chosenCourse, new ArrayList<Question>());
+    }
 
 
     public void chooseCategory() {
@@ -110,21 +123,21 @@ private String sentenceStructure;
         currentCategory = new Category(chosenCategory, new ArrayList<Question>());
     }
 
-     // Scenario 1: simple login
-     public void scenario1() {
-        System.out.println("Scenario 1");
+    //  // Scenario 1: simple login
+    //  public void scenario1() {
+    //     System.out.println("Scenario 1");
 
-        // Hardcoded username and password for login
-        String username = "janesmith10";
-        String password = "IlovemyCat";
+    //     // Hardcoded username and password for login
+    //     String username = "janesmith10";
+    //     String password = "IlovemyCat";
 
-        if (login(username, password)) {
-            System.out.println("Welcome, " + currentUser.getFirstName() + " " + currentUser.getLastName() + "!");
-        }
+    //     if (login(username, password)) {
+    //         System.out.println("Welcome, " + currentUser.getFirstName() + " " + currentUser.getLastName() + "!");
+    //     }
 
-        chooseCategory();
-        askLogout();
-    }
+    //     chooseCategory();
+    //     askLogout();
+    // }
 
     // Scenario 2: create account
     public void scenarioJim() {
@@ -146,7 +159,8 @@ private String sentenceStructure;
         }
         
 
-        
+        chooseLangauage();
+        chooseCourse();
         chooseCategory();
         askLogout();
     }
@@ -169,7 +183,7 @@ private String sentenceStructure;
 
         // run scenarios
         System.out.println("Testing scenarios.");
-        langUI.scenario1(); // login scenario
+        //langUI.scenario1(); // login scenario
         langUI.scenarioJim(); // create account
     }
 
