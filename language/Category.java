@@ -64,7 +64,7 @@ public class Category{
         // checks the user entered a valid number
         int choice = 0;
         while (choice < 1 || choice > categoryNames.size()) {
-            System.out.print("Enter the number for the category you want to choose: ");
+            System.out.print("You have chosen 1.) Numbers");
             if (scanner.hasNextInt()) {
                 choice = scanner.nextInt();
                 if (choice < 1 || choice > categoryNames.size()) {
