@@ -96,6 +96,8 @@ private String sentenceStructure;
 
     }
 
+
+
     public void chooseCategory() {
         // Create an instance of Category and use it to list and choose categories
         Category category = new Category("", new ArrayList<>());
@@ -125,16 +127,16 @@ private String sentenceStructure;
     }
 
     // Scenario 2: create account
-    public void scenario2() {
-        System.out.println("Scenario 2");
+    public void scenarioJim() {
+        System.out.println("Scenario: Jim Smith");
 
-        String firstName = "John";
-        String lastName = "Doe";
-        String email = "johndoe@gmail.com";
-        String phoneNumber = "627-917-2739";
+        String firstName = "Jim";
+        String lastName = "Smith";
+        String email = "jimsmith@gmail.com";
+        String phoneNumber = "643-917-1800";
         LocalDate dateOfBirth = LocalDate.of(2005, 1, 1); 
-        String username = "johndoe73";
-        String password = "IlovemyCat";
+        String username = "jimsmith44";
+        String password = "smithj1";
 
         createAccount(firstName, lastName, email, phoneNumber, dateOfBirth, username, password);
 
@@ -142,7 +144,9 @@ private String sentenceStructure;
         if (login(username, password)) {
             System.out.println("Welcome, " + currentUser.getFirstName() + " " + currentUser.getLastName() + "!");
         }
+        
 
+        
         chooseCategory();
         askLogout();
     }
@@ -166,7 +170,7 @@ private String sentenceStructure;
         // run scenarios
         System.out.println("Testing scenarios.");
         langUI.scenario1(); // login scenario
-        langUI.scenario2(); // create account
+        langUI.scenarioJim(); // create account
     }
 
 }
