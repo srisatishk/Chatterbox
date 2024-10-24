@@ -105,22 +105,23 @@ return null;
 
 
 public static ArrayList<Course> getCourse() {
-    ArrayList<Course> CourseList = new ArrayList<Course>();
+    ArrayList<Course> courseList = new ArrayList<Course>();
     try {
         FileReader reader = new FileReader(FILE_NAME_COURSES);
         JSONParser parser = new JSONParser();
-        JSONArray CourseJSON = (JSONArray)new JSONParser().parse(reader);
+        JSONArray CoursesJSON = (JSONArray)new JSONParser().parse(reader);
 
-        for (int i=0; i < CourseJSON.size(); i++) {
-            JSONObject CourseJSON = (JSONObject)CourseJSON.get(i);
+        for (int i=0; i < CoursesJSON.size(); i++) {
+            JSONObject CourseJSON = (JSONObject)CoursesJSON.get(i);
             UUID userID = UUID.fromString(String.valueOf(CourseJSON.get(USER_ID)));
             UUID courseID = UUID.fromString(String.valueOf(CourseJSON.get(COURSE_ID)));
             String course = (String)CourseJSON.get(COURSE);
             String language = (String)CourseJSON.get(LANGUAGE);
             String category = (String)CourseJSON.get(CATEGORY_TITLE);
             String question = (String)CourseJSON.get(CATEGORY_QUESTION);
+            String newCategory = (String)CourseJSON.get(NEW_CATEGORY);
 
-            Language newLanguage = new Language(userID, courseID, language, question, newCategory);
+            Course newCourse = new Course(userID, courseID, language, question, newCategory);
             courseList.add(newCourse);
         }
         return courseList;
