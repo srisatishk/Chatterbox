@@ -117,11 +117,37 @@ public static ArrayList<Course> getCourse() {
             UUID courseID = UUID.fromString(String.valueOf(CourseJSON.get(COURSE_ID)));
             String course = (String)CourseJSON.get(COURSE);
             String language = (String)CourseJSON.get(LANGUAGE);
-            String category = (String)CourseJSON.get(CATEGORY_TITLE);
-            String question = (String)CourseJSON.get(CATEGORY_QUESTION);
-            String newCategory = (String)CourseJSON.get(NEW_CATEGORY);
+            String category = (String)CourseJSON.get(CURRENT_CATEGORY_TITLE);
+            
 
-            Course newCourse = new Course(userID, courseID, language, question, newCategory);
+            JSONArray categories = (JSONArray)new JSONParser().parse(reader);
+            for (int j=0; i < categories.size(); j++) 
+            {
+                String title = (String)CourseJSON.get(CATEGORY_TITLE); 
+                JSONArray words = (JSONArray)CourseJSON.get(WORDS); 
+                   for (int w=0; i < words.size(); w++) 
+                    {
+                        String word = (String)CourseJSON.get(WORD);
+                        String pronunciation = (String)CourseJSON.get(WORD_PRONUNCIATION);
+                        String translation = (String)CourseJSON.get(WORD_TRANSLATION);
+                        String alternatives = (String)CourseJSON.get(WORD_ALTERNATIVES);
+
+                        Word newWord = new Word(word,pronunciation,translation,alternatives);
+                        WordList.add(newWord); 
+                   }
+
+                
+                JSONArray phrases = (JSONArray)CourseJSON.get(PHRASES); 
+                    for (int w=0; i < phrases.size(); w++) 
+                    {
+                        String translation = (String)CourseJSON.get(WORD_TRANSLATION);
+                        String phrasewords = (String)CourseJSON.get(WORDS);
+
+                        Phrase newPhrase = new Phrase (translation, phrasewords);
+                        PhraseList.add(newPhrase); 
+                    }
+            }
+            Course newCourse = new Course(userID, courseID, course, language, category, categories);
             courseList.add(newCourse);
         }
         return courseList;

@@ -22,6 +22,11 @@ public class PhraseList {
     }
 
 
+    public static void add(Phrase newPhrase) {
+        PhraseList.add(newPhrase);
+    }
+
+
     //hashmap category to arraylistwords 
 
 

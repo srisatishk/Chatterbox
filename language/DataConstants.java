@@ -1,16 +1,19 @@
 package language;
 
+import java.util.ArrayList;
+
 public abstract class DataConstants {
     protected static final String FILE_NAME_FLASHCARDS = "data.json";
     protected static final String FILE_NAME_QUESTIONS = "question.json";
     protected static final String FILE_NAME_PROGRESS = "progress.json";
     protected static final String FILE_NAME_CATEGORY_SYSTEM = "categorysystem.json";
     protected static final String FILE_NAME_USER_INTERFACE = "user.json"; //added this for UI, not sure if done correctly tho
-    protected static final String FILE_NAME_PHRASES = "phrases.json"; 
+    protected static final String FILE_NAME_PHRASES = "Courses.json"; 
     protected static final String FILE_NAME_COURSES = "Courses.json";
+    protected static final String FILE_NAME_WORDS = "Courses.json";
     //Files for DataLoader - USER
     protected static final String FILE_NAME_USER = "PixelChicksProject/json/User.json";
-    protected static final String USER_ID = "id";
+    protected static final String USER_ID = "userID";
     protected static final String USER_FIRST_NAME = "firstName";
     protected static final String USER_LAST_NAME = "lastName";
     protected static final String USER_USERNAME = "username";
@@ -28,6 +31,7 @@ public abstract class DataConstants {
     protected static final String LANGUAGE = "language";
     protected static final String COURSE = "course";
     protected static final String CATEGORY_TITLE = "title";
+    protected static final String CURRENT_CATEGORY_TITLE = "category";
     protected static final String CATEGORY_QUESTION = "question";
     protected static final String FILL_IN_THE_BLANK = "fillintheBlank";
     protected static final String SAMPLE_SENTENCE = "sampleSentence";
@@ -45,12 +49,13 @@ public abstract class DataConstants {
     //protected static final String WORD_TRANSLATION = "translation";
     //Files for DataLoader - CATEGORY
     //Files for DataLoader - WORDS
-    protected static final String FILE_NAME_WORDS = "PixelChicksProject/json/words.json";
     protected static final String WORD = "word";
+    protected static final String WORDS= "words";
     protected static final String WORD_PRONUNCIATION = "pronunciation";
     protected static final String WORD_TRANSLATION = "translation";
     protected static final String WORD_ALTERNATIVES = "alternatives";
     //Files for DataLoader - PHRASES
+    protected static final String PHRASES= "phrases";
     protected static final String PHRASE_CATEGORY = "category";
     protected static final String PHRASE_TRANSLATION = "translation";
     protected static final String PHRASE_WORDS = "words<>";

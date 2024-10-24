@@ -114,9 +114,11 @@ public class CategorySystemFacade {
      * @return phrase for the user to learn in diff language
      */
     public List<Phrase> getPhraseList(){
-        LanguageList languageList = LanguageList.getInstance();
-        //we need to implement phrase list in language list? its in the uml
-        List<Phrase> phraseList = languageList.phraseList();
+        List<PhraseList> phraseList = new ArrayList<>();
+        if(phraseList != null)
+        {
+            phraseList.();
+        }
         return phraseList;
     }
 
@@ -126,13 +128,7 @@ public class CategorySystemFacade {
      * @return
      */
     public List<Word> getWordList(){
-        List<Word> wordList = new ArrayList<>();
-
-        if (wordList != null) 
-        {
-            wordList.add(this.words); 
-        }
-
+        List<WordList> wordList = new ArrayList<>();
         return wordList;
     }
 

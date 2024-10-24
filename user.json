@@ -1,1 +1,7 @@
+<<<<<<< HEAD
 [{"firstName":"Jane","lastName":"Smith","password":"IlovemyCat","phoneNumber":"817-902-3201","dateOfBirth":"1998-10-07","id":"4109bdad-38b6-4682-8dd4-8f1c627dc16e","email":"jsmith@gmail.com","username":"janesmith10"},{"firstName":"John","lastName":"Doe","password":"IlovemyCat","phoneNumber":"627-917-2739","dateOfBirth":"2005-01-01","id":"47fd76f3-efd3-4d45-829d-7f0dba5e881d","email":"johndoe@gmail.com","username":"johndoe73"},{"firstName":"Jim","lastName":"Smith","password":"smithj1","phoneNumber":"643-917-1800","dateOfBirth":"2005-01-01","id":"439e9475-c7fa-4d0f-8401-22a2bb86681a","email":"jimsmith@gmail.com","username":"jimsmith44"}]
+=======
+[{"firstName":"Jane","lastName":"Smith","password":"IlovemyCat","phoneNumber":"817-902-3201","dateOfBirth":"1998-10-07","id":"942255c7-09f0-42a4-9a03-41d92c7e09a6","email":"jsmith@gmail.com","username":"janesmith10"},
+{"firstName":"John","lastName":"Doe","password":"IlovemyCat","phoneNumber":"627-917-2739","dateOfBirth":"2005-01-01","id":"997b349c-d7a8-4d48-9c8d-04d5c43ba75b","email":"johndoe@gmail.com","username":"johndoe73"},
+{"firstName":"John","lastName":"Doe","password":"IlovemyCat","phoneNumber":"627-917-2739","dateOfBirth":"2005-01-01","id":"4fd35aac-cb57-4030-a1d7-99f69c421036","email":"johndoe@gmail.com","username":"johndoe73"}]
+>>>>>>> 77f92913752c3fc55ee1b749f4514ed771a25474

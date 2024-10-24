@@ -22,6 +22,11 @@ public class WordList {
     }
 
 
+    public static void add(Word newWord) {
+        WordList.add(newWord);
+    }
+
+
     //hashmap category to arraylistwords 
 
 
