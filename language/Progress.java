@@ -15,7 +15,7 @@ public class Progress {
     private Category currentCategory;
     private Course currentCourse;
     private int progressInCategory;
-    // private int progressInCourse;
+    private int progressInCourse;
     private int streak;
     private LocalDate loginDate;
     private ArrayList<String> missedWords;
@@ -25,22 +25,19 @@ public class Progress {
     private int categoryIndex; 
     private List<String> categories;
 
-
-    public Progress(int totalQuestionsAnswered, int numCorrectAnswers, String currentCategory2, int progressInCategory, int streak2, ArrayList<String> missedWords, Language language) {
+    public Progress(int totalQuestionsAnswered, int numCorrectAnswers, Category currentCategory, 
+    Course currentCourse, int progressInCategory, int streak, Language language) {
         this.totalQuestionsAnswered = totalQuestionsAnswered;
         this.numCorrectAnswers = numCorrectAnswers;
-        this.language = language;
-        this.categoryIndex = categoryIndex;
-        this.courseIndex = courseIndex;
+        this.currentCategory = currentCategory;
         this.currentCourse = currentCourse;
-        this.categories = currentCourse.getCategories();
-        this.currentCategory = new Category(categories.get(categoryIndex), new ArrayList<>());
-        // this.progressInCourse = progressInCourse;
         this.progressInCategory = progressInCategory;
         this.streak = streak;
-        this.missedWords = new ArrayList<String>();
+        this.missedWords = new ArrayList<>();
         this.language = language;
+        this.categories = currentCourse.getCategories();
     }
+
 
 
     public int getTotalQuestionsAnswered() {    
@@ -84,7 +81,7 @@ public class Progress {
         return streak;
     }
 
-    public void setStreak() {
+    public void setStreak(int streak) {
         this.streak = streak;
     }
 
@@ -162,6 +159,7 @@ public class Progress {
         System.out.println("Percentage of correct answers: " + percentCorrect + "%");
 
         if (percentCorrect >= 80) {
+            System.out.println("Moving to next Course!");
             goToNextCategory();
         } else {
             System.out.println("Score too low to advance. Must achieve at least 80%.");
@@ -174,6 +172,7 @@ public class Progress {
      */
     public void trackCorrectAnswer() {
         numCorrectAnswers++;
+        totalQuestionsAnswered++;
         System.out.print("Tracking the number of correct answers. Total correct answers: " + numCorrectAnswers);
     }
 
@@ -196,7 +195,7 @@ public class Progress {
         }
     }
 
-    }
+    
     
 
     /**
@@ -238,12 +237,17 @@ public class Progress {
     //     }
     //  }
 
-     public void switchToNextCourse() {
-        courseIndex = (courseIndex == 0) ? 1 : 0;
-        currentCourse = new Course(null, null, courses[courseIndex],language.toString(), categories, categories.get(courseIndex));
-        categories = currentCourse.getCategories();
-        currentCategory = new Category(categories.get(categoryIndex), new ArrayList<>());
-        System.out.print("Switched to the the otherCourse: "+ getCurrentCourse());
+     @SuppressWarnings("static-access")
+    public void switchToNextCourse() {
+        // courseIndex = (courseIndex == 0) ? 1 : 0;
+        // currentCourse = new Course(null, null, courses[courseIndex],language.toString(), categories, categories.get(courseIndex));
+        // categories = currentCourse.getCategories();
+        // currentCategory = new Category(categories.get(categoryIndex), new ArrayList<>());
+        // System.out.print("Switched to the the otherCourse: "+ getCurrentCourse());
+        String[] availableCourses = {"Words", "Phrases"};
+        int nextIndex = (currentCourse.getCourse().equals("Words")) ? 1 : 0;
+        currentCourse = new Course(null, null, availableCourses[nextIndex], language.SPANISH, categories, null);
+        System.out.println("Switched to the next course: " + currentCourse.getCourse());
      }
 
 

@@ -86,7 +86,7 @@ public class Course {
     }
 
     public String chooseCourse(ArrayList<String> courseNames){
-        String selectedCourse = "Phrases";
+        String selectedCourse = "Words";
         return selectedCourse;
         
         // Scanner scanner = new Scanner(System.in);
@@ -106,7 +106,7 @@ public class Course {
         //         System.out.println("Please enter a number.");
         //         scanner.next(); 
         //     }
-        }
+    }
         // show which category the user chose
         // String selectedCourse = courseNames.get(choice - 1);
         // System.out.println("Current Course: " + selectedCourse);

@@ -1,5 +1,8 @@
 package language;
-    /**
+
+import java.util.List;
+
+/**
      * @author gracie
      */
 public class Question {
@@ -8,7 +11,7 @@ public class Question {
      */
     protected String question;
 
-    public Question(){  
+    public Question(String string, String string2, List<String> list){  
     }
 
     public Question(String question) {
