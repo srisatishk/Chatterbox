@@ -345,7 +345,7 @@ public static List<Progress> loadProgress() {
         // Return the String array
         return missedWords;
     }
-        
+  
 }
 
     // public static ArrayList<Word> getWords() {
